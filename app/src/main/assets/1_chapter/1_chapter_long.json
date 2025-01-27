@@ -1,0 +1,34 @@
+{
+  "texts": [
+    {
+      "section" : "1/7",
+      "title" : "Einführung „Betrügerische Nachrichten“",
+      "paragraphs": [
+        "Kriminelle nutzen im Internet verschiedene Strategien, um Ihnen persönlich zu schaden. Beliebte Angriffsstrategien sind:",
+        "• die Verbreitung von Schadsoftware, um z. B. Zugriff auf Ihre Geräte und im nächsten Schritt auf Ihre Anwendungen zu bekommen,",
+        "• das Täuschen der Endanwender, um an sensible Daten bzw. Informationen zu gelangen (z. B. an Zugangsdaten) oder",
+        "• das Täuschen der Endanwender, um sich unmittelbar monetär zu bereichern.",
+        "Eine weit verbreitete Angriffsmethode ist es, Ihnen betrügerische Nachrichten zu schicken, die Ihnen einen legitimen Grund für die Nachricht an Sie vorspielen.",
+        "Betrügerische Nachrichten können Sie über unterschiedliche Kanäle empfangen, z. B. als:",
+        "• E-Mails,",
+        "• SMS/MMS,",
+        "• Nachrichten in Messenger (z.B. WhatsApp, Instagram, Snapchat) und",
+        "• Nachrichten in sozialen und beruflichen Netzwerken (z.B. Facebook, Twitter, Xing, LinkedIn)."
+      ]
+    },
+
+    {
+      "section": "2/7",
+      "title": "Einführung „Betrügerische Nachrichten“",
+      "paragraphs": [
+        "Grundsätzlich ist die Gefahr im Kontext von E-Mails derzeit am größten, da Sie um Dienste im Internet nutzen zu können oft eine private E-Mail-Adresse hinterlegen müssen und nicht sicher sein können, ob und wie diese Dienste Ihre Daten schützen.",
+        "Es ist spielend leicht, die Absenderin oder den Absender einer E-Mail zu fälschen. Diese Fälschung kann jeder, auch ganz ohne großes Fachwissen, durchführen. Entsprechend reicht es nicht die E-Mail Absender Adressen zu betrachten, um entscheiden zu können, ob eine E-Mail eine betrügerische Nachricht ist oder nicht."
+      ],
+      "media": {
+        "type": "video",
+        "description": "Im nachfolgenden Video zeigen wir Ihnen, wie einfach es ist die Adresse des Absenders oder der Absenderin zu fälschen. Das Video zeigt den Vorgang nur visuell und hat keinen Ton.",
+        "source": "raw/example_video"
+      }
+    }
+  ]
+}
