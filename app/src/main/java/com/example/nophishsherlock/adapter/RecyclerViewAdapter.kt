@@ -1,6 +1,7 @@
 package com.example.nophishsherlock.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +57,8 @@ class RecyclerViewAdapter(private val cards: List<JsonTextData>, context: Contex
         private val contentContainer: LinearLayout = view.findViewById(R.id.linearLayout)
 
         fun bind(view: View) {
+            contentContainer.removeAllViews()
+            Log.d("ViewHolder", "Adding view: $view")
             contentContainer.addView(view)
         }
     }

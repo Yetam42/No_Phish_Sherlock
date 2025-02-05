@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.text.Html
 import android.util.Log
+import android.util.TypedValue
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -15,6 +16,8 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.VideoView
+import androidx.core.content.ContextCompat
+import com.example.nophishsherlock.data.ImageText
 
 
 /**
@@ -50,15 +53,23 @@ class ContentViewBuilder(private val context: Context) {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
-                setPadding(16, 16, 16, 16)
+                setPadding(32, 16, 32, 16)
+            }
+
+            Log.d("ContentViewBuilder", "Section: ${textData.section}")
+            if (textData.section != null){
+                layout.addView(createTextView(textData.section, 14f))
+
             }
 
 
-            layout.addView(createTextView(textData.section, 14f))
-            //layout.addView(createTextView(instruction.title, 20f))
-            for (paragraph in textData.paragraphs) {
-                layout.addView(createTextView(paragraph, 16f))
+            //layout.addView(createTextView(instruction.title, 20f))   würde titel hinzufügen
+            if (textData.paragraphs != null) {
+                for (paragraph in textData.paragraphs) {
+                    layout.addView(createTextView(paragraph, 16f))
+                }
             }
+
 
             textData.media?.let { media ->
                 when (media.type) {
@@ -75,6 +86,11 @@ class ContentViewBuilder(private val context: Context) {
                     else -> {}
                 }
             }
+
+            textData.image_text?.let { imageText ->
+                layout.addView(createTextViewWithImage(imageText, 16f))
+            }
+
 
             scrollView.addView(layout)
             views.add(scrollView)
@@ -97,8 +113,45 @@ class ContentViewBuilder(private val context: Context) {
         return TextView(context).apply {
             this.text = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
             this.textSize = textSize
-            setPadding(0, 8, 0, 8)
+            setPadding(0, 0, 0, 8)
         }
+    }
+
+    private fun createTextViewWithImage(text: ImageText, textSize: Float): LinearLayout {
+        if (text.text == null) return LinearLayout(context)
+        val layout = LinearLayout(context).apply {
+            orientation = LinearLayout.HORIZONTAL
+        }
+
+        val layoutParam = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+        )
+        layout.layoutParams = layoutParam
+
+        val textParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2f)
+
+        val textView = createTextView(text.text, textSize)
+        textView.layoutParams = textParams
+
+        val imageParams =
+            LinearLayout.LayoutParams(0, textView.maxHeight, 1f)
+
+        val imageView = createImageView(text.imageSource)
+        imageView.layoutParams = imageParams
+        imageView.scaleType = ImageView.ScaleType.CENTER_INSIDE
+
+        if (text.imageFirst) {
+
+            layout.addView(imageView)
+            layout.addView(textView)
+        } else {
+            layout.addView(textView)
+            layout.addView(imageView)
+        }
+
+        return layout
+
     }
 
     /**
@@ -114,7 +167,7 @@ class ContentViewBuilder(private val context: Context) {
         imageView.layoutParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, 400
         ).apply {
-            setMargins(0, 10, 0, 20)
+            //setMargins(0, 8, 0, 0)
         }
         imageView.scaleType = ImageView.ScaleType.CENTER_CROP
         imageView.tag = imageUrl

@@ -17,6 +17,32 @@
       }
     },
     {
+      "number": "2/4",
+      "title": "Drag und Drop aufgabe Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDrop",
+        "content": [
+          {
+            "targetNames": [
+              "Ziel 1",
+              "Ziel 2"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "Phishing",
+                "Test1"
+              ],
+              "2": [
+                "Schadsoftware",
+                "Test2"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "number": "3/4",
       "title": "Richtig oder falsch",
       "taskDescription": "Ist folgende Aussage plausibel?",

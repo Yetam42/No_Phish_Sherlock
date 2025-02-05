@@ -1,5 +1,6 @@
 package com.example.no_phishing_yannick.games.pickwrong
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -83,16 +84,17 @@ class PickWrongFragment : BaseGameFragment() {
 
             spannableString.setSpan(object : ClickableSpan() {
                 override fun onClick(p0: View) {
-                    if (clickedWords.contains(word)) {
-                        clickedWords.remove(word)
-                    } else {
-                        clickedWords.add(word)
-                    }
+//                    if (clickedWords.contains(word)) {
+//                        clickedWords.remove(word)
+//                    } else {
+//                        clickedWords.add(word)
+//                    }
+                    clickedWords.clear()
+                    clickedWords.add(word)
                     gameText.invalidate()
                     if (word == currentGameData.pickWord) {
                         notifyActivity(true)
-                        Toast.makeText(context, currentGameData.feedBackText, Toast.LENGTH_SHORT)
-                            .show()
+
                     } else {
                         notifyActivity(false)
                     }
@@ -101,10 +103,11 @@ class PickWrongFragment : BaseGameFragment() {
 
                 override fun updateDrawState(ds: android.text.TextPaint) {
                     super.updateDrawState(ds)
+                    ds.color = ContextCompat.getColor(requireContext(), R.color.text_color)
                     if (clickedWords.contains(word)) {
-                        ds.color = ContextCompat.getColor(requireContext(), R.color.teal_700) // Farbe für angeklickte Wörter
+                        ds.bgColor = ContextCompat.getColor(requireContext(), R.color.teal_200) // Farbe für angeklickte Wörter
                     } else {
-                        ds.color = ContextCompat.getColor(requireContext(), R.color.text_color) // Standardfarbe
+                        ds.bgColor = Color.TRANSPARENT// Farbe für nicht angeklickte Wörter
                     }
                     ds.isUnderlineText = false
                 }

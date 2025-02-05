@@ -75,14 +75,17 @@ class InfoFragment : DialogFragment() {
             contentContainer.addView(titleView)
 
             // Absätze hinzufügen
-            for (paragraph in jsonData.paragraphs) {
-                val paragraphView = createTextView(
-                    requireContext(),
-                    text = paragraph,
-                    textSize = 16f
-                )
-                contentContainer.addView(paragraphView)
+            if (jsonData.paragraphs != null) {
+                for (paragraph in jsonData.paragraphs) {
+                    val paragraphView = createTextView(
+                        requireContext(),
+                        text = paragraph,
+                        textSize = 16f
+                    )
+                    contentContainer.addView(paragraphView)
+                }
             }
+
 
             // Video hinzufügen (falls vorhanden)
             jsonData.media?.let { media ->

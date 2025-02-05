@@ -3,13 +3,20 @@ package com.example.nophishsherlock.game
 import ViewPagerAdapter
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
+import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.no_phishing_yannick.games.EndFragment
@@ -17,6 +24,7 @@ import com.example.no_phishing_yannick.games.pickwrong.PickWrongFragment
 import com.example.no_phishing_yannick.games.rightOrwrong.RightOrWrongFragment
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.JsonGameData
+import com.example.nophishsherlock.game.fragments.DragAndDropFragment
 import com.example.nophishsherlock.game.fragments.GameOverFragment
 import com.example.nophishsherlock.game.helper.GameFragmentListener
 import com.example.nophishsherlock.parser.JsonGameParser
@@ -38,6 +46,12 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
     //der adapter für den ViewPager
     lateinit var adapter: ViewPagerAdapter
+
+    lateinit var bottomAppBarContainer: LinearLayout
+    lateinit var feedBack: TextView
+    lateinit var weiterButton: Button
+
+    lateinit var infoButton: ImageButton
 
     //die Liste mit allen Spielen, für das jeweilige Kapitel
     private var gameFraments = mutableListOf<Fragment>()
@@ -63,6 +77,12 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_main_screen)
 
+        supportActionBar?.hide()
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+//        supportActionBar?.setDisplayShowHomeEnabled(true);
+
+
+
         // Initialisiere Views
         title = findViewById(R.id.instruction)
         description = findViewById(R.id.description)
@@ -72,12 +92,21 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         confirm = findViewById(R.id.confirm)
         exit = findViewById(R.id.exit)
 
+        bottomAppBarContainer = findViewById(R.id.bottomAppBarContainer)
+        feedBack = findViewById(R.id.feedBack)
+        weiterButton = findViewById(R.id.weiterButton)
+
+        infoButton = findViewById(R.id.infoButton)
+
         title.setTextColor(getColor(R.color.text_color))
         description.setTextColor(getColor(R.color.text_color))
 
+
+
+
         /*der confirm button wird am anfang unsichtbar gemacht underst,
         wenn eine entcheidung getroffen wurde sichtbar*/
-        confirm.visibility = View.INVISIBLE
+        //confirm.visibility = View.INVISIBLE
 
         loadGameDatalist()
 
@@ -91,7 +120,9 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
 
         //initializer für den viewpager
+        viewPager.isUserInputEnabled = false
         adapter = ViewPagerAdapter(this, gameFraments)
+
         viewPager.adapter = adapter
 
 
@@ -107,6 +138,13 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
     }
 
+    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     /**
      * Diese Funktion lädt die Fragmente der Spiele
      *
@@ -119,6 +157,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         when (gameData.game?.type) {
             "rightOrWrong" -> gameFraments.add(prepareFragment(RightOrWrongFragment(), gameData))
             "pickwrong" -> gameFraments.add(prepareFragment(PickWrongFragment(), gameData))
+            "dragAndDrop" -> gameFraments.add(prepareFragment(DragAndDropFragment(), gameData))
             else -> {
                 println("Unknown game type: ${gameData.game?.type}")
             }
@@ -167,7 +206,9 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
      * Diese Funktion zeigt das nächste Spiel an
      */
     private fun nextFragment() {
-        confirm.visibility = View.INVISIBLE
+        removeAppBar()
+        confirm.isEnabled = false
+        confirm.isClickable = false
         currentGameIndex++
         progressBar.progress = currentGameIndex + 1
         if (currentGameIndex < gameDataList.size) {
@@ -191,6 +232,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         progressBar.visibility = View.INVISIBLE
         lives.visibility = View.INVISIBLE
         confirm.visibility = View.INVISIBLE
+        infoButton.visibility = View.INVISIBLE
     }
 
     /**
@@ -199,28 +241,126 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
      * hat meine keine Leben mehr, wird das Spiel beendet
      */
     override fun onSelectionMade(isCorrect: Boolean) {
-        confirm.visibility = View.VISIBLE
+
+        confirm.isEnabled = true
+        confirm.isClickable = true
+
 
         confirm.setOnClickListener {
-            if (isCorrect) {
-                nextFragment()
-                hasLostLife = false
-            } else {
-                if (!hasLostLife) {
-                    liveCount--
-                    Toast.makeText(this, "Leider falsch, du verlierst ein Leben", Toast.LENGTH_SHORT).show()
-                    hasLostLife = true
-                }
-                if (liveCount <= 0) {
-                    Log.d("MainGameActivity", "Game over")
-                    adapter.addFragment(GameOverFragment())
-                    adapter.notifyDataSetChanged()
-                    viewPager.currentItem = adapter.itemCount -1
-                    removeGameUI()
-                } else {
-                    lives.text = "$liveCount"
-                }
-            }
+            showFeedBack(isCorrect)
+//            if (isCorrect) {
+//                nextFragment()
+//                hasLostLife = false
+//            } else {
+//                if (!hasLostLife) {
+//                    liveCount--
+//                    Toast.makeText(this, "Leider falsch, du verlierst ein Leben", Toast.LENGTH_SHORT).show()
+//                    hasLostLife = true
+//                }
+//                if (liveCount <= 0) {
+//                    Log.d("MainGameActivity", "Game over")
+//                    adapter.addFragment(GameOverFragment())
+//                    adapter.notifyDataSetChanged()
+//                    viewPager.currentItem = adapter.itemCount -1
+//                    removeGameUI()
+//                } else {
+//                    lives.text = "$liveCount"
+//                }
+//            }
         }
+    }
+
+    private fun loseLife() {
+        removeAppBar()
+        if(liveCount <= 0){
+            showGameOver()
+        }
+        else{
+            lives.text = "$liveCount"
+        }
+    }
+
+    private fun showFeedBack(isCorrect: Boolean) {
+        addAppBar()
+
+        if (isCorrect) {
+            showCorrectFeedback()
+        } else {
+            showWrongFeedback()
+        }
+
+    }
+
+
+
+    private fun addAppBar() {
+        bottomAppBarContainer.visibility = View.VISIBLE
+        val feedback = findViewById<TextView>(R.id.feedBack)
+        val weiter = findViewById<Button>(R.id.weiterButton)
+        val animate = TranslateAnimation(
+            0f,  // fromXDelta
+            0f,  // toXDelta // fromYDelta
+            bottomAppBarContainer.height.toFloat(),
+            0f// toYDelta
+        )
+        animate.duration = 500
+        animate.fillAfter = true
+        bottomAppBarContainer.startAnimation(animate)
+        weiter.isClickable = true
+    }
+
+    private fun showCorrectFeedback() {
+        bottomAppBarContainer.background = AppCompatResources.getDrawable(
+            this,
+            android.R.color.holo_green_light
+        )
+        feedBack.text = "Voll gut richtig gemacht"
+        weiterButton.text = "Weiter"
+
+        weiterButton.setOnClickListener {
+            hasLostLife = false
+            nextFragment()
+            weiterButton.isClickable = false
+        }
+    }
+
+
+
+    private fun removeAppBar(){
+        bottomAppBarContainer.visibility = View.GONE
+        val animate = TranslateAnimation(
+            0f,  // fromXDelta
+            0f,  // toXDelta
+            0f,  // fromYDelta
+            bottomAppBarContainer.height.toFloat()// toYDelta
+        )
+        animate.duration = 500
+        animate.fillAfter = true
+        bottomAppBarContainer.startAnimation(animate)
+    }
+
+    private fun showWrongFeedback() {
+        bottomAppBarContainer.background = AppCompatResources.getDrawable(
+            this,
+            android.R.color.holo_red_light
+        )
+        if (!hasLostLife) {
+            liveCount--
+            hasLostLife = true
+        }
+        feedBack.text = "Schade man, dass war falsch :/"
+        weiterButton.text = if (liveCount == 0) "Vorbei" else "Wiederholen"
+        weiterButton.setOnClickListener {
+            loseLife()
+            weiterButton.isClickable = false
+
+        }
+    }
+
+    private fun showGameOver() {
+        adapter.addFragment(GameOverFragment())
+        viewPager.currentItem = adapter.itemCount -1
+        adapter.notifyDataSetChanged()
+        removeGameUI()
     }
 }
