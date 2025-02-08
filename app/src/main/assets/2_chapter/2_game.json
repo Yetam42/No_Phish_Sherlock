@@ -1,0 +1,61 @@
+{
+  "game": [
+    {
+      "number": "1/4",
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "gameData.json",
+            "word": "json",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "number": "2/4",
+      "title": "Drag und Drop aufgabe Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDrop",
+        "content": [
+          {
+            "targetNames": [
+              "Ziel 1",
+              "Ziel 2"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "Phishing",
+                "Test1"
+              ],
+              "2": [
+                "Schadsoftware",
+                "Test2"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "number": "3/4",
+      "title": "Richtig oder falsch",
+      "taskDescription": "Ist folgende Aussage plausibel?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "Bei einer (vermeintlichen) E-Mail von Amazon lautet der Absender info@amazon.de",
+            "word": "info@amazon.de",
+            "isCorrect": true
+          }
+        ]
+      }
+    }
+  ]
+}

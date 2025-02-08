@@ -2,16 +2,19 @@ package com.example.nophishsherlock
 
 import ViewPagerAdapter
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +27,8 @@ import com.example.nophishsherlock.game.GameSelectionActivty
 import com.example.nophishsherlock.game.helper.LongChapterFragment
 import com.example.nophishsherlock.parser.JsonTextParser
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import org.json.JSONArray
 
 
@@ -87,8 +92,20 @@ class MainActivity : AppCompatActivity() {
     //private var currentChapterIndex = 0
 
 
+    private lateinit var shortChapterString: String
+    private lateinit var longChapterString: String
+    private lateinit var gameString: String
+
+
+    val gameButtonText = "Spiele"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        shortChapterString = intent.getStringExtra("shortChapterString")!!
+        longChapterString = intent.getStringExtra("longChapterString")!!
+        gameString = intent.getStringExtra("gameString")!!
 
 
         setContentView(R.layout.main_screen)
@@ -96,8 +113,15 @@ class MainActivity : AppCompatActivity() {
         // Initialisiere Views
         titleTextView = findViewById(R.id.titleTextView)
         contentContainer = findViewById(R.id.contentContainer)
-        gameViewButton = findViewById(R.id.gameViewButton)
-        nextButton = findViewById(R.id.nextButton)
+//        gameViewButton = findViewById(R.id.gameViewButton)
+        gameViewButton = Button(this)
+        gameViewButton.text = gameButtonText
+        gameViewButton.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+
+//        nextButton = findViewById(R.id.nextButton)
         infoButton = findViewById(R.id.infoButton)
 
         titleTextView.setTextColor(getColor(R.color.text_color))
@@ -106,6 +130,8 @@ class MainActivity : AppCompatActivity() {
 
         gameViewButton.setOnClickListener {
             val intent = Intent(this, GameSelectionActivty::class.java)
+            Log.d("MainActivity", "Game string: $gameString")
+            intent.putExtra("gameString", gameString)
             startActivity(intent)
         }
 
@@ -114,6 +140,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show(supportFragmentManager, "InformationFragment")
 
         }
+
 
     }
 
@@ -125,7 +152,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_short_text -> {
                 showShort = true
-                nextButton.visibility = View.INVISIBLE
+                //nextButton.visibility = View.INVISIBLE
                 infoButton.visibility = View.VISIBLE
                 contentContainer.removeAllViews()
                 showChapter()
@@ -134,7 +161,7 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu_long_text -> {
                 showShort = false
-                nextButton.visibility = View.VISIBLE
+                //nextButton.visibility = View.VISIBLE
                 infoButton.visibility = View.INVISIBLE
                 contentContainer.removeAllViews()
                 showChapter()
@@ -158,12 +185,12 @@ class MainActivity : AppCompatActivity() {
      */
     private fun showChapter() {
         if (showShort) {
-            nextButton.visibility = View.INVISIBLE
-            val currentChapterData = getJsonData("1_chapter/1_chapter_short_image.json")
+            // nextButton.visibility = View.INVISIBLE
+            val currentChapterData = getJsonData(shortChapterString)
             buildShortView(currentChapterData)
         } else {
-            nextButton.visibility = View.VISIBLE
-            val currentChapterData = getJsonData("1_chapter/1_chapter_long.json")
+            // nextButton.visibility = View.VISIBLE
+            val currentChapterData = getJsonData(longChapterString)
             buildLongView(currentChapterData)
         }
     }
@@ -181,6 +208,9 @@ class MainActivity : AppCompatActivity() {
         for (view in views) {
             contentContainer.addView(view)
         }
+
+        contentContainer.addView(gameViewButton)
+
     }
 
     /**
@@ -193,15 +223,41 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = RecyclerView(this).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT // Oder eine feste Höhe
+                LinearLayout.LayoutParams.WRAP_CONTENT,
             )
+
+//            (this.layoutParams as LinearLayout.LayoutParams).weight = 1f
         }
+
+        val pageIndicator = TabLayout(this).apply {
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            tabGravity = TabLayout.GRAVITY_CENTER
+            tabGravity = TabLayout.GRAVITY_CENTER
+            setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+            setSelectedTabIndicatorColor(R.drawable.selected_dot)
+            setSelectedTabIndicatorGravity(TabLayout.INDICATOR_GRAVITY_BOTTOM)
+
+        }
+
+        pageIndicator.requestLayout()
+        pageIndicator.invalidate()
 
         val adapter = RecyclerViewAdapter(currentChapterData, this)
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val fragments = createLongChapterFragments(currentChapterData)
+
+
+        //TODO
+//        val lastFragment = fragments.last()
+//        val lastFragmentView = lastFragment.view
+//        val layout = lastFragmentView?.findViewById<ViewGroup>(R.id.fragment_container)
+//        layout?.addView(gameViewButton)
+
         val viewPagerAdapter = ViewPagerAdapter(this, fragments)
 
         val viewPager = ViewPager2(this).apply {
@@ -211,8 +267,15 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        viewPager.adapter = viewPagerAdapter
+        contentContainer.addView(pageIndicator)
         contentContainer.addView(viewPager)
+        viewPager.adapter = viewPagerAdapter
+        TabLayoutMediator(pageIndicator, viewPager) { tab, position ->
+            tab.setIcon(R.drawable.selected_dot)
+        }.attach()
+
+
+
 
         recyclerView.adapter = adapter
         //contentContainer.addView(recyclerView)
@@ -231,8 +294,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun createLongChapterFragments(currentChapterData: List<JsonTextData>): MutableList<Fragment> {
         val fragments = mutableListOf<Fragment>()
-//        val contentViewBuilder = ContentViewBuilder(this)
-//        val views = contentViewBuilder.buildContent(currentChapterData)
         for (chapter in currentChapterData) {
             Log.d("MainActivity", "Creating fragment for chapter: $chapter")
             val fragment = LongChapterFragment()

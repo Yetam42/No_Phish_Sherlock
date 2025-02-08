@@ -71,6 +71,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     //die Variable liveCount speichert die Anzahl der Leben. Es fängt mit 5 Leben an
     private var liveCount = 2
 
+    lateinit var gameString: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +82,8 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true);
 //        supportActionBar?.setDisplayShowHomeEnabled(true);
 
-
+        Log.d("MainGameActivity", "Game string: ${intent.getStringExtra("gameString")}")
+        gameString = intent.getStringExtra("gameString")!!
 
         // Initialisiere Views
         title = findViewById(R.id.instruction)
@@ -182,7 +184,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
      * Diese Funktion lädt die Daten für das Spiel
      */
     private fun loadGameDatalist(){
-        gameDataList = jsonGameParser.parse(this, "1_chapter/1_game.json").toMutableList()
+        gameDataList = jsonGameParser.parse(this, gameString).toMutableList()
     }
 
     /**
