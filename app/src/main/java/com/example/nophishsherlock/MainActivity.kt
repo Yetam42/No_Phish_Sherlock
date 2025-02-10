@@ -36,10 +36,6 @@ import org.json.JSONArray
  * Todo: notwenig
  *      Spiel UI anpassen:
  *        Infobutton für die Spiele
- *      ViewPager und Fragmente für lange Ansicht benutzen
- *      mehr Kapitel:
- *          Level Übersicht
- *              design -> done
  *       Weitere Ideen
  *        besseres Drag und Drop
  *        Text zum Ausklappen
@@ -252,11 +248,7 @@ class MainActivity : AppCompatActivity() {
         val fragments = createLongChapterFragments(currentChapterData)
 
 
-        //TODO
-//        val lastFragment = fragments.last()
-//        val lastFragmentView = lastFragment.view
-//        val layout = lastFragmentView?.findViewById<ViewGroup>(R.id.fragment_container)
-//        layout?.addView(gameViewButton)
+
 
         val viewPagerAdapter = ViewPagerAdapter(this, fragments)
 
@@ -305,9 +297,9 @@ class MainActivity : AppCompatActivity() {
             fragments.add(fragment)
             Log.d("MainActivity", "Created fragment: $fragment")
         }
-
         return fragments
 
     }
+
 
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.nophishsherlock.MainActivity
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.contentbuilder.ContentViewBuilder
 import com.example.nophishsherlock.data.JsonTextData
@@ -32,8 +33,15 @@ class LongChapterFragment : Fragment() {
                     view.findViewById<ViewGroup>(R.id.fragment_container).addView(c)
                 }
             }
-
-
         }
+
+    }
+
+    fun addView(view: View) {
+        view?.let { fragmentView ->
+            val layout = fragmentView.findViewById<ViewGroup>(R.id.fragment_container)
+            layout.addView(view)
+        }
+
     }
 }

@@ -23,8 +23,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.example.nophishsherlock.contentbuilder.FullscreenVideoActivity
 import com.example.nophishsherlock.parser.JsonTextParser
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class InfoFragment : DialogFragment() {
+class InfoFragment : BottomSheetDialogFragment() {
 
     private lateinit var gestureDetector: GestureDetector
     private val parser = JsonTextParser()
@@ -36,7 +37,7 @@ class InfoFragment : DialogFragment() {
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT
         )
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        //dialog.window?.setBackgroundDrawable(ColorDrawable(Color.WHITE))
 
 
         return dialog
