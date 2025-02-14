@@ -1,0 +1,84 @@
+{
+  "texts": [
+    {
+      "section": "1/7",
+      "title": "Einführung „Betrügerische Nachrichten“",
+      "paragraphs": [
+        "Kriminelle nutzen im Internet verschiedene Strategien, um Ihnen persönlich zu schaden. Beliebte Angriffsstrategien sind:",
+        "• die Verbreitung von Schadsoftware, um z. B. Zugriff auf Ihre Geräte und im nächsten Schritt auf Ihre Anwendungen zu bekommen,",
+        "• das Täuschen der Endanwender, um an sensible Daten bzw. Informationen zu gelangen (z. B. an Zugangsdaten) oder",
+        "• das Täuschen der Endanwender, um sich unmittelbar monetär zu bereichern.",
+        "Eine weit verbreitete Angriffsmethode ist es, Ihnen betrügerische Nachrichten zu schicken, die Ihnen einen legitimen Grund für die Nachricht an Sie vorspielen.",
+        "Betrügerische Nachrichten können Sie über unterschiedliche Kanäle empfangen, z. B. als:",
+        "• E-Mails,",
+        "• SMS/MMS,",
+        "• Nachrichten in Messenger (z.B. WhatsApp, Instagram, Snapchat) und",
+        "• Nachrichten in sozialen und beruflichen Netzwerken (z.B. Facebook, Twitter, Xing, LinkedIn)."
+      ]
+    },
+    {
+      "section": "2/7",
+      "title": "Einführung „Betrügerische Nachrichten“",
+      "paragraphs": [
+        "Grundsätzlich ist die Gefahr im Kontext von E-Mails derzeit am größten, da Sie um Dienste im Internet nutzen zu können oft eine private E-Mail-Adresse hinterlegen müssen und nicht sicher sein können, ob und wie diese Dienste Ihre Daten schützen.",
+        "Es ist spielend leicht, die Absenderin oder den Absender einer E-Mail zu fälschen. Diese Fälschung kann jeder, auch ganz ohne großes Fachwissen, durchführen. Entsprechend reicht es nicht die E-Mail Absender Adressen zu betrachten, um entscheiden zu können, ob eine E-Mail eine betrügerische Nachricht ist oder nicht."
+      ],
+      "media": {
+        "type": "video",
+        "description": "Im nachfolgenden Video zeigen wir Ihnen, wie einfach es ist die Adresse des Absenders oder der Absenderin zu fälschen. Das Video zeigt den Vorgang nur visuell und hat keinen Ton.",
+        "source": "raw/example_video"
+      }
+    },
+    {
+      "section": "3/7",
+      "title": "Einführung \"Betrügerische Nachrichten\"",
+      "paragraphs": [
+        "Betrügerische Nachrichten erhalten Sie entweder, weil Kriminelle ihre betrügerischen Nachrichten an alle denkbaren Empfängerinnen und Empfänger schicken und hoffen, dass möglichst viele darauf reinfallen.",
+        "Oder weil Kriminelle gezielt einen Angriff auf Sie durchführen und die Nachricht gezielt an Sie verschickt haben. Hierzu werden oft zunächst im Internet verfügbare Informationen über Sie zusammengetragen, um die Nachricht möglichst glaubwürdig aussehen zu lassen und auf Ihre Aufgaben zuschneiden zu können.",
+        "Kriminelle sind dann am erfolgreichsten, wenn Sie glauben, gar nicht Ziel eines Angriffs zu sein oder zu werden und daher unvorsichtig sind.",
+        "Viele E-Mail-Anbieter setzen technische Maßnahmen ein, um betrügerische Nachrichten automatisiert zu erkennen. Dennoch lassen sich Kriminelle immer neue Methoden einfallen, und es dauert, bis die Technik nachgezogen hat. Daher ist es wichtig, dass Sie wissen, wie Sie sich vor betrügerischen Nachrichten schützen."
+      ]
+    },
+    {
+      "section": "4/7",
+      "title": "Einführung \"Betrügerische Nachrichten\"",
+      "paragraphs": [
+        "Die Inhalte betrügerischer Nachrichten können auf unterschiedliche Art und Weise gefährlich sein:",
+        "• Sie werden gebeten, sensible Informationen oder Daten zurückzuschicken.",
+        "• Sie sollen Überweisungen oder Anrufe tätigen, um Geld an Kriminelle zu überweisen.",
+        "• Sie werden aufgefordert, auf einen Link zu klicken, der Sie zu einer gefälschten Webseite führt.",
+        "• Eine Datei soll geöffnet werden, die Schadsoftware enthält."
+      ]
+    },
+    {
+      "section": "5/7",
+      "title": "Einführung \"Betrügerische Nachrichten\"",
+      "paragraphs": [
+        "Kriminelle geben oft vor, eine bekannte Person oder Organisation zu sein, um Vertrauen zu gewinnen.",
+        "Manchmal nutzen sie auch allgemeine Vorwände, um Sie zu einer Handlung zu verleiten."
+      ]
+    },
+    {
+      "section": "6/7",
+      "title": "Einführung \"Betrügerische Nachrichten\"",
+      "paragraphs": [
+        "Es gibt schlecht gemachte betrügerische Nachrichten, die leicht zu erkennen sind, und gut gemachte, die schwerer zu identifizieren sind.",
+        "Kriminelle nutzen oft echte Nachrichten als Vorlage, um ihre Betrugsversuche authentischer wirken zu lassen."
+      ],
+      "media": {
+        "type": "video",
+        "description": "Hier ein Beispiel, um zu zeigen, wie schwer es ist, die legitime Nachricht von der gut gemachten betrügerischen Nachricht zu unterscheiden.",
+        "source": "raw/example_video"
+      }
+    },
+    {
+      "section": "7/7",
+      "title": "Einführung \"Betrügerische Nachrichten\"",
+      "paragraphs": [
+        "Wenn Sie eine betrügerische Nachricht klar erkennen, löschen Sie diese sofort.",
+        "Bei Unsicherheiten kontaktieren Sie das BSI unter: Telefon: 0800 274 1000, E-Mail: mail@bsi-fuer-buerger.de.",
+        "Falls Sie auf eine Phishing-Nachricht hereingefallen sind, sollten Sie schnell reagieren und das BSI informieren."
+      ]
+    }
+  ]
+}

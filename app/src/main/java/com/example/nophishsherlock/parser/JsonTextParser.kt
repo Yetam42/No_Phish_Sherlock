@@ -13,7 +13,7 @@ import org.json.JSONObject
  * Diese Klasse verarbeitet den gebenen String bei der Funktion parse() in eine Liste mit JsonTextData Objekten
  * Diese können dann von den anderen Klassen verwendet werden
  */
-class JsonTextParser {
+class JsonTextParser<AssetManager> {
 
     /**
      * Diese Funktion parst den übergebenen String und gibt eine Liste mit JsonTextData Objekten zurück
@@ -36,15 +36,6 @@ class JsonTextParser {
 
 
                 //Absätze einlesen
-
-//                val paragraphArray = textObject.optJSONArray("paragraphs")
-//                val paragraphList = mutableListOf<String>()
-//                if (paragraphArray != null) {
-//                    for (j in 0 until paragraphArray.length()) {
-//                        paragraphList.add(paragraphArray.getString(j))
-//                    }
-//                }
-
                 val paragraphList = textObject.optJSONArray("paragraphs")?.let { getParagraphs(it) }
 
                 //Medien einlesen
@@ -62,7 +53,7 @@ class JsonTextParser {
                 val imageText = if (textObject.has("image text")) {
                     val imagetextObject = textObject.getJSONObject("image text")
                     ImageText(
-                        text = getParagraphString(imagetextObject.getJSONArray("text")),
+                        text = getParagraphs(imagetextObject.getJSONArray("text")), //getParagraphString(imagetextObject.getJSONArray("text")),
                         imageSource = imagetextObject.getString("image_source"),
                         imageFirst = imagetextObject.getBoolean("image_first")
                     )
@@ -113,4 +104,6 @@ class JsonTextParser {
         Log.d("JsonTextParser", "String: $output")
         return output
     }
+
+
 }

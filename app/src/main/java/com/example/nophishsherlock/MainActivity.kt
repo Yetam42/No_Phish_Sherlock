@@ -1,11 +1,11 @@
 package com.example.nophishsherlock
 
 import ViewPagerAdapter
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,18 +14,18 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.example.nophishsherlock.adapter.RecyclerViewAdapter
 import com.example.nophishsherlock.contentbuilder.ContentViewBuilder
 import com.example.nophishsherlock.data.JsonTextData
-import com.example.nophishsherlock.game.GameSelectionActivty
+import com.example.nophishsherlock.game.MainGameActivity
+import com.example.nophishsherlock.game.helper.GameViewModel
+import com.example.nophishsherlock.game.helper.LevelPrefernce
 import com.example.nophishsherlock.game.helper.LongChapterFragment
+import com.example.nophishsherlock.parser.Gson.Parser
 import com.example.nophishsherlock.parser.JsonTextParser
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -36,10 +36,7 @@ import org.json.JSONArray
  * Todo: notwenig
  *      Spiel UI anpassen:
  *        Infobutton für die Spiele
- *       Weitere Ideen
- *        besseres Drag und Drop
- *        Text zum Ausklappen
- *        UI anpassen
+ *     leere JSON Datei
  *
  *
  */
@@ -47,10 +44,10 @@ import org.json.JSONArray
 /**
  * Todo: optional
  *       wenn elemte hat soll farbe geändert werden, sonst nicht
- *      Sticky Bottom sheet für infobutton
  *      schauen ob ich noch die texte in eine string datei bekomme
- *       *        feedback anders
  *  *          feedback nicht im content
+ *   *        Text zum Ausklappen
+ *
  */
 
 /**
@@ -72,11 +69,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var titleTextView: TextView
     private lateinit var contentContainer: LinearLayout
     private lateinit var gameViewButton: Button
-    private lateinit var nextButton: Button
     private lateinit var infoButton: FloatingActionButton
 
     // hier wird der JsonTextParser initialisiert
-    private val jsonTextParser = JsonTextParser()
+    private val jsonTextParser = JsonTextParser<Any>()
 
     //Die Variable showShort gibt an, ob ein kurzer Text oder langer Text angezeigt werden soll
     private var showShort = true
@@ -88,6 +84,10 @@ class MainActivity : AppCompatActivity() {
     //private var currentChapterIndex = 0
 
 
+    private lateinit var previousPage: Button
+    private lateinit var nextPage: Button
+    private lateinit var pageIndicator: TabLayout
+
     private lateinit var shortChapterString: String
     private lateinit var longChapterString: String
     private lateinit var gameString: String
@@ -95,6 +95,14 @@ class MainActivity : AppCompatActivity() {
 
     val gameButtonText = "Spiele"
 
+    val NO_GAME = "noGame"
+
+    lateinit var viewModel: GameViewModel
+
+    lateinit var levelPrefernce: LevelPrefernce
+
+
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,18 +112,47 @@ class MainActivity : AppCompatActivity() {
         gameString = intent.getStringExtra("gameString")!!
 
 
+
+
         setContentView(R.layout.main_screen)
 
         // Initialisiere Views
         titleTextView = findViewById(R.id.titleTextView)
         contentContainer = findViewById(R.id.contentContainer)
 //        gameViewButton = findViewById(R.id.gameViewButton)
-        gameViewButton = Button(this)
-        gameViewButton.text = gameButtonText
-        gameViewButton.layoutParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
+        gameViewButton = MaterialButton(this).apply {
+            text = gameButtonText
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+        }
+
+        viewModel = ViewModelProvider(this)[GameViewModel::class.java]
+        levelPrefernce = LevelPrefernce(this)
+
+
+        if (gameString == NO_GAME) {
+            gameViewButton.text = "Level Beenden"
+
+            gameViewButton.setOnClickListener {
+                val currentLevel = viewModel.currentLevel.value ?: 1
+                viewModel.setLevelCompleted(currentLevel, true)
+
+                // Also update the current level (move on to the next level).
+                viewModel.setCurrentLevel(currentLevel + 1)
+                val intent = Intent(this, LevelOverviewActivity::class.java)
+
+                viewPager.adapter
+                startActivity(intent)
+            }
+        } else {
+            gameViewButton.setOnClickListener {
+                val intent = Intent(this, MainGameActivity::class.java)
+                intent.putExtra("gameString", gameString)
+                startActivity(intent)
+            }
+        }
 
 //        nextButton = findViewById(R.id.nextButton)
         infoButton = findViewById(R.id.infoButton)
@@ -124,18 +161,16 @@ class MainActivity : AppCompatActivity() {
 
         showChapter()
 
-        gameViewButton.setOnClickListener {
-            val intent = Intent(this, GameSelectionActivty::class.java)
-            Log.d("MainActivity", "Game string: $gameString")
-            intent.putExtra("gameString", gameString)
-            startActivity(intent)
-        }
 
         infoButton.setOnClickListener {
             val dialog = InfoFragment()
             dialog.show(supportFragmentManager, "InformationFragment")
 
         }
+
+        previousPage = findViewById(R.id.previousPage)
+        nextPage = findViewById(R.id.nextPage)
+        pageIndicator = findViewById(R.id.pageIndicator)
 
 
     }
@@ -148,8 +183,15 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_short_text -> {
                 showShort = true
+                val parent = gameViewButton.parent
+                if (parent is ViewGroup) {
+                    parent.removeView(gameViewButton)
+                }
                 //nextButton.visibility = View.INVISIBLE
                 infoButton.visibility = View.VISIBLE
+                nextPage.visibility = View.GONE
+                previousPage.visibility = View.GONE
+                pageIndicator.visibility = View.GONE
                 contentContainer.removeAllViews()
                 showChapter()
                 true
@@ -158,6 +200,9 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_long_text -> {
                 showShort = false
                 //nextButton.visibility = View.VISIBLE
+                nextPage.visibility = View.VISIBLE
+                previousPage.visibility = View.VISIBLE
+                pageIndicator.visibility = View.VISIBLE
                 infoButton.visibility = View.INVISIBLE
                 contentContainer.removeAllViews()
                 showChapter()
@@ -205,7 +250,12 @@ class MainActivity : AppCompatActivity() {
             contentContainer.addView(view)
         }
 
-        contentContainer.addView(gameViewButton)
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.gravity = Gravity.CENTER
+        contentContainer.addView(gameViewButton, layoutParams)
 
     }
 
@@ -216,61 +266,83 @@ class MainActivity : AppCompatActivity() {
      */
     private fun buildLongView(currentChapterData: List<JsonTextData>) {
         titleTextView.text = currentChapterData[0].title
-        val recyclerView = RecyclerView(this).apply {
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-            )
+//        val recyclerView = RecyclerView(this).apply {
+//            layoutParams = LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.MATCH_PARENT,
+//                LinearLayout.LayoutParams.WRAP_CONTENT,
+//            )
+//
+//        }
 
-//            (this.layoutParams as LinearLayout.LayoutParams).weight = 1f
-        }
+        //val pageIndicator = createPageIndicator(this)
 
-        val pageIndicator = TabLayout(this).apply {
-            layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            tabGravity = TabLayout.GRAVITY_CENTER
-            tabGravity = TabLayout.GRAVITY_CENTER
-            setBackgroundColor(ContextCompat.getColor(context, R.color.white))
-            setSelectedTabIndicatorColor(R.drawable.selected_dot)
-            setSelectedTabIndicatorGravity(TabLayout.INDICATOR_GRAVITY_BOTTOM)
-
-        }
-
-        pageIndicator.requestLayout()
-        pageIndicator.invalidate()
-
-        val adapter = RecyclerViewAdapter(currentChapterData, this)
-        recyclerView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//        val adapter = RecyclerViewAdapter(currentChapterData, this)
+//        recyclerView.layoutManager =
+//            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val fragments = createLongChapterFragments(currentChapterData)
-
-
+        Log.d("MainActivity", "creating new fragments")
 
 
         val viewPagerAdapter = ViewPagerAdapter(this, fragments)
 
-        val viewPager = ViewPager2(this).apply {
+        viewPager = ViewPager2(this).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT // Oder eine feste Höhe
             )
         }
 
-        contentContainer.addView(pageIndicator)
+
+        // contentContainer.addView(pageIndicator)
         contentContainer.addView(viewPager)
         viewPager.adapter = viewPagerAdapter
-        TabLayoutMediator(pageIndicator, viewPager) { tab, position ->
-            tab.setIcon(R.drawable.selected_dot)
+
+
+        check(viewPagerAdapter)
+
+        previousPage.setOnClickListener {
+            viewPager.currentItem = viewPager.currentItem - 1
+            check(viewPagerAdapter)
+
+        }
+
+        nextPage.setOnClickListener {
+            viewPager.currentItem += 1
+            check(viewPagerAdapter)
+        }
+
+
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                check(viewPagerAdapter)
+            }
+        })
+
+
+        TabLayoutMediator(pageIndicator, viewPager) { tab, index ->
+            tab.text = "${index + 1}"
         }.attach()
 
 
-
-
-        recyclerView.adapter = adapter
+        //recyclerView.adapter = adapter
         //contentContainer.addView(recyclerView)
+    }
+
+    fun check(viewPagerAdapter: ViewPagerAdapter) {
+        if (viewPager.currentItem == 0) {
+            previousPage.visibility = View.INVISIBLE
+        } else {
+            previousPage.visibility = View.VISIBLE
+        }
+
+        if (viewPager.currentItem == viewPagerAdapter.itemCount - 1) {
+            nextPage.visibility = View.INVISIBLE
+        } else {
+            nextPage.visibility = View.VISIBLE
+        }
     }
 
     /**
@@ -280,14 +352,17 @@ class MainActivity : AppCompatActivity() {
      * @return die Daten für das aktuelle Kapitel
      */
     private fun getJsonData(jsonFile: String): List<JsonTextData> {
+        val parser = Parser()
+        //TODO richtig implementieren
+
+
         val jsonData = jsonTextParser.parse(this, jsonFile)
-        return jsonData
+        return parser.parse(this, jsonFile)
     }
 
     private fun createLongChapterFragments(currentChapterData: List<JsonTextData>): MutableList<Fragment> {
         val fragments = mutableListOf<Fragment>()
         for (chapter in currentChapterData) {
-            Log.d("MainActivity", "Creating fragment for chapter: $chapter")
             val fragment = LongChapterFragment()
             val args = Bundle()
             val currentList = ArrayList<JsonTextData>()
@@ -295,11 +370,30 @@ class MainActivity : AppCompatActivity() {
             args.putParcelableArrayList("views", currentList)
             fragment.arguments = args
             fragments.add(fragment)
-            Log.d("MainActivity", "Created fragment: $fragment")
         }
+
+        val longChapterFragment = fragments.last() as LongChapterFragment
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.gravity = Gravity.CENTER
+        longChapterFragment.setGameViewButton(gameViewButton, layoutParams)
+
         return fragments
 
     }
 
 
+    private fun createPageIndicator(context: Context): TabLayout {
+        return TabLayout(context).apply {
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            tabGravity = TabLayout.GRAVITY_CENTER
+            setSelectedTabIndicator(R.drawable.selected_dot)
+            setSelectedTabIndicatorGravity(TabLayout.INDICATOR_GRAVITY_BOTTOM)
+        }
+    }
 }

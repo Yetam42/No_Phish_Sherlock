@@ -19,6 +19,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -48,4 +52,15 @@ dependencies {
 
     // für DragNDrop
     implementation(libs.kotlinx.serialization.json)
+
+    //viewmodel für spieldaten
+    implementation(libs.androidx.fragment.ktx)
+
+    //für json parser
+    implementation(libs.gson)
+
+
+    //for newer video
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui.v120)
 }

@@ -27,5 +27,9 @@ class ViewPagerAdapter(
         fragmentList.add(fragment)
     }
 
+    fun clearFragments() {
+        fragmentList.clear()
+    }
+
 
 }

@@ -1,12 +1,10 @@
 package com.example.nophishsherlock.contentbuilder
 
-import com.example.nophishsherlock.data.JsonTextData
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.text.Html
 import android.util.Log
-import android.util.TypedValue
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -16,8 +14,12 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.VideoView
-import androidx.core.content.ContextCompat
+import androidx.media3.common.MediaItem
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
 import com.example.nophishsherlock.data.ImageText
+import com.example.nophishsherlock.data.JsonTextData
+import com.google.android.material.textview.MaterialTextView
 
 
 /**
@@ -57,7 +59,7 @@ class ContentViewBuilder(private val context: Context) {
             }
 
             Log.d("ContentViewBuilder", "Section: ${textData.section}")
-            if (textData.section != null){
+            if (textData.section != null) {
                 layout.addView(createTextView(textData.section, 14f))
 
             }
@@ -74,7 +76,7 @@ class ContentViewBuilder(private val context: Context) {
             textData.media?.let { media ->
                 when (media.type) {
                     "video" -> {
-                        layout.addView(createVideoView(media.source))
+                        layout.addView(createVideo(media.source))
                         layout.addView(createTextView(media.description, 14f))
                     }
 
@@ -87,7 +89,7 @@ class ContentViewBuilder(private val context: Context) {
                 }
             }
 
-            textData.image_text?.let { imageText ->
+            textData.imageText?.let { imageText ->
                 layout.addView(createTextViewWithImage(imageText, 16f))
             }
 
@@ -109,8 +111,8 @@ class ContentViewBuilder(private val context: Context) {
      * @return TextView mit Text
      */
     private fun createTextView(text: String?, textSize: Float): TextView {
-        if (text == null) return TextView(context)
-        return TextView(context).apply {
+        if (text == null) return MaterialTextView(context)
+        return MaterialTextView(context).apply {
             this.text = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
             this.textSize = textSize
             setPadding(0, 0, 0, 8)
@@ -131,7 +133,7 @@ class ContentViewBuilder(private val context: Context) {
 
         val textParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2f)
 
-        val textView = createTextView(text.text, textSize)
+        val textView = createTextView(text.text.toString(), textSize)
         textView.layoutParams = textParams
 
         val imageParams =
@@ -173,6 +175,56 @@ class ContentViewBuilder(private val context: Context) {
         imageView.tag = imageUrl
         return imageView
     }
+
+
+    private fun createVideo(videoUrl: String): PlayerView {
+        Log.d("VideoView", "Creating video view for URL: $videoUrl")
+        val videoUri = Uri.parse("android.resource://${context.packageName}/raw/example")
+        Log.d("VideoView", "Video URI: $videoUri")
+
+        var isFullscreen = false
+
+        // Create ExoPlayer instance
+        val player = ExoPlayer.Builder(context).build()
+
+        // Prepare MediaItem
+        val mediaItem = MediaItem.fromUri(videoUri)
+
+
+        // Create StyledPlayerView
+        val playerView = PlayerView(context)
+
+
+        player.setMediaItem(mediaItem)
+        player.prepare()
+        player.playWhenReady = false
+
+        playerView.player = player
+        playerView.useController = true // Show media controls
+
+
+        playerView.layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, 600
+        ).apply {
+            setMargins(0, 16, 0, 16)
+        }
+
+        playerView.setFullscreenButtonClickListener {
+            openFullscreen(player)
+
+        }
+
+        return playerView
+    }
+
+
+    private fun openFullscreen(player: ExoPlayer) {
+        val intent = Intent(context, NewFullScreen::class.java)
+        intent.putExtra("video_uri", "android.resource://${context.packageName}/raw/example")
+        intent.putExtra("video_position", player.currentPosition)
+        context.startActivity(intent)
+    }
+
 
     /**
      * Diese Funktion erstellt den VideoView

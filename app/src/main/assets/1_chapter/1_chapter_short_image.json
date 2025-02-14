@@ -21,7 +21,7 @@
       ]
     },
     {
-      "image text": {
+      "imageText": {
         "text": [
           "Betrügerische Nachrichten können Sie über unterschiedliche Kanäle empfangen, z. B. als:",
           "• E-Mails,",
@@ -29,8 +29,8 @@
           "• Nachrichten in Messenger (z.B. WhatsApp, Instagram, Snapchat) und",
           "• Nachrichten in sozialen und beruflichen Netzwerken (z.B. Facebook, Twitter, Xing, LinkedIn)."
         ],
-        "image_source": "drawable/phone",
-        "image_first": true
+        "imageSource": "drawable/phone",
+        "imageFirst": true
       }
     },
     {
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "image text": {
+      "imageText": {
         "text": [
           "<b>Verhalten bei verdächtigen Nachrichten:</b>",
           "• Bei sicherer Erkennung: Nachricht sofort löschen.",
@@ -57,8 +57,8 @@
           "Verhalten nach versehentlichem Klicken oder Datenverlust:",
           "• Ebenfalls das BSI kontaktieren, um Hilfe zu erhalten und den Schaden zu minimieren."
         ],
-        "image_source": "drawable/support",
-        "image_first": false
+        "imageSource": "drawable/support",
+        "imageFirst": false
       }
     }
   ]

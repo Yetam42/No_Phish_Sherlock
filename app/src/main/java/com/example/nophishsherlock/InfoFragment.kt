@@ -3,8 +3,6 @@ package com.example.nophishsherlock
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.text.Html
@@ -20,7 +18,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.DialogFragment
 import com.example.nophishsherlock.contentbuilder.FullscreenVideoActivity
 import com.example.nophishsherlock.parser.JsonTextParser
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -28,7 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class InfoFragment : BottomSheetDialogFragment() {
 
     private lateinit var gestureDetector: GestureDetector
-    private val parser = JsonTextParser()
+    private val parser = JsonTextParser<Any>()
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

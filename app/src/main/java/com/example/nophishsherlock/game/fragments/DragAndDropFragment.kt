@@ -2,24 +2,20 @@ package com.example.nophishsherlock.game.fragments
 
 import android.content.ClipData
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.DragEvent
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.example.no_phishing_yannick.games.helper.BaseGameFragment
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.GameData
 import org.json.JSONArray
-import org.json.JSONObject
+import kotlin.properties.Delegates
 
-data class DragAndDropItem(val id: Int, val text: String)
 
 class DragAndDropFragment : BaseGameFragment() {
 
@@ -31,16 +27,13 @@ class DragAndDropFragment : BaseGameFragment() {
     private lateinit var dropZone2Text: TextView
 
 
-    private val droppedItems = mutableListOf<MutableList<DragAndDropItem>>()
-    private var dropCounts = mutableListOf<Int>()
-
-
-
     private var currentGameData = DragAndDropData()
 
     private val DEFAULT_TARGET_STRING = "Hier ablegen"
     private val DROPZONE_1_INDEX = 0
     private val DROPZONE_2_INDEX = 1
+
+    private var itemCount by Delegates.notNull<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,6 +49,8 @@ class DragAndDropFragment : BaseGameFragment() {
         dropZone1Text = view.findViewById(R.id.dropZone1Text)
         dropZone2Text = view.findViewById(R.id.dropZone2Text)
 
+
+
         return view
     }
 
@@ -66,9 +61,9 @@ class DragAndDropFragment : BaseGameFragment() {
             val empfangeneFrage: GameData? = arguments?.getParcelable<GameData>("game")
 
             currentGameData = empfangeneFrage?.let { parseGameData(it) } as DragAndDropData
+            itemCount = currentGameData.itemToTargetMap.values.sumOf { it.size }
         }
 
-        Log.d("DragAndDropFragment", "currentGameData: $currentGameData")
         createDragItemViews()
         setupDropZone()
 
@@ -77,16 +72,16 @@ class DragAndDropFragment : BaseGameFragment() {
     }
 
     override fun handleUserSelection() {
-        dropZone1.setOnDragListener(createDropZoneListener(dropZone1, DROPZONE_1_INDEX))
-        dropZone1.setOnLongClickListener(null)
-        dropZone2.setOnDragListener(createDropZoneListener(dropZone2, DROPZONE_2_INDEX))
-        dropZone2.setOnLongClickListener(null)
+        dropZone2.setOnDragListener(createDragListener())
+        dropZone1.setOnDragListener(createDragListener())
+        draggableItemsContainer.setOnDragListener(createDragListener())
     }
 
     override fun updateUI(isCorrect: Boolean) {
     }
 
 
+    //TODO GSON
     override fun parseGameData(gameData: GameData): DragAndDropData {
         return try {
             val jsonArray = gameData.content
@@ -94,7 +89,7 @@ class DragAndDropFragment : BaseGameFragment() {
             if (jsonArray != null) {
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i)
-                    val itemToTargetMap = mutableMapOf<String, MutableList<DragAndDropItem>>()
+                    val itemToTargetMap = mutableMapOf<String, MutableList<String>>()
                     val targetNames = mutableListOf<String>()
 
                     val jsonTargetNames = jsonObject.getJSONArray("targetNames")
@@ -106,7 +101,8 @@ class DragAndDropFragment : BaseGameFragment() {
                     val jsonMap = jsonObject.getJSONObject("itemToTargetMap")
                     for (key in jsonMap.keys()) {
                         val values = jsonMap.getJSONArray(key)
-                        itemToTargetMap[key] = createDragAndDropItem(values)
+                        itemToTargetMap[key] =
+                            createDragItemStrings(values) //createDragAndDropItem(values)
                     }
                     dragAndDropData = DragAndDropData(targetNames, itemToTargetMap)
 
@@ -121,12 +117,10 @@ class DragAndDropFragment : BaseGameFragment() {
         }
     }
 
-    private fun createDragAndDropItem(values: JSONArray): MutableList<DragAndDropItem> {
-        val dragItemsList = mutableListOf<DragAndDropItem>()
-        Log.d("DragAndDropFragment", "List size: ${dragItemsList.size}")
+    private fun createDragItemStrings(values: JSONArray): MutableList<String> {
+        val dragItemsList = mutableListOf<String>()
         for (i in 0 until values.length()) {
-            Log.d("DragAndDropFragment", "Adding item: ${values.getString(i)}, with id: ${dragItemsList.size + 1}")
-            dragItemsList.add(DragAndDropItem(i, values.getString(i)))
+            dragItemsList.add(values.getString(i))
         }
         return dragItemsList
     }
@@ -137,8 +131,7 @@ class DragAndDropFragment : BaseGameFragment() {
         for (values in currentGameData.itemToTargetMap.values) {
             for (item in values) {
                 val dragItemTextView = TextView(requireContext()).apply {
-                    text = item.text
-                    tag = item.text
+                    text = item
                     layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
@@ -147,7 +140,7 @@ class DragAndDropFragment : BaseGameFragment() {
                     }
                     setBackgroundColor(Color.LTGRAY)
 
-                    setOnLongClickListener(createDragItemListener(item))
+                    setOnTouchListener(createTouchItemListener2())
                 }
                 textViewList.add(dragItemTextView)
             }
@@ -160,152 +153,179 @@ class DragAndDropFragment : BaseGameFragment() {
         }
     }
 
-    private fun setupDropZone(){
-        dropZone1Text.text = currentGameData.targetNames.getOrNull(DROPZONE_1_INDEX) ?: DEFAULT_TARGET_STRING
-        dropZone2Text.text = currentGameData.targetNames.getOrNull(DROPZONE_2_INDEX) ?: DEFAULT_TARGET_STRING
-
-        droppedItems.add(mutableListOf())
-        droppedItems.add(mutableListOf())
-
-        dropCounts.add(0)
-        dropCounts.add(0)
+    private fun setupDropZone() {
+        dropZone1Text.text =
+            currentGameData.targetNames.getOrNull(DROPZONE_1_INDEX) ?: DEFAULT_TARGET_STRING
+        dropZone2Text.text =
+            currentGameData.targetNames.getOrNull(DROPZONE_2_INDEX) ?: DEFAULT_TARGET_STRING
 
     }
 
-    private fun createDropZoneListener(dropZone: LinearLayout, dropZoneIndex: Int) : View.OnDragListener {
-        return View.OnDragListener{ view, event ->
+    private fun createDragListener(
+    ): View.OnDragListener {
+        return View.OnDragListener { v, event ->
+
+            val draggedView = event.localState as View
+            val originalParent = draggedView.getTag(R.id.draggableItemsContainer) as? ViewGroup
+
             when (event.action) {
+                DragEvent.ACTION_DRAG_STARTED -> {
+                    return@OnDragListener true
+                }
+
+
+                DragEvent.ACTION_DRAG_ENTERED -> { //löscht die View aus dem aktuellen Container sobald sich diese außerhalb befindet
+                    val currentParent = draggedView.parent as? ViewGroup
+                    if (currentParent != null && currentParent != v) {
+                        currentParent.removeView(draggedView)
+                    }
+                    v.setBackgroundColor(Color.LTGRAY)
+                    true
+                }
+
+                DragEvent.ACTION_DRAG_EXITED -> { //wenn view nicht gedroppt wurde, wird die vorschau wieder gelöscht, außer es ist der draggableItemContainer
+                    v.setBackgroundColor(Color.TRANSPARENT)
+                    (draggedView.parent as? ViewGroup)?.removeView(draggedView)
+                    if (originalParent != null) {
+                        originalParent.addView(draggedView)
+                        draggedView.visibility = View.VISIBLE
+                    }
+                    true
+                }
+
                 DragEvent.ACTION_DROP -> {
-                    val droppedItem = getDroppedItem(event)
-                    if (droppedItem != null) {
-                        updateDropCount(dropZoneIndex)
-                        droppedItems[dropZoneIndex].add(droppedItem)
-                        updateDropZoneUI(dropZoneIndex, dropZone, droppedItem)
-                        checkDropZones()
+                    v.setBackgroundColor(Color.TRANSPARENT)
+
+                    val sourceParent = draggedView.parent as? ViewGroup
+                    sourceParent?.removeView(draggedView)
+
+                    if (v is ViewGroup) {
+                        v.addView(draggedView)
+                        draggedView.visibility = View.VISIBLE
+                        draggedView.setOnTouchListener(createTouchItemListener2())
                     }
-                    else {
-                        return@OnDragListener false
-                    }
+
+                    allItemsPlaced()
+
                     true
                 }
+
                 DragEvent.ACTION_DRAG_ENDED -> {
-                    val sourceData = event.localState as? Pair<View, Int>
-                    val sourceView = sourceData?.first
-                    val originalVisibility = sourceData?.second
-                    if (!event.result && sourceView != view) {
-                        sourceView?.visibility = originalVisibility ?: View.VISIBLE
+                    v.setBackgroundColor(Color.TRANSPARENT)
+                    if (!event.result) {
+                        val currentParent = draggedView.parent as? ViewGroup
+                        currentParent?.removeView(draggedView)
+
+                        if (originalParent != null) {
+                            originalParent.addView(draggedView)
+                            draggedView.visibility = View.VISIBLE
+                        }
                     }
-                    view.setBackgroundColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            android.R.color.holo_blue_light
-                        )
-                    )
                     true
                 }
 
+                else -> false
 
-                else -> true
+
             }
 
-
         }
-
     }
 
-    private fun getDroppedItem(event : DragEvent) : DragAndDropItem? {
-        val clipData = event.clipData
-        val dragItemJson = clipData.getItemAt(0).text.toString()
-        val jsonObject = JSONObject(dragItemJson)
-        val id = jsonObject.getInt("id")
-        val text = jsonObject.getString("text")
 
-        val dragItem: DragAndDropItem? = try {
-            DragAndDropItem(
-                id = id,
-                text = text
-            )
-        } catch (e: Exception) {
-            null
-        }
+    private fun createTouchItemListener2(): View.OnTouchListener {
+        return View.OnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
 
-        return dragItem
-    }
 
-    private fun updateDropCount(dropZoneIndex: Int) {
-        var currentDropCount = dropCounts[dropZoneIndex]
-        currentDropCount++
-        dropCounts[dropZoneIndex] = currentDropCount
-    }
+                    if (v.getTag(R.id.draggableItemsContainer) == null) {
+                        v.setTag(R.id.draggableItemsContainer, v.parent)
+                    }
 
-    private fun updateDropZoneUI(dropZoneIndex: Int, dropZoneView: LinearLayout, droppedItem: DragAndDropItem) {
-        val droppedItemsList = droppedItems[dropZoneIndex]
-        val droppedTextView = TextView(requireContext()).apply {
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply {
-                setMargins(8, 16, 8, 16)
+                    val shadowBuilder = View.DragShadowBuilder(v)
+                    v.startDragAndDrop(ClipData.newPlainText("", ""), shadowBuilder, v, 0)
+                    v.visibility = View.INVISIBLE
+                    true
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    v.visibility = View.VISIBLE
+                    true
+                }
+
+                MotionEvent.ACTION_CANCEL -> {
+                    v.visibility = View.VISIBLE
+                    v.performClick()
+                    true
+                }
+
+                else -> false
             }
-            text = droppedItem.text
-            setBackgroundColor(Color.LTGRAY)
-            setOnClickListener {
-                dropZoneView.removeView(this)
-                droppedItemsList.remove(droppedItem)
-                dropCounts[dropZoneIndex]--
-                val draggableTextView =
-                    draggableItemsContainer.findViewWithTag(droppedItem.text) as? TextView
-                draggableTextView?.visibility = View.VISIBLE
 
+        }
+    }
+
+    private fun allItemsPlaced() {
+        val dropZone1Items = dropZone1.childCount - 1
+        val dropZone2Items = dropZone2.childCount - 1
+
+        val itemCount = currentGameData.itemToTargetMap.values.sumOf { it.size }
+
+        val allItemsPlaced = dropZone1Items + dropZone2Items == itemCount
+
+        if (allItemsPlaced) {
+            notifyActivity(checkItemPlacement())
+        }
+    }
+
+    private fun checkItemPlacement(): Boolean {
+        var allItemsPlaced = true
+        for ((targetName, items) in currentGameData.itemToTargetMap) {
+            val targetView = when (targetName) {
+                "1" -> dropZone1
+                "2" -> dropZone2
+                else -> null // Handle cases where the targetName is invalid
+            }
+            val actualItems = targetView?.let { getItemsFromView(it) }
+
+            if (actualItems != null) {
+                if (!actualItems.containsAll(items) || !items.containsAll(actualItems)) {
+                    allItemsPlaced = false
+
+                }
+            }
+        }
+        return allItemsPlaced
+    }
+
+    private fun getItemsFromView(view: ViewGroup): List<String> {
+        val items = mutableListOf<String>()
+        for (i in 0 until view.childCount) {
+            val child = view.getChildAt(i)
+            val item = extractString(child)
+            if (item != null) {
+                items.add(item.toString())
             }
         }
 
-        if (dropCounts[DROPZONE_1_INDEX] == 0 && dropCounts[DROPZONE_2_INDEX] == 0) {
-            dropZone1.setBackgroundColor(getResources().getColor(R.color.purple_200))
-            dropZone2.setBackgroundColor(getResources().getColor(R.color.purple_200))
+        return items
+    }
+
+    private fun extractString(view: View): CharSequence? {
+        val currentTextView = view as? TextView
+        val text = currentTextView?.text
+
+        if (text == dropZone1Text.text || text == dropZone2Text.text) {
+            return null
         }
 
-        dropZoneView.addView(droppedTextView)
+        return text
     }
 
-    private fun checkDropZones() {
-        val alleElementeZugeordnet =
-            droppedItems.sumOf { it.size } == draggableItemsContainer.childCount
-
-        if (alleElementeZugeordnet) {
-            notifyActivity(isCorrectAssignment())
-        }
-    }
-
-    private fun isCorrectAssignment(): Boolean {
-        val expectedItemsZone1 = currentGameData.itemToTargetMap["1"]?.sortedBy { it.id }
-        val expectedItemsZone2 = currentGameData.itemToTargetMap["2"]?.sortedBy { it.id }
-
-        val isZone1Correct = droppedItems[DROPZONE_1_INDEX].sortedBy { it.id } == expectedItemsZone1
-        val isZone2Correct = droppedItems[DROPZONE_2_INDEX].sortedBy { it.id } == expectedItemsZone2
-
-
-
-        return isZone1Correct && isZone2Correct
-    }
-
-    private fun createDragItemListener(dragItem: DragAndDropItem): View.OnLongClickListener {
-        return View.OnLongClickListener { v ->
-            val jsonObject = JSONObject().apply {
-                put("id", dragItem.id)
-                put("text", dragItem.text)
-            }
-            val clipData = ClipData.newPlainText("drag_item_json", jsonObject.toString())
-            val shadow = View.DragShadowBuilder(v)
-            val originalVisibility = v.visibility
-            v.startDragAndDrop(clipData, shadow, Pair(v, originalVisibility), 0)
-            v.visibility = View.INVISIBLE
-            true
-        }
-    }
 
     data class DragAndDropData(
         val targetNames: List<String> = emptyList(),
-        val itemToTargetMap: Map<String, MutableList<DragAndDropItem>> = emptyMap()
+        val itemToTargetMap: Map<String, MutableList<String>> = emptyMap()
     )
 }

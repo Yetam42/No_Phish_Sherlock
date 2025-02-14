@@ -11,4 +11,8 @@ interface GameFragmentListener {
      * @param isCorrect gibt an ob Antwort richtig war
      */
     fun onSelectionMade(isCorrect: Boolean)
+
+    fun onGameFinished(isCompleted: Boolean)
+
+    fun onNextChapter()
 }

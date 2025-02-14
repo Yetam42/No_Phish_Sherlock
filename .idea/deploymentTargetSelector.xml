@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-01-26T19:41:25.972974620Z">
+        <DropdownSelection timestamp="2025-02-13T16:16:19.980534632Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/home/yetam/.android/avd/Pixel_3a_API_30_x86.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=R5CT12VXWSB" />
             </handle>
           </Target>
         </DropdownSelection>

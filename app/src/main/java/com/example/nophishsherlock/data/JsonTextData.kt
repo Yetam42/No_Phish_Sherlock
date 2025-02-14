@@ -2,7 +2,6 @@ package com.example.nophishsherlock.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.io.Serializable
 
 /**
  * Diese Klasse repräsentiert das JsonTextData
@@ -18,8 +17,8 @@ data class JsonTextData(
     val title: String? = null,
     val paragraphs: List<String>? = null,
     val media: MediaData? = null,
-    val image_text: ImageText? = null
-) : Serializable, Parcelable
+    val imageText: ImageText? = null
+) : Parcelable
 
 /**
  * Diese Klasse repräsentiert das MediaData
@@ -35,9 +34,10 @@ data class MediaData(
     val source: String,
 ) : Parcelable
 
+
 @Parcelize
 data class ImageText(
-    val text: String? = null,
+    val text: List<String>? = null,
     val imageSource: String,
     val imageFirst : Boolean = false
 ) : Parcelable

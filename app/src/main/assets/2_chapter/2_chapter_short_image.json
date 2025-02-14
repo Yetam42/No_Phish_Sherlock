@@ -1,7 +1,7 @@
 {
   "texts": [
     {
-      "title": "Einführung „Betrügerische Nachrichten“",
+      "title": "Plausibilitätsprüfung",
       "media": {
         "type": "image",
         "source": "drawable/data_thief"
@@ -9,57 +9,8 @@
     },
     {
       "paragraphs": [
-        "Kriminelle nutzen <b>betrügerische Nachrichten</b>, um Schaden anzurichten. Diese Nachrichten können versendet werden, um:",
-        "• sensible Daten zu erlangen (z.B. Zugangsdaten),",
-        "• Geld zu erpressen (durch Überweisungen oder Anrufe),",
-        "• Schadsoftware zu verbreiten (durch Links oder Anhänge)."
+        "TODO"
       ]
-    },
-    {
-      "paragraphs": [
-        "<b>Eine weit verbreitete Methode ist es, Nachrichten zu versenden, die einen legitimen Grund vortäuschen.</b>"
-      ]
-    },
-    {
-      "image text": {
-        "text": [
-          "Betrügerische Nachrichten können Sie über unterschiedliche Kanäle empfangen, z. B. als:",
-          "• E-Mails,",
-          "• SMS/MMS,",
-          "• Nachrichten in Messenger (z.B. WhatsApp, Instagram, Snapchat) und",
-          "• Nachrichten in sozialen und beruflichen Netzwerken (z.B. Facebook, Twitter, Xing, LinkedIn)."
-        ],
-        "image_source": "drawable/phone",
-        "image_first": true
-      }
-    },
-    {
-      "paragraphs": [
-        "Die Nachrichten können versendet werden:",
-        "• allgemein an viele Empfänger (in der Hoffnung, dass jemand darauf reagiert),",
-        "• gezielt an bestimmte Personen (oft mit im Internet gefundenen Informationen)."
-      ]
-    },
-    {
-      "paragraphs": [
-        "<b>Oft geben sich die Absender als vertraute Personen oder Organisationen aus.</b>",
-        "Es gibt zwei Arten von betrügerischen Nachrichten:",
-        "• Schlecht gemachte Nachrichten (leicht erkennbar an Fehlern in Sprache und Design),",
-        "• Gut gemachte Nachrichten (schwerer zu erkennen, da sie Kopien echter Nachrichten ähneln können)."
-      ]
-    },
-    {
-      "image text": {
-        "text": [
-          "<b>Verhalten bei verdächtigen Nachrichten:</b>",
-          "• Bei sicherer Erkennung: Nachricht sofort löschen.",
-          "• Bei Unsicherheit: Das BSI kontaktieren <b>(0800 274 1000, mail@bsi-fuer-buerger.de).</b>",
-          "Verhalten nach versehentlichem Klicken oder Datenverlust:",
-          "• Ebenfalls das BSI kontaktieren, um Hilfe zu erhalten und den Schaden zu minimieren."
-        ],
-        "image_source": "drawable/support",
-        "image_first": false
-      }
     }
   ]
 }

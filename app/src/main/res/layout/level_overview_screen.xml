@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:layout_width="match_parent"
-        android:id="@+id/sds"
+        android:id="@+id/title"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Übersicht"
@@ -23,7 +24,7 @@
         android:layout_height="0dp"
         android:layout_weight="6"
         android:id="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@id/sds"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="6dp">
 

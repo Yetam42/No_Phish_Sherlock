@@ -1,0 +1,19 @@
+{
+  "game": [
+    {
+      "title": "Was ist der richtige Wer-Berich",
+      "taskDescription": "Ist das der richtige Wer-Berich?",
+      "game": {
+        "type": "hiddenLink",
+        "content": [
+          {
+            "shownText": "Hier ist der Link zu Amazon www.amazon.de",
+            "shownLink": "www.amazon.de",
+            "trueLink": "www.DuWirstHopsGenommen.de",
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

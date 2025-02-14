@@ -1,8 +1,8 @@
 package com.example.nophishsherlock.game
 
 import ViewPagerAdapter
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.TranslateAnimation
@@ -11,24 +11,28 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toolbar
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.no_phishing_yannick.games.EndFragment
 import com.example.no_phishing_yannick.games.pickwrong.PickWrongFragment
 import com.example.no_phishing_yannick.games.rightOrwrong.RightOrWrongFragment
+import com.example.nophishsherlock.InfoFragment
+import com.example.nophishsherlock.LevelOverviewActivity
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.JsonGameData
 import com.example.nophishsherlock.game.fragments.DragAndDropFragment
 import com.example.nophishsherlock.game.fragments.GameOverFragment
+import com.example.nophishsherlock.game.fragments.HiddenLinkFragment
 import com.example.nophishsherlock.game.helper.GameFragmentListener
+import com.example.nophishsherlock.game.helper.GameViewModel
+import com.example.nophishsherlock.game.helper.LevelPrefernce
 import com.example.nophishsherlock.parser.JsonGameParser
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
+// ... rest of your code ...
 /**
  * Diese Klasse ist die Activity für das Hauptspiel
  *
@@ -73,6 +77,9 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
     lateinit var gameString: String
 
+    lateinit var viewModel: GameViewModel
+
+    lateinit var levelPrefernce: LevelPrefernce
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,7 +89,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true);
 //        supportActionBar?.setDisplayShowHomeEnabled(true);
 
-        Log.d("MainGameActivity", "Game string: ${intent.getStringExtra("gameString")}")
         gameString = intent.getStringExtra("gameString")!!
 
         // Initialisiere Views
@@ -134,9 +140,29 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
             nextFragment()
         }
 
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle("Info")
+            .setMessage("")
+            .setPositiveButton("OK") { dialog, which ->
+                dialog.dismiss()
+            }
+            .setNeutralButton("Verlassen") { dialog, which ->
+                finish()
+            }
+            .create()
+
+
         exit.setOnClickListener {
-            finish()
+            dialog.show()
         }
+
+        infoButton.setOnClickListener {
+            val dialog = InfoFragment()
+            dialog.show(supportFragmentManager, "InformationFragment")
+        }
+
+        viewModel = ViewModelProvider(this)[GameViewModel::class.java]
+        levelPrefernce = LevelPrefernce(this)
 
     }
 
@@ -160,6 +186,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
             "rightOrWrong" -> gameFraments.add(prepareFragment(RightOrWrongFragment(), gameData))
             "pickwrong" -> gameFraments.add(prepareFragment(PickWrongFragment(), gameData))
             "dragAndDrop" -> gameFraments.add(prepareFragment(DragAndDropFragment(), gameData))
+            "hiddenLink" -> gameFraments.add(prepareFragment(HiddenLinkFragment(), gameData))
             else -> {
                 println("Unknown game type: ${gameData.game?.type}")
             }
@@ -218,10 +245,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
             loadTitel()
         }
         if (currentGameIndex == gameDataList.size) {
-            adapter.addFragment(EndFragment())
-            adapter.notifyDataSetChanged()
-            viewPager.currentItem = currentGameIndex
-            removeGameUI()
+            showEndScreen()
         }
     }
 
@@ -229,12 +253,13 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
      * Diese Funktion entfernt die UI für das Spiel
      */
     private fun removeGameUI() {
-        title.visibility = View.INVISIBLE
-        description.visibility = View.INVISIBLE
-        progressBar.visibility = View.INVISIBLE
-        lives.visibility = View.INVISIBLE
-        confirm.visibility = View.INVISIBLE
-        infoButton.visibility = View.INVISIBLE
+        title.visibility = View.GONE
+        description.visibility = View.GONE
+        progressBar.visibility = View.GONE
+        lives.visibility = View.GONE
+        confirm.visibility = View.GONE
+        infoButton.visibility = View.GONE
+        exit.visibility = View.GONE
     }
 
     /**
@@ -250,25 +275,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
         confirm.setOnClickListener {
             showFeedBack(isCorrect)
-//            if (isCorrect) {
-//                nextFragment()
-//                hasLostLife = false
-//            } else {
-//                if (!hasLostLife) {
-//                    liveCount--
-//                    Toast.makeText(this, "Leider falsch, du verlierst ein Leben", Toast.LENGTH_SHORT).show()
-//                    hasLostLife = true
-//                }
-//                if (liveCount <= 0) {
-//                    Log.d("MainGameActivity", "Game over")
-//                    adapter.addFragment(GameOverFragment())
-//                    adapter.notifyDataSetChanged()
-//                    viewPager.currentItem = adapter.itemCount -1
-//                    removeGameUI()
-//                } else {
-//                    lives.text = "$liveCount"
-//                }
-//            }
         }
     }
 
@@ -362,7 +368,42 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     private fun showGameOver() {
         adapter.addFragment(GameOverFragment())
         viewPager.currentItem = adapter.itemCount -1
-        adapter.notifyDataSetChanged()
+        adapter.notifyItemInserted(adapter.itemCount - 1)
         removeGameUI()
+    }
+
+    private fun showEndScreen() {
+        //viewModel.setLevelCompletion(currentLevel, true)
+
+
+        adapter.addFragment(EndFragment())
+        viewPager.currentItem = currentGameIndex
+        adapter.notifyItemInserted(currentGameIndex)
+        removeGameUI()
+    }
+
+
+    override fun onGameFinished(isCompleted: Boolean) {
+        val currentLevel = viewModel.currentLevel.value ?: 1
+
+        // Update the level completion status in the ViewModel.
+        viewModel.setLevelCompleted(currentLevel, isCompleted)
+
+
+        val intent = Intent(this, LevelOverviewActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun onNextChapter() {
+        val currentLevel = viewModel.currentLevel.value ?: 1
+        viewModel.setLevelCompleted(currentLevel, true)
+
+        // Also update the current level (move on to the next level).
+        viewModel.setCurrentLevel(currentLevel + 1)
+        val intent = Intent(this, LevelOverviewActivity::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }
