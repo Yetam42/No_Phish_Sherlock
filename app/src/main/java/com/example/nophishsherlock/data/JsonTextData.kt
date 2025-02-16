@@ -17,7 +17,8 @@ data class JsonTextData(
     val title: String? = null,
     val paragraphs: List<String>? = null,
     val media: MediaData? = null,
-    val imageText: ImageText? = null
+    val imageText: ImageText? = null,
+    val paragraphWithMedia: List<ParagraphWithImage>? = null
 ) : Parcelable
 
 /**
@@ -40,4 +41,11 @@ data class ImageText(
     val text: List<String>? = null,
     val imageSource: String,
     val imageFirst : Boolean = false
+) : Parcelable
+
+@Parcelize
+data class ParagraphWithImage(
+    val paragraphs: List<String>? = null,
+    val media: MediaData? = null,
+    val media2: MediaData? = null
 ) : Parcelable

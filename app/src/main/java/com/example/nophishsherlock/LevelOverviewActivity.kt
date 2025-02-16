@@ -20,13 +20,13 @@ class LevelOverviewActivity : AppCompatActivity() {
     private lateinit var elementContainer: LinearLayout
     private lateinit var titel: TextView
 
-    private var shortChapterString = "#_chapter/#_chapter_short_image.json"
+    private var shortChapterString = "#_chapter/#_chapter_short.json"
     private var longChapterString = "#_chapter/#_chapter_long.json"
     private var gameString = "#_chapter/#_game.json"
 
     private var chapterDirectories: List<String>? = null
 
-    private val jsonTextParser = JsonTextParser<Any>()
+    private val jsonTextParser = JsonTextParser()
 
 
     private var chapterCount = 0
@@ -35,6 +35,8 @@ class LevelOverviewActivity : AppCompatActivity() {
 
     private lateinit var levelPreferences: LevelPrefernce
 
+    private val NO_SHORT_VERSION = "No short version available"
+    private val NO_DATA_AVAILABLE = "No data available"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,41 +86,34 @@ class LevelOverviewActivity : AppCompatActivity() {
 
         viewModel.currentLevel.observe(this) { newLevel ->
             Log.d("LevelOverview", "currentLevel changed to $newLevel")
-            Log.d("LevelOverview", "currentChapter is ${levelPreferences.getCurrentChapter()}")
             if (newLevel != levelPreferences.getCurrentChapter()) {
                 levelPreferences.setCurrentChapter(newLevel)
                 startChapter(newLevel)
             }
         }
-        val parser = Parser()
-
-        Log.d("LevelOverview", "Loading chapter data....")
-        val jsonTextData = parser.parse(this, "1_chapter/1_chapter_short_image.json")
-        for (data in jsonTextData) {
-            Log.d("LevelOverview", "data: $data")
-        }
-
-
     }
 
 
     private fun createElemente(index: Int) {
         val element = layoutInflater.inflate(R.layout.level_overview_element, null)
+        var currentTitel = getChapterTitle(index)
         element.findViewById<TextView>(R.id.chapter_number).text = "$index"
-        element.findViewById<TextView>(R.id.title).text = getChapterTitle(index)
 
 
-        val assetManager: AssetManager = this.assets
-        val assetList: Array<String>? =
-            chapterDirectories?.let { assetManager.list(it.get(index - 1)) }
-        if (assetList != null) {
-            Log.d("LevelOverview", "${assetList.contains("${index}_game.json")}")
+        if (currentTitel != NO_SHORT_VERSION) {
+            element.isClickable = true
+            element.setOnClickListener {
+                startChapter(index)
+            }
+        } else {
+            currentTitel = getTitleFromLong(index)
         }
 
-        element.isClickable = true
-        element.setOnClickListener {
-            startChapter(index)
-        }
+        //TODO besserer check dafür
+        element.findViewById<TextView>(R.id.title).text = currentTitel
+
+
+
 
         elementContainer.addView(element)
 
@@ -137,8 +132,8 @@ class LevelOverviewActivity : AppCompatActivity() {
 
         if (hasGame(chapterIndex)) {
             intent.putExtra("gameString", getCurrentChapterStrings(chapterIndex)[2])
-            Log.d("LevelOverview", "has game")
-            Log.d("LevelOverview", getCurrentChapterStrings(chapterIndex)[2])
+            Log.d("Level", "has game")
+            Log.d("Level", getCurrentChapterStrings(chapterIndex)[2])
         } else {
             intent.putExtra("gameString", "noGame")
         }
@@ -149,7 +144,11 @@ class LevelOverviewActivity : AppCompatActivity() {
     private fun countDirectories(context: Context): Int {
         val assetManager: AssetManager = context.assets
         return try {
-            chapterDirectories = assetManager.list("")?.filter { it.contains("chapter") }
+            val unsortedDirectories = assetManager.list("")?.filter { it.contains("chapter") }
+            chapterDirectories = unsortedDirectories?.sortedBy {
+                val matchResult = Regex("(\\d+)_chapter").find(it)
+                matchResult?.groupValues?.get(1)?.toIntOrNull() ?: Int.MAX_VALUE
+            }
 
             assetManager.list("")?.filter { it.contains("chapter") }?.size ?: 0
         } catch (e: IOException) {
@@ -161,11 +160,33 @@ class LevelOverviewActivity : AppCompatActivity() {
 
     private fun getChapterTitle(index: Int): String? {
         val currentShortChapterString = shortChapterString.replace("#", index.toString())
-        val jsonTextData = jsonTextParser.parse(this, currentShortChapterString)
-        return jsonTextData[0].title
+        val chapterTitel = try {
+            val jsonTextData = jsonTextParser.parse(this, currentShortChapterString)
+            jsonTextData[0].title
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            NO_SHORT_VERSION
+        }
+
+        return chapterTitel
+    }
+
+    private fun getTitleFromLong(index: Int): String? {
+        val currentShortChapterString = longChapterString.replace("#", index.toString())
+        val chapterTitel = try {
+            val jsonTextData = jsonTextParser.parse(this, currentShortChapterString)
+            jsonTextData[0].title
+        } catch (e: Exception) {
+            e.printStackTrace()
+            NO_DATA_AVAILABLE
+        }
+        return chapterTitel
     }
 
     private fun getCurrentChapterStrings(index: Int): List<String> {
+
+        Log.d("LevelOverview", "getting current chapter strings $index")
         val currentShortChapterString = shortChapterString.replace("#", index.toString())
         val currentLongChapterString = longChapterString.replace("#", index.toString())
         val currentGameString = gameString.replace("#", index.toString())
@@ -175,8 +196,14 @@ class LevelOverviewActivity : AppCompatActivity() {
 
     private fun hasGame(index: Int): Boolean {
         val assetManager: AssetManager = this.assets
+
         val assetList: Array<String>? =
-            chapterDirectories?.let { assetManager.list(it.get(index - 1)) }
+            chapterDirectories?.let { assetManager.list(it[index - 1]) }
+
+        for (element in assetList!!) {
+            Log.d("LevelOverview", element)
+        }
+
 
         var hasGame = false
         if (assetList != null) {

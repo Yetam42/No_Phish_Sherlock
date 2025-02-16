@@ -1,0 +1,136 @@
+{
+  "texts": [
+    {
+      "title": "Gefährliche Dateiformate",
+      "media": {
+        "type": "image",
+        "source": "file_search"
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Schadsoftware kann sich in vielen Dateiformaten verbergen – besonders in komplexen oder ausführbaren Dateien</b>. Wer diese öffnet, riskiert eine Infektion des Geräts."
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Erkennen von besonders gefährlichen Dateiformate:</b>",
+          "• Direkt ausführbare Dateien wie: <b>.exe, .bat, .com oder .scr</b> sind besonders gefährlich.",
+          "• Office-Dateien mit Makros können Schadsoftware enthalten, die nicht von Anti-Virus-Programmen erkannt werden",
+          "• Komprimierte Dateien verschleiern oft gefährliche Inhalte.",
+          "• &#128231; <b>Unbekannte Dateiformate sollten Sie vorsichtshalber als riskant einstufen.</b>"
+        ],
+        "imageSource": "error_429",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Makros als Bedrohung:</b>",
+          "• Makros können beim Öffnen einer Datei automatisch ausgeführt werden.",
+          "• Besonders betroffen sind <b>Microsoft-Office-Dokumente (.docm, .xlsm, .pptm)</b>. Office kann gefährlichen Code nachladen, den Antivirenprogramme zunächst nicht erkennen."
+        ],
+        "imageSource": "open_mail",
+        "imageFirst": false
+      }
+    },
+    {
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "• <b>&#128231; In der Regel erhalten Sie eine Warnung beim Starten des Programms (s. unten). Dann sollten Sie die Datei nicht öffnen, sondern löschen!</b>"
+          ],
+          "media": {
+            "type": "image",
+            "source": "makros"
+          }
+        }
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Komprimierte Dateien überprüfen:</b>",
+          "• Kriminelle verpacken Schadsoftware in Archiven <b>(.zip, .rar, .7z)</b>, um Firewalls zu umgehen.",
+          "• Nach dem Entpacken wird der Inhalt oft automatisch ausgeführt – eine Gefahr für Ihr System.",
+          "• <b>Entpacken Sie Dateien zunächst nur, ohne sie zu öffnen, und prüfen Sie den Inhalt.</b>",
+          "• Nutzen Sie sichere Programme wie WinZip oder 7-Zip zur Überprüfung. Nutzen Sie keine Entpackungsprogramme, die direkt im Anschluss die Dateien ausführen oder öffnen"
+        ],
+        "imageSource": "paket",
+        "imageFirst": true
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Manipulierte Dateiendungen:</b>",
+        "• Kriminelle ändern Dateiendungen, um Sicherheitsmechanismen zu umgehen - z.B. Beispiel: „Rechnung.exe“ wird zu „Rechnung.txt“ umbenannt",
+        "• Falls eine Datei nicht geöffnet werden kann, empfehlen Betrüger oft, die Endung wieder zu ändern.",
+        "• &#128231; <b>Ändern Sie niemals eine Dateiendung nach Anweisung – das könnte Schadsoftware aktivieren.</b>"
+      ]
+    },
+    {
+      "paragraphs": [
+        "<b>Umgang mit potentiell gefährlichen Dateiformaten</b>",
+        "Die wichtige Fragen, die Sie sich stellen sollten, bevor Sie eine vermeintlich gefährliche Datei öffnen, ist: <b>Kennen Sie den Absender und ist die Nachricht von ihm angekündigt?</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Vorherige Ankündigung durch Absender:</b>",
+          "• Vorsicht: Absenderadressen können gefälscht werden.",
+          "• Die Ankündigung sollte deshalb über einen anderen Kanal (z. B. Telefon oder persönliches Gespräch) gekommen sein",
+          "• &#128231; In diesem Fall können Sie die Datei öffnen."
+        ],
+        "imageSource": "personal_email",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Keine Ankündigung, aber Sie kennen den Absender:</b>",
+          "• Kontaktieren Sie den Absender - wenden Sie sich dazu aber nicht über die Kontaktdaten aus der Nachricht an ihn.",
+          "• Der Absender könnte sich nicht bewusst sein, dass eine Schadsoftware eingebettet ist.",
+          "• Fragen Sie, ob die Nachricht <b>wirklich von ihm stammt und bitten sie Sie den Absender, die Datei in einem weniger gefährlichen Format zu senden</b> (z. B. PDF statt Word).",
+          "• Sie können auch darum bitten, Dateien <b>einzeln statt komprimiert</b> zu erhalten."
+        ],
+        "imageSource": "conversation02",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Unbekannter Absender:</b>",
+          "• <b>Die Nachricht sollten Sie ignorieren oder löschen.</b>",
+          "• Im Zweifelsfall können Sie das <b>BSI kontaktieren.</b>"
+        ],
+        "imageSource": "hidden_person",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Vorsicht bei sozialen Netzwerken:</b>",
+          "• Seien Sie vorsichtig bei lustigen Inhalten, die über soziale Netzwerke verbreitet werden.",
+          "• Es kann sein, dass ein Kollege eine <b>vermeintlich harmlose Datei erhalten hat, die jedoch gefährlich ist.</b>"
+        ],
+        "imageSource": "social_media",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Der Umgang mit potenziell gefährlichen Dateiformaten erfordert Aufmerksamkeit und Vorsicht. Wenn Sie Zweifel haben, zögern Sie nicht, den Absender zu kontaktieren oder eine professionelle IT-Beratung in Anspruch zu nehmen.</b>"
+        ],
+        "imageSource": "vision_left",
+        "imageFirst": false
+      }
+    }
+  ]
+}

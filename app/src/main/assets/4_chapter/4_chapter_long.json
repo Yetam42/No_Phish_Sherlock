@@ -1,0 +1,99 @@
+{
+  "texts": [
+    {
+      "section": "1/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Bisher haben Sie folgendes gelernt:",
+        "1. was „betrügerische Nachrichten“ sind,",
+        "2. wie man jede Nachricht zunächst erstmal auf Plausibilität prüft und",
+        "3. wie man mit Hinblick auf die folgenden drei Aktionen - in auf den ersten Blick plausiblen Nachrichten – überprüft, ob die Aktionen gefährlich sind; es sich also um betrügerische Nachrichten handelt: (a) sensible Informationen oder Daten zurückzuschicken, bzw. (b) Überweisungen oder (c) Anrufe z. B. an vermeintliche Kooperationspartnerinnen oder Kooperationspartner, vermeintliche Freundinnen oder Freunde oder vermeintliche Geschäftspartnerinnen oder Geschäftspartner, zu tätigen.",
+        "In den folgenden Kapiteln geht es um die potentiell gefährliche Aktion auf einen Link zu klicken. Dabei wird davon ausgegangen, dass die betrügerische Nachricht gut gemacht ist, also bei den in Kapitel 2 kennen gelernten Plausibilitätsprüfungen nichts aufgefallen ist.",
+        "Betrügerische Nachrichten, die einen gefährlichen Link enthalten, werden oft als Phishing Nachricht bezeichnet. Der Link in einer betrügerischen Nachricht führt dabei oft zu einer Webseite, die der echten Webseite auf den ersten Blick zum Verwechseln ähnlich sieht und dadurch vertrauenswürdig wirkt. Es handelt sich allerdings um eine gefälschte Kopie, die sogenannte Phishing- Webseite. Geben Sie auf einer Phishing-Webseite sensible Informationen und/oder Daten (z.B. Zugangsdaten) ein, werden diese von Kriminellen abgegriffen und können von diesen missbraucht werden, um Ihnen zu schaden.",
+        "Im schlimmsten Fall werden Sie beim Anklicken zu einer Webseite weitergeleitet, die direkt versucht auf Ihrem Gerät Schadsoftware zu installieren oder Ihnen den Download einer Datei anbietet, die Schadsoftware enthält. Ob dies jeweils gelingt, hängt von vielen Faktoren ab, z.B. wie aktuell das Betriebssystem und die installierten Programme sind.",
+        "Hinweis: Man spricht von Spear-Phishing, wenn die Phishing-Nachricht genau an eine Person gerichtet ist und die Nachricht selbst alle Plausibilitätsprüfungen besteht.",
+        "Hinweis: Das Vorgehen, welches Sie hier zur Prüfung von Links lernen, können Sie grundsätzlich auf Links anwenden, auch z.B. auf Links auf Webseiten."
+      ]
+    },
+    {
+      "section": "2/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Die Webadresse, die sich hinter einem Link verbrigt (Fachbegriff: „URL“ → Uniform Ressource Locator), legt fest welche Webseite nach dem Klicken des Links aufgerufen wird. Um zu erkennen, ob der Link zu einer vertrauenswürdigen Webseite oder der von Kriminellen führt, müssen Sie zunächst herausfinden, welche Webadresse sich hinter dem entsprechenden Link verbirgt.",
+        "Dabei ist wichtig, dass Sie dies tun, bevor Sie auf den Link klicken, also die entsprechende Webseite öffnet, da durch das Klicken bereits Schadsoftware aktiv werden würde.",
+        "In diesem Kapitel lernen Sie, wie Sie herauszufinden, welche Webadresse hinter einem Link steckt."
+      ]
+    },
+    {
+      "section": "3/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Zunächst aber die Frage – wie sieht ein Link aus?",
+        "Ein Link kann in verschiedenen Formen in einer Nachricht (oder auf einer Webseite vorkommen):",
+        "• Als Wort: hier klicken",
+        "• Als Webadresse: kit.edu oder auch https://www.kit.edu",
+        "• In Form eines Bildes z.B. die KIT-Karte oder einem „Hier Klicken“ Button",
+        "• Als QR-Code"
+      ]
+    },
+    {
+      "section": "4/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Die Information, welche Webadresse hinter einem Link steckt, ist je nach Gerät und Software (z. B. E-Mail-Programm oder Browser) an unterschiedlichen Stellen zu finden. Sie sollten sich daher für jedes Gerät und jede Software damit vertraut machen, wo die (tatsächliche) Webadresse zu finden ist.",
+        "Im Folgenden gehen wir auf die Fälle ein, die am häufigsten vorkommen.",
+        "Bei PCs und Laptops erscheinen die Webadressen in der Regel, wenn Sie mit der Maus den Link berühren, aber ohne ihn anzuklicken. Der Link wird in den meisten Fällen entweder:",
+        "• in der Statusleiste am Fuß des Fensters oder",
+        "• in einem Infofeld, auch Tooltip genannt, erscheinen.",
+        "[Image of Webadresse in der Statusleiste.]",
+        "[Image of Webadresse im Tooltip.]"
+      ],
+      "media": {
+        "type": "image",
+        "description": "Webadresse in der Statusleiste.",
+        "source": "example_image"
+      }
+    },
+    {
+      "section": "5/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Bei mobilen Geräten (Smartphones und Tablets) hängt das Vorgehen zum Identifizieren der Webadresse eines Links stark vom Gerät ab. Meist ist es so, dass Sie für mindestens zwei Sekunden mit dem Finger auf dem Link verweilen oder diesen für mindestens zwei Sekunden drücken müssen.",
+        "Achten Sie darauf, dass Sie den Link dabei nicht versehentlich öffnen, d. h. kurz antippen. Auch die Vorschau (mittels Force Touch) bei iOS sollten Sie vermeiden. Hier besteht die Gefahr, dass sie aus Versehen die Webadresse aufrufen.",
+        "[Image of Durch das Verweilen wird die Webadresse in einem Dialogfenster angezeigt.]",
+        "Haben Sie eine Idee, wie Sie an Ihrem Smartphone aus Ihrem Lieblingsmessenger oder in Ihrem E- Mail-Programm an die Webadresse hinter einem Link kommen?",
+        "Probieren Sie es doch einfach mal aus! Nachrichten mit Links haben Sie sicher reichlich empfangen.",
+        "Hinweis: Grundsätzlich ist es auf dem mobilen Gerät oft schwieriger den Link aufgrund der Größe oder der Gefahr des ungewollten Klickens auf seine Legitimität zu prüfen. Deshalb empfiehlt es sich im Zweifel zu warten und erst am PC oder Laptop die Prüfung durchzuführen."
+      ],
+      "media": {
+        "type": "image",
+        "description": "Durch das Verweilen wird die Webadresse in einem Dialogfenster angezeigt.",
+        "source": "example_image"
+      }
+    },
+    {
+      "section": "6/6",
+      "title": "Webadresse hinter einem Link finden",
+      "paragraphs": [
+        "Es gibt zwei gängige Tricks, die Kriminelle anwenden, um Sie in die Irre zu führen:",
+        "1) Der sogenannte Mismatch-Fall",
+        "Lassen Sie sich nicht durch Webadressen, die direkt im Text der Nachricht angegeben sind, in die Irre führen. Es ist sehr einfach möglich eine Webadresse in der Nachricht anzuzeigen, auch wenn eine andere Webadresse (die tatsächliche Webadresse) hinter dem Link zu finden ist.",
+        "Entsprechend versuchen Kriminelle Sie zu täuschen, indem der Text in der Nachricht wie eine Webadresse aussieht. Deshalb ist es wichtig, dass Sie nicht auf Webadressen im Text der Nachricht achten, sondern wissen, wo Sie die tatsächliche Webadresse finden.",
+        "Klicken Sie doch mal auf www.kit.edu und achten Sie darauf, wo sie letztlich landen → www.kit.edu",
+        "",
+        "2) Der sogenannte programmierte Tooltip Fall",
+        "Es ist möglich, dass ein Programm z.B. Thunderbird, dass normalerweise keinen Tooltip anzeigt, trotzdem einen solchen anzeigt. Lassen Sie sich dann nicht durch Webadresse, die in einem Tooltip direkt neben dem Link angezeigt werden, in die Irre führen.",
+        "Der Inhalt von diesem Tooltip kann von der Absenderin oder dem Absender komplett beeinflusst werden und ist daher nicht vertrauenswürdig. Die dort angezeigte Information ist nicht zu berücksichtigen, wenn Sie die Webadresse hinter dem Link versuchen zu identifizieren.",
+        "Hier ist es wichtig zu wissen, ob das eigene Programm einen Tooltip anzeigt.",
+        "[Image of Es ist für Kriminelle möglich, einen zusätzlichen Tooltip anzuzeigen. Dieser kann frei gewählt werden.]",
+        "Hinweis: Wenn das Programm einen Tooltip anzeigt, dann ist es auch wichtig zu wissen, wie der Tooltip normalerweise aussieht. Ansonsten könnte es Sie in die Irre führen, wenn Sie zwei Tooltips sehen, und Sie wissen nicht, welchem Sie vertrauen sollten.",
+        "[Image of Wenn das Programm standardmäßig einen Tooltip anzeigt, können in so einem Fall auch zwei zu sehen sein.]"
+      ],
+      "media": {
+        "type": "image",
+        "description": "Es ist für Kriminelle möglich, einen zusätzlichen Tooltip anzuzeigen. Dieser kann frei gewählt werden.",
+        "source": "example_image"
+      }
+    }
+  ]
+}

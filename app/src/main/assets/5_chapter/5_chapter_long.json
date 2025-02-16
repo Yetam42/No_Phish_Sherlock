@@ -1,0 +1,37 @@
+{
+  "texts": [
+    {
+      "section": "1/3",
+      "title": "Aufbau von Webadressen und Wer-Bereich",
+      "paragraphs": [
+        "Wenn Sie herausgefunden haben, wie die (tatsächliche) Webadresse hinter einem Link lautet, dann gilt es anschließend die Vertrauenswürdigkeit der aufzurufenden Webadresse zu beurteilen. Dazu ist es wichtig, den Aufbau einer Webadresse zu verstehen.",
+        "Zunächst ein Beispiel für eine Webadresse:",
+        "https://secuso.aifb.kit.edu/642.php",
+        "Der wichtigste Bestandteil einer Webadresse zur Beurteilung der Vertrauenswürdigkeit ist der sogenannte Wer-Bereich (Fachbegriff „Domain“). Um den Wer-Bereich zu bestimmen, starten Sie bei http bzw. https und gehen zum dritten „/“ oder, falls nicht vorhanden, zum Ende der Webadresse. Von dort lesen Sie von rechts nach links die ersten beiden mit Punkt getrennten Begriffe. Jeden Abschnitt davon bezeichnen wir auch als „Block“ d.h. es gibt den Block „.kit“ und den Block „.edu“.",
+        "[Image of Der Wer-Bereich ist deswegen so wichtig, weil man diesen registrieren muss, um ihn nutzen zu können. Dabei ist zu beachten, dass bereits registrierte Wer-Bereiche nicht noch einmal registriert werden können. Dies hat zur Folge, dass Kriminelle beispielsweise nicht den Wer-Bereich „kit.edu“ registrieren können, da das KIT selbst dies bereits getan hat.]"
+      ]
+    },
+    {
+      "section": "2/3",
+      "title": "Aufbau von Webadressen und Wer-Bereich",
+      "paragraphs": [
+        "Folgende Informationen über Webadressen sind wichtig für die Beurteilung der Vertrauenswürdigkeit:",
+        "• Falls im Wer-Bereich Zahlen stehen, handelt es sich um eine sogenannte IP-Adresse und es ist höchstwahrscheinlich eine Webadresse zu einer nicht-vertrauenswürdigen Webseite. Hier ein Beispiel https://www.129.13.152.9/secuso.org/",
+        "• Ob eine Webadresse per „https“ oder „http“ aufgerufen wird, sagt nichts über die Vertrauenswürdigkeit der aufzurufenden Webseite aus. „https“ gewährleistet in erster Linie, dass die Übertragung der Inhalte auf der Webseite und Ihrer dort eingegebenen Daten nicht mitgehört werden können. Es sagt aber nichts darüber aus, ob die Webseite selbst vertrauenswürdig ist. Auch Kriminelle nutzen Webadressen mit https, um all diejenigen reinzulegen, die das „s“ bei https allgemein als „sicher“ interpretieren und entsprechend die Webadresse nicht weiter untersuchen, sondern direkt klicken.",
+        "• Früher fingen die meisten Webadressen mit „www“ an (https://www.kit.edu). Heute fangen sie oft nicht mehr mit „www“ an. Ein Fehlen oder Vorhandensein gibt keinen Hinweis darauf, ob es gefährlich ist auf einen Link zu klicken oder nicht. Wichtig ist, dass, auch wenn das „www“ noch sehr geläufig ist, dieses nicht Teil des Wer-Bereichs ist.",
+        "Hinweis: In manchen Ländern besteht der Wer-Bereich aus den letzten drei Blöcken. Es kommt ein weiterer Bereich zwischen dem Namen der Organisation z.B. Amazon und dem Länderkürzel .de hinzu. In Großbritannien gibt es noch vor dem Länderkürzel einen weiteren Block zum Kontext z.B. .co für Unternehmen oder .ac für Akademische Institutionen. Deshalb lautet hier die Webadresse amazon.co.uk. Ähnliches gilt auch in Frankreich (z.B. .aeroport.fr für Flughäfen in Frankreich) und Österreich (z.B. .ac.at für akademische Einrichtungen, gv.at für Regierungseinrichtungen, .co.at für kommerzielle Anbieter und .or.at für Organisationen im Allgemeinen). Für weitere Informationen siehe: https://en.wikipedia.org/wiki/Second-level_domain."
+      ]
+    },
+    {
+      "section": "3/3",
+      "title": "Aufbau von Webadressen und Wer-Bereich",
+      "paragraphs": [
+        "Nachdem Sie das gerade Erlernte angewendet haben und den Wer-Bereich in der Webadresse hinter einem Link gefunden haben, prüfen Sie, ob der Wer-Bereich einen Bezug zur Absenderin oder dem Absender und/oder dem Inhalt der Nachricht hat.",
+        "Mit diesem Wissen können Sie nun schon einige betrügerische Nachrichten mit gefährlichen Links als solche erkennen, z.B.:",
+        "• Finden Sie in einem echt aussehenden Newsletter, der vorgibt von Springer zu sein, einen Link auf das am häufigsten zitierte und bei Springer veröffentlichte Paper von 2015 und die Webadresse hinter dem Link lautet: https://www.host745.com/top-paper-2015%citation%9211, dann ist Ihnen klar, dass Sie hier nicht klicken dürfen. Denn host745.com ist kaum der Wer- Bereich von Springer.",
+        "• Finden Sie in einer vertrauenserweckenden Ankündigung durch das KIT zur Neuerung der SAP- Module einen Link mit folgender Webadresse: https://login.host745.com/~news/internal, dann ist Ihnen klar, dass Sie hier nicht klicken dürfen. Denn host745.com ist kaum der Wer-Bereich des KIT.",
+        "Hinweis: Die Komplexität einer Webadresse sagt nichts über die Vertrauenswürdigkeit der Webadresse aus. So können viele lange Webadressen mit vielen komischen Zeichen dennoch vertrauenswürdig sein, wie http://ewraa.zeugs12a2.kit.edu/234%234ser%%/setw5rewsrew45rw435.html/werwerewrewr-wer18213awe4w43, denn der Wer-Bereich ist kit.edu."
+      ]
+    }
+  ]
+}

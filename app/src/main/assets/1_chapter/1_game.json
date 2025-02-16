@@ -43,6 +43,37 @@
       }
     },
     {
+      "title": "Drag und Drop Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDropLayout",
+        "content": [
+          {
+            "targetNames": [
+              "betrügerisch Webadresse",
+              "legitime Webadresse"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "www.yovtube.de",
+                "www.amazon.de.host423.com"
+              ],
+              "2": [
+                "www.youtube.de",
+                "www.ticketmaster.uk.co"
+              ]
+            },
+            "itemToOrganisation": {
+              "www.amazon.de.host423.com": "Amazon",
+              "www.ticketmaster.uk.co": "Ticketmaster",
+              "www.youtube.de": "Youtube",
+              "www.yovtube.de": "Youtube"
+            }
+          }
+        ]
+      }
+    },
+    {
       "number": "3/4",
       "title": "Richtig oder falsch",
       "taskDescription": "Ist folgende Aussage plausibel?",

@@ -1,0 +1,73 @@
+{
+  "texts": [
+    {
+      "section": "1/5",
+      "title": "Einfach zu erkennende Tricks in Webadressen",
+      "paragraphs": [
+        "In diesem Kapitel zeigen wir Ihnen nun, wie Kriminelle Sie dazu bringen, auch Webadressen, die bei genauem Hinsehen nicht vertrauenswürdig sind, vorschnell als vertrauenswürdig einzustufen.",
+        "Kriminelle registrieren einen beliebigen Wer-Bereich. Den von Ihnen erwarteten Wer-Bereich „verschieben“ sie dann:",
+        "• vor den eigentlichen Wer-Bereich (Trick 1) oder",
+        "• nach den eigentlichen Wer-Bereich (Trick 2).",
+        "Teilweise registrieren Kriminelle nicht völlig beliebige Wer-Bereiche, sondern solche, die vertrauenserweckende Begriffe enthalten.",
+        "Auf diese Weise können die Kriminellen den gleichen Wer-Bereich für mehrere Arten von betrügerischen Nachrichten mit Links nutzen (z.B. einmal für Springer und einmal für SAP am KIT). Es muss also nur ein Wer-Bereich registriert werden und schon können die Kriminellen loslegen.",
+        "Neugierig? Wir zeigen Ihnen gleich wie …"
+      ]
+    },
+    {
+      "section": "2/5",
+      "title": "Einfach zu erkennende Tricks in Webadressen",
+      "paragraphs": [
+        "Trick 1: Der Bereich vor dem Wer-Bereich kann von demjenigen, der den Wer-Bereich registriert hat, beliebig gewählt werden. Nach einer Registrierung von host745.com können daher beliebig viele Organisationen imitiert werden, z.B.:",
+        "• mit https://www.kit.edu.uni.login.host745.com das KIT",
+        "• mit http://amazon-prime.amazon.de.host745.com Amazon",
+        "• mit https://newsletter.springer.com.paper2018.host745.com/login/citations Springer",
+        "Das Problem hierbei ist, dass wir es gewöhnt sind von links nach rechts zu lesen und ja bereits darauf eingestellt sind, dass dies wahrscheinlich eine KIT, Amazon bzw. Springer Nachricht ist. Bitte denken Sie dran, die meisten Links, die Sie sich zukünftig anschauen, sind ja vertrauenswürdig, da kann Ihr Gehirn Ihnen schon mal schnell einen Streich spielen und in der Hektik des Alltags fälschlicherweise signalisieren, dass alles in Ordnung ist.",
+        "Teilweise erschwert es Ihnen auch die Formatierung, den wahren Wer-Bereich zu identifizieren z.B. bei https://newsletter.springer.com.paper2018.host745.com/login/citations"
+      ]
+    },
+    {
+      "section": "3/5",
+      "title": "Einfach zu erkennende Tricks in Webadressen",
+      "paragraphs": [
+        "Trick 2: Das gleiche gilt auch für den Bereich nach dem eigentlichen Wer-Bereich. Auch dieser kann von demjenigen, der den Wer-Bereich registriert hat, beliebig gewählt werden.",
+        "Nach einer Registrierung von host745.com können daher beliebige Ziele von den Kriminellen anvisiert werden, z.B.:",
+        "• mit https://www.host745.com/kit.edu/de das KIT",
+        "• mit http://de.host745.com/https://www.amazon.de/ Amazon",
+        "• mit https://newsletter.paper2018.host745.com/springer.com/login/citations Springer",
+        "Auch hier kann die Formatierung Ihnen es erschweren, den wahren Wer-Bereich zu identifizieren z.B. bei https://paper2018.login.host745.com/login/den/https://kit.edu",
+        "Wichtig ist es in beiden Fällen, den tatsächlichen Wer-Bereich der zu untersuchenden Webadresse zu beurteilen. Wie so oft im Leben, nehmen Sie sich die Zeit, gerade am Anfang, wenn Sie diese Prüfung in Ihren Alltag einbauen."
+      ]
+    },
+    {
+      "section": "4/5",
+      "title": "Einfach zu erkennende Tricks in Webadressen",
+      "paragraphs": [
+        "Beide Formen „veredeln“ Kriminelle teilweise noch dadurch, dass sie vertrauenswürdig klingende Wer-Bereiche registrieren:",
+        "• https://www.safer-login.com/kit.edu/de",
+        "• http://amazon-prime.amazon.de.securepay24.de/login-Germany/ssl",
+        "Hinweis: Das Vorkommen von vertrauenswürdig klingenden Begriffen ist kein eindeutiges Zeichen für eine gefährliche Webadresse. Diese Begriffe werden durchaus auch in legitimen Webadressen verwendet, z.B. https://3d-secure.pluscard.de/reg-pcs-spk-mc/#!/start oder https://mobilsicher.de/."
+      ]
+    },
+    {
+      "section": "5/5",
+      "title": "Einfach zu erkennende Tricks in Webadressen",
+      "paragraphs": [
+        "Sie haben jetzt also schon gelernt, was Sie tun, wenn Sie eine plausible Nachricht vorfinden und überlegen, ob Sie auf den Link klicken können oder nicht:",
+        "1. Identifizieren der Webadresse hinter dem Link",
+        "2. Identifizieren des Wer-Bereichs der Webadresse",
+        "3. Prüfen der Plausibilität des Wer-Bereichs und zwar nur des Wer-Bereichs und nicht der Angaben davor (Trick 1) oder danach (Trick 2)",
+        "Jetzt ist es Zeit, dass wir die beiden Beispiele aus Kapitel 1 auflösen und erklären, welches davon die betrügerische Nachricht ist und welche die legitime ist.",
+        "Hier nochmal die Beispiele aus dem ersten Kapitel.",
+        "[Image of Legitime Nachricht vs Betrügerische Nachricht]",
+        "Hätten Sie es selbst gemerkt?",
+        "Bei der betrügerischen Nachricht wurde statt shopping-total.de im Wer-Bereich shoppingsi- cher.de verwendet. Dafür wurde in den Bereich davor shopping-total.de geschrieben. Wenn man nun nicht aufmerksam liest oder nicht Ihr Wissen hat, dass nur der Wer-Bereich registriert werden muss, könnte man denken, dass es sich um eine legitime E-Mail von Shopping Total handelt.",
+        "Dass Sie sich von all dem nicht beeindrucken lassen, können Sie gleich bei der Übung zeigen. Danach geht’s weiter mit schwerer erkennbaren Tricks der Kriminellen…. Aber erstmal „Viel Erfolg.“"
+      ],
+      "media": {
+        "type": "image",
+        "description": "Legitime Nachricht vs Betrügerische Nachricht",
+        "source": "example_image"
+      }
+    }
+  ]
+}

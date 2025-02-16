@@ -1,6 +1,7 @@
 package com.example.no_phishing_yannick.games.rightOrwrong
 
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.no_phishing_yannick.games.helper.BaseGameFragment
 import com.example.nophishsherlock.R
+import com.example.nophishsherlock.contentbuilder.GameAnswerButton
 import com.example.nophishsherlock.data.GameData
 
 /**
@@ -17,14 +19,11 @@ import com.example.nophishsherlock.data.GameData
 class RightOrWrongFragment : BaseGameFragment() {
 
     //hier werden die Elemente der Activity initialisiert
-    private lateinit var right: Button
-    private lateinit var wrong: Button
-
-    //hier wird ein leeres Datenobjekt erstellt
-    val emptyData = RightOrWrongData("", "", false)
+    private lateinit var right: GameAnswerButton
+    private lateinit var wrong: GameAnswerButton
 
     //hier wird das aktuelle Datenobjekt gespeichert
-    private var currentGameData: RightOrWrongData? = null
+    private var currentGameData = RightOrWrongData()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,12 +42,11 @@ class RightOrWrongFragment : BaseGameFragment() {
 
         if (arguments != null) {
             val empfangeneFrage = arguments?.getParcelable<GameData>("game")
-            currentGameData = empfangeneFrage?.let { parseGameData(it) } as RightOrWrongData?
+            currentGameData = (empfangeneFrage?.let { parseGameData(it) } as RightOrWrongData?)!!
 
 
-            if (currentGameData != null) {
-                gameText.text = currentGameData!!.statement
-            }
+
+            gameText.text = Html.fromHtml(currentGameData.statement, Html.FROM_HTML_MODE_LEGACY)
         }
 
         handleUserSelection()
@@ -63,9 +61,8 @@ class RightOrWrongFragment : BaseGameFragment() {
      * @property isCorrect gibt an ob die Aussage richtig ist
      */
     data class RightOrWrongData(
-        val statement: String,
-        val word: String,
-        val isCorrect: Boolean?,
+        val statement: String = "",
+        val isCorrect: Boolean = false,
     )
 
     override fun handleUserSelection() {
@@ -73,22 +70,29 @@ class RightOrWrongFragment : BaseGameFragment() {
         right = requireView().findViewById(R.id.right)
         wrong = requireView().findViewById(R.id.wrong)
 
-        if (currentGameData?.isCorrect!!) {
+
+        if (currentGameData.isCorrect) {
             right.setOnClickListener {
                 notifyActivity(true)
+                right.selectButton(true)
+                wrong.deselectButton()
             }
             wrong.setOnClickListener {
                 notifyActivity(false)
+                wrong.selectButton(false)
+                right.deselectButton()
             }
         } else {
             right.setOnClickListener {
                 notifyActivity(false)
+                right.selectButton(true)
+                wrong.deselectButton()
             }
             wrong.setOnClickListener {
                 notifyActivity(true)
+                right.deselectButton()
+                wrong.selectButton(false)
             }
-
-
         }
     }
 
@@ -108,22 +112,21 @@ class RightOrWrongFragment : BaseGameFragment() {
 
         return try {
             val jsonArray = gameData.content
-            var rightOrWrongData = emptyData
+            var rightOrWrongData = RightOrWrongData()
 
             if (jsonArray != null) {
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i)
                     val statement = jsonObject.getString("statement")
-                    val word: String = jsonObject.getString("word")
                     val isCorrect = jsonObject.getBoolean("isCorrect")
 
-                    rightOrWrongData = RightOrWrongData(statement, word, isCorrect)
+                    rightOrWrongData = RightOrWrongData(statement, isCorrect)
                 }
             }
             rightOrWrongData
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyData
+            RightOrWrongData()
         }
     }
 

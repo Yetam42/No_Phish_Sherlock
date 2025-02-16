@@ -1,0 +1,35 @@
+{
+  "game": [
+    {
+      "title": "Drag und Drop aufgabe Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDrop",
+        "content": [
+          {
+            "targetNames": [
+              "sehr gefährlich",
+              "gefährlich"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "Wartung.exe",
+                "Rechnung.zip",
+                "Problemloesung.pdf.exe",
+                "Rechnung.osuc",
+                "Auftragsbestätigung.exe",
+                "Rechnung007.docm",
+                "Rechnung64920.7zip"
+              ],
+              "2": [
+                "Nutzungsbedingungen.pdf",
+                "Plan-exe.docx",
+                "Problemloesung.pdf"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

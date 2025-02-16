@@ -8,27 +8,30 @@
 
     <LinearLayout
         android:id="@+id/draggableItemsContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/targetContainer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/dropZone1"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@color/purple_200"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_margin="4dp">
 
             <TextView
                 android:id="@+id/dropZone1Text"
@@ -40,11 +43,12 @@
 
         <LinearLayout
             android:id="@+id/dropZone2"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:background="@color/purple_200"
+            android:layout_margin="4dp"
             android:padding="16dp">
 
             <TextView

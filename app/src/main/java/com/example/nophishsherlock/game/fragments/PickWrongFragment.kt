@@ -1,4 +1,4 @@
-package com.example.no_phishing_yannick.games.pickwrong
+package com.example.nophishsherlock.game.fragments
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.no_phishing_yannick.games.helper.BaseGameFragment
 import com.example.nophishsherlock.R
@@ -22,8 +21,7 @@ import com.example.nophishsherlock.data.GameData
  */
 class PickWrongFragment : BaseGameFragment() {
 
-    val emptyData = PickWrongData("", "", false, "")
-    lateinit var gameText: TextView
+    private lateinit var gameText: TextView
     val clickedWords = mutableListOf<String>()
 
     override fun onCreateView(
@@ -66,7 +64,10 @@ class PickWrongFragment : BaseGameFragment() {
      * @param currentGameData die Daten die eingefügt werden sollen
      * @return SpannableString mit den Daten
      */
-    fun createSpannableString(currentGameData: PickWrongData, gameText: TextView): SpannableString {
+    private fun createSpannableString(
+        currentGameData: PickWrongData,
+        gameText: TextView
+    ): SpannableString {
         val spannableString = SpannableString(currentGameData.text)
 
         /***
@@ -75,7 +76,9 @@ class PickWrongFragment : BaseGameFragment() {
          * und das ausgewählter bereich leuchtet
          */
 
-        val words = currentGameData.text.split(".", " ")
+        val words = currentGameData.text.split(Regex("[./]"))
+
+        val rightWords = currentGameData.pickWord.split(Regex("[.]"))
 
 
         words.forEach { word ->
@@ -83,21 +86,21 @@ class PickWrongFragment : BaseGameFragment() {
             val endIndex = startIndex + word.length
 
             spannableString.setSpan(object : ClickableSpan() {
-                override fun onClick(p0: View) {
-//                    if (clickedWords.contains(word)) {
-//                        clickedWords.remove(word)
-//                    } else {
-//                        clickedWords.add(word)
-//                    }
-                    clickedWords.clear()
-                    clickedWords.add(word)
-                    gameText.invalidate()
-                    if (word == currentGameData.pickWord) {
-                        notifyActivity(true)
+                var isRight = false
 
+
+                override fun onClick(p0: View) {
+
+                    if (clickedWords.contains(word)) {
+                        clickedWords.remove(word)
                     } else {
-                        notifyActivity(false)
+                        clickedWords.add(word)
                     }
+                    gameText.invalidate()
+
+                    isRight = clickedWords.sorted() == rightWords.sorted()
+
+                    notifyActivity(isRight)
                 }
 
 
@@ -130,7 +133,7 @@ class PickWrongFragment : BaseGameFragment() {
 
         return try {
             val jsonArray = gameData.content
-            var pickWrongData = emptyData
+            var pickWrongData = PickWrongData()
 
 
             if (jsonArray != null) {
@@ -140,16 +143,14 @@ class PickWrongFragment : BaseGameFragment() {
 
 
                     val pickWord = jsonObject.getString("word")
-                    val isCorrect = jsonObject.getBoolean("isCorrect")
-                    val feedBackText = jsonObject.getString("feedback")
 
-                    pickWrongData = PickWrongData(text, pickWord, isCorrect, feedBackText)
+                    pickWrongData = PickWrongData(text, pickWord)
                 }
             }
             pickWrongData
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyData
+            PickWrongData()
         }
     }
 
@@ -163,10 +164,8 @@ class PickWrongFragment : BaseGameFragment() {
      * @property feedBackText der Text der angezeigt werden soll
      */
     data class PickWrongData(
-        val text: String,
-        val pickWord: String,
-        val isCorrect: Boolean,
-        val feedBackText: String,
+        val text: String = "",
+        val pickWord: String = "",
     )
 
 }

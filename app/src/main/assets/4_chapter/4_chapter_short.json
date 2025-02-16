@@ -1,0 +1,132 @@
+{
+  "texts": [
+    {
+      "title": "Falsche Links",
+      "media": {
+        "type": "image",
+        "source": "page_not_found"
+      }
+    },
+    {
+      "paragraphs": [
+        "Links sind Verweise, die zu einer bestimmten Webseite führen. Sie können als sichtbarer Text, als Bild, als QR-Code oder als Schaltfläche erscheinen. Beim Anklicken wird die hinterlegte Webadresse (URL) aufgerufen.",
+        " <b>Betrüger nutzen gefälschte Links, um sensible Daten zu stehlen oder Schadsoftware zu verbreiten.</b> Durch sorgfältige Prüfung von Webadressen und das Wissen um die Tricks der Kriminellen können Sie sich jedoch wirksam schützen."
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Gefahren durch betrügerische Links:</b>",
+          "• Betrügerische Links führen oft zu gefälschten Webseiten (Phishing-Seiten).",
+          "• Diese Seiten ähneln echten Webseiten und wirken vertrauenswürdig.",
+          "• Eingaben wie Zugangsdaten oder persönliche Informationen werden von Kriminellen abgefangen.",
+          "• Manche Links leiten direkt auf Schadsoftware oder schädliche Downloads weiter.",
+          "• Ob die Infektion gelingt, hängt von der Aktualität Ihres Systems ab."
+        ],
+        "imageSource": "malware_2",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>! Besondere Vorischt bei Spear-Phishing:</b>",
+          "• Besonders raffinierte Angriffe, die genau auf eine Person zugeschnitten sind.",
+          "• Solche Nachrichten bestehen oft alle Plausibilitätsprüfungen."
+        ],
+        "imageSource": "spear",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Grundsätzliche Sicherheitsmaßnahmen beim Umgang mit Links</b>",
+          "• Klicken Sie nicht blind auf Links in E-Mails, SMS oder Messengern – bereits ein Klick kann Schadsoftware aktivieren",
+          "• Prüfen Sie Webadressen vor dem Anklicken – besonders, wenn sie von unbekannten oder unerwarteten Absendern stammen.",
+          "• Geben Sie keine sensiblen Daten auf unbekannten Webseiten ein.",
+          "• Halten Sie Ihr Betriebssystem und Ihre Software stets aktuell."
+        ],
+        "imageSource": "maus",
+        "imageFirst": true
+      }
+    },
+    {
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "<b>Webadresse hinter einem Link erkennen</b>",
+            "Da sich hinter Links oft andere Webadressen verbergen, als der sichtbare Text vermuten lässt, sollten Sie die tatsächliche URL immer überprüfen, bevor Sie darauf klicken."
+          ],
+          "media": {
+            "type": "image",
+            "source": "laptop02"
+          }
+        },
+        {
+          "paragraphs": [
+            "<b>Auf PC und Laptop:</b> Bewegen Sie die Maus über den Link, ohne zu klicken. Die echte Webadresse erscheint entweder in der Statusleiste:"
+          ],
+          "media": {
+            "type": "image",
+            "source": "statusleiste"
+          }
+        },
+        {
+          "paragraphs": [
+            "Oder im Tooltip"
+          ],
+          "media": {
+            "type": "image",
+            "source": "tooltip"
+          }
+        },
+        {
+          "paragraphs": [
+            "<b>Aber Vorsicht vor falschen Tooltips!</b>",
+            "Normalerweise zeigen Programme wie E-Mail-Clients oder Browser Tooltips an, um die echte Webadresse anzuzeigen. Doch Kriminelle können gefälschte Tooltips einfügen, die falsche Adressen vortäuschen.",
+            "<b>Falls Sie zwei Tooltips sehen oder der Tooltip ungewöhnlich aussieht, seien Sie besonders vorsichtig.</b>"
+          ],
+          "media": {
+            "type": "image",
+            "source": "falscher_tooltip"
+          }
+        },
+        {
+          "paragraphs": [
+            "Beim oberen Tooltip (blauer Kreis) handelt es sich um einen Fake, den die Betrüger eingefügt haben. Die tatsächliche Webadresse wird unten (roter Kreis) angezeigt.",
+            "<b>Vergewissern Sie sich also, wo und wie ihre Programme Tooltips anzeigen.</b>"
+          ],
+          "media": {
+            "type": "image",
+            "source": "smartphone"
+          }
+        },
+        {
+          "paragraphs": [
+            "<b>Auf Smartphones und Tablets:</b> Halten Sie den Link für mindestens zwei Sekunden gedrückt. Die URL erscheint in einem Dialogfenster."
+          ],
+          "media": {
+            "type": "image",
+            "source": "vorschau"
+          }
+        },
+        {
+          "paragraphs": [
+            "Vermeiden Sie Vorschau-Funktionen wie „Force Touch“ bei iOS, da diese den Link möglicherweise öffnen.",
+            "<b>Tipp: Falls Sie unsicher sind, prüfen Sie den Link lieber erst am PC.</b>"
+          ]
+        }
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "Indem Sie Links immer sorgfältig prüfen, bevor Sie darauf klicken, können Sie sich effektiv vor Betrug und Schadsoftware schützen. Bleiben Sie wachsam und klicken Sie mit Bedacht!"
+        ],
+        "imageSource": "vision_right",
+        "imageFirst": true
+      }
+    }
+  ]
+}

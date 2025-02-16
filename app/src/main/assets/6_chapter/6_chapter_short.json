@@ -1,0 +1,84 @@
+{
+  "texts": [
+    {
+      "title": "Um den Wer-Bereich herum",
+      "media": {
+        "type": "image",
+        "source": "trust"
+      }
+    },
+    {
+      "paragraphs": [
+        "Kriminelle täuschen Nutzer, indem sie bekannte Wer-Bereiche optisch verschieben. Durch die Registrierung eines Wer-Bereichs können Kriminelle die Webadresse drumrum eigenständig verändern. ",
+        "Sie setzen sie z.B. <b>den erwarteten Wer-Bereich vor oder nach die eigentliche Adresse. So erscheinen ihre Links vertrauenswürdig.</b>"
+      ]
+    },
+    {
+      "paragraphs": [
+        "Ein registrierter Wer-Bereich wie beispielsweise <b>host745.com</b> kann mit vielen scheinbar seriösen Bezeichnungen kombiniert werden.\n"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<br><b>Trick 1: Betrüger fügen den erwarteten Wer-Bereich vor oder hinter den eigentlichen Wer-Bereich.</b>",
+          "Beispiele:",
+          "• https://www. <span style='color:blue;'>kit.edu</span> .uni.login. <span style='color:red;'>host745.com</span> /login/citations (nicht KIT, sondern host745.com)",
+          "• https://www. <span style='color:red;'>host745.com</span> / <span style='color:blue;'>kit.edu</span> /de (nicht KIT, sondern host745.com)"
+        ],
+        "imageSource": "editable",
+        "imageFirst": false
+      },
+      "paragraphs": [
+        "Unser Gehirn liest von links nach rechts und interpretiert vertraute Begriffe falsch.",
+        "<b>In Eile übersehen wir oft den wahren Wer-Bereich (rot markiert) und halten die betrügerische Website (blau markiert) für vertrauenswürdig.</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 2: Auch Formatierungen wie Zeilenumbrüche erschweren die Erkennung:</b>",
+          "• https:// <span style='color:blue;'>newsletter.springer.com</span> .paper2018. <span style='color:red;'>host745.com</span> /login\n/citations (nicht Springer, sondern host745.com)"
+        ],
+        "imageSource": "undo",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 3: Kriminelle registrieren vertrauenswürdige Begriffe als Wer-Bereiche. Diese Begriffe sind auch in legitimen Webseiten enthalten, was die Erkennung besonders erschwert.</b>",
+          "• https://www. <span style='color:red;'>safer-login.com</span> / <span style='color:blue;'>kit.edu</span> /de",
+          "• http://amazon-prime. <span style='color:blue;'>amazon.de</span> . <span style='color:red;'>securepay24.de</span> /login-Germany/ssl"
+        ],
+        "imageSource": "hand_shake",
+        "imageFirst": false
+      }
+    },
+    {
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Um gefährliche Links zu erkennen, folgen Sie drei Schritten:",
+            "<b>1. Webadresse hinter dem Link anzeigen lassen.</b>",
+            "<b>2. Wer-Bereich der Webadresse identifizieren.</b>",
+            "<b>3. Plausibilität des Wer-Bereichs prüfen – nicht der Bereiche davor oder danach.</b>"
+          ],
+          "media": {
+            "type": "image",
+            "source": "coding"
+          }
+        }
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Nehmen Sie sich immer Zeit, Webadressen genau zu prüfen. Achten Sie genau auf den Wer-Bereich einer Webadresse, bevor Sie einem Link vertrauen.</b>"
+        ],
+        "imageSource": "vision_right",
+        "imageFirst": true
+      }
+    }
+  ]
+}

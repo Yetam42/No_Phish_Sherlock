@@ -1,0 +1,92 @@
+{
+  "texts": [
+    {
+      "title": "Erkennung mit Hilfsmitteln",
+      "media": {
+        "type": "image",
+        "source": "cloud"
+      }
+    },
+    {
+      "paragraphs": [
+        "Kriminelle nutzen verschiedene Tricks, um Sie zu täuschen, bei <b>denen der Wer-Bereich allein keine Hilfe bietet.</b>",
+        "Zu diesen gehören <b>Kurz-URLs, Weiterleitungen, Cloud-Anbieter-Webadressen und QR-Codes.</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Kurz-URLs:</b>",
+          "• Diese Dienste verkürzen lange Webadressen, um das Merken zu erleichtern oder eben um gefährliche Links zu tarnen.",
+          "• <b>In E-Mails sind sie unnötig, und Sie sollten besonders vorsichtig sein</b>",
+          "• <b>Nutzen Sie Auflösedienste wie „checkshorturl.com“, um die tatsächliche URL zu ermitteln.</b>",
+          "• Achten Sie darauf, dass Kurz-URLs verschachtelt sein können und prüfen Sie diese genau."
+        ],
+        "imageSource": "share",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Weiterleitungen:</b>",
+          "• In vielen E-Mails, besonders von Dienstanbietern wie GMX, wird eine Webadresse über eine Weiterleitung umgeleitet.",
+          "• Steht im Wer-Bereich <b>„deref-“</b> handelt es sich um eine Weiterleitung",
+          "• <b>Die eigentliche Webadresse ist rechts hinter dem Wer-Bereich nach „redirectUrl=“ zu finden<b/>"
+        ],
+        "imageSource": "synchronization",
+        "imageFirst": false
+      }
+    },
+    {
+      "paragraphs": [
+        " z.B. https://<span style='color:blue;'>deref-gmx.net</span>/mail/client/QRJNnxLmS4Y/dereferrer/? redirectUrl=https%3A%2F%2Fdrive.<span style='color:red;'>google.com</span>%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7",
+        "&#128231; Hier handelt es sich z.B. um eine Weiterleitung von <b>gmx an google</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "• <b>Mehrere Weiterleitungen in einer Webadresse können auch legitim sein</b>, wenn Absender und Empfänger mit einem Dienst arbeiten, der die Webadresse mit einer Weiterleitung ergänzt.",
+          "<b>Verwenden Sie aber keinen solchen Dienst, sollten Sie in diesem Fall besonders vorsichtig sein. </b>Es handelt sich wahrscheinlich um eine betrügerische Nachricht."
+        ],
+        "imageSource": "digital_transformation",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Cloud-Anbieter:</b>",
+          "• Kriminelle können Webadressen von Cloud-Anbietern wie Google Drive oder Dropbox verwenden, um Dateien zu verstecken.",
+          "• Der Wer-Bereich zeigt keine Gefahr an, daher sollten Sie sicherstellen, dass Sie die Datei tatsächlich erwartet haben, bevor Sie den Link anklicken.",
+          "• <b>Achten Sie auf den Dateityp und prüfen Sie ihn sorgfältig.</b> <br>(Informationen zu gefährlichen Dateitypen s. nächstes Kapitel)"
+        ],
+        "imageSource": "synchronization",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>QR-Codes:</b>",
+          "• Gefährliche Webadressen können in QR-Codes eingebettet werden",
+          "• Vertrauenswürdige Unternehmen senden selten QR-Codes, weshalb es sich wahrscheinlich um eine betrügerische Nachricht handelt",
+          "• Nutzen Sie Apps, die die URL und den Wer-Bereich anzeigen, bevor Sie den Code scannen.",
+          "• Für Android-Geräte empfehlen wir: <a href='https://play.google.com/store/apps/details?id=com.secuso.privacyFriendlyCodeScanner'>https://play.google.com/store/apps/details?id=com.secuso.privacyFriendlyCodeScanner</a>"
+        ],
+        "imageSource": "qr_code",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "Besondere Vorsicht gilt bei Kurz-URL, Weiterleitung oder QR-Code – denn diese kommen auch in seriösen Nachrichten vor. <br><b>Deshalb sollten Sie nicht nur auf den Wer-Bereich achten, sondern sich immer fragen: Erwarte ich diesen Link wirklich?</b>"
+        ],
+        "imageSource": "vision_left",
+        "imageFirst": false
+      }
+    }
+  ]
+}

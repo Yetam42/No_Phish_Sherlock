@@ -54,14 +54,6 @@ class FullscreenVideoActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        // Zurück zum normalen Modus
-        setResult(RESULT_OK, Intent().apply {
-            putExtra("video_position", videoView.currentPosition)
-        })
-
-    }
 
     override fun onResume() {
         super.onResume()

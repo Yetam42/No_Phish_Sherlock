@@ -1,0 +1,95 @@
+{
+  "game": [
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "http://kit0-my.sharepoint.com/personal/",
+            "word": "sharepoint.com"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "https://crypto.iti.kit.edu/index.php?id=kryptologikum",
+            "word": "kit.edu"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "https://www.google.de/search?source=hp&ei=HLkEXLTVBYXRwAKU6ZyoDg&q=Online-Betrug+Youtube&btnK=Google-Suche&oq=Online-Betrug+Youtube&gs  l=psy-ab.3..33i160.4568.16511..16632...3.0..0.109.2171.22j501.gws-wiz.....0..0j0i131j0i30i19j0i30j0i22i30.RkAPxQ4f10c",
+            "word": "google.de"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "http://www.amazon.de/gp/buy/thankyou/handlers/display.html?ie=UTF8&as=B17&is Refresh=1&orderId=36-1563-68&0304-393-737&ref =chk typ browserRefresh&viewld=Thank YouCart",
+            "word": "amazon.de"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "http://kit.edu",
+            "word": "kit.edu"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "http://secuso.aifb.kit.edu",
+            "word": "kit.edu"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "https://www.kastel.kit.edu/index.php/https://www.kit-shop.de/security",
+            "word": "kit.edu"
+          }
+        ]
+      }
+    }
+  ]
+}

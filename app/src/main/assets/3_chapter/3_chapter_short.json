@@ -1,0 +1,79 @@
+{
+  "texts": [
+    {
+      "title": "Sensible Daten",
+      "media": {
+        "type": "image",
+        "source": "personal_files"
+      }
+    },
+    {
+      "paragraphs": [
+        "•<b> Betrügerische Nachrichten können täuschend echt wirken.</b> Selbst nach einer ersten Plausibilitätsprüfung fallen sie oft nicht direkt auf.",
+        "• <b>Besonders gefährlich</b> sind Nachrichten, die zu sensiblen Aktionen auffordern, wie <b>persönliche oder vertrauliche Daten zurückzusenden und Geldüberweisungen oder Anrufe zu tätigen</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Sensible Daten</b>",
+          " • Dazu gehören z.B. Zugangsdaten, Kreditkarteninformationen oder interne Unternehmensdaten.",
+          " • <b>Kriminelle nutzen Daten schrittweise, um Betrug zu begehen.</b>",
+          " • Zuerst fragen sie nach einer Ausweiskopie, um später Identitätsmissbrauch zu begehen",
+          " • Zuerst erfragen sie Abwesenheitszeiten von Kollegen, um später betrügerische E-Mails an die Vertretung zu senden.",
+          " • &#128231; <b>Seriöse Organisationen fragen nie per E-Mail oder Nachricht nach Zugangsdaten.</b>"
+        ],
+        "imageSource": "cyberattack",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Sichere Übermittlung sensibler Daten:</b>",
+          "• Keine Passwörter oder Zugangsdaten per E-Mail oder Messenger-Apps weitergeben.",
+          "• Bei Bedarf nur mit S/MIME verschlüsselte E-Mails nutzen."
+        ],
+        "imageSource": "schild",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Telefonbetrug erkennen:</b>",
+          "• Betrüger geben sich z.B. als IT-Support (Microsoft, Apple) oder andere seriöse Stellen aus.",
+          "• Vorsicht bei ausländischen Vorwahlen oder 0900-Nummern.",
+          "• Nummern online prüfen, um bekannte Betrugsfälle zu erkennen",
+          "• Rückrufe nur über bekannte Nummern tätigen.",
+          "• &#128231; Niemals Zugangsdaten oder persönliche Informationen am Telefon preisgeben.",
+          "• &#128231; Unerwartete Support-Anrufe immer hinterfragen und offizielle Nummern verwenden."
+        ],
+        "imageSource": "calling",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Geldüberweisungen absichern:</b>",
+          "• IBAN in Rechnungen kann unbemerkt manipuliert werden.",
+          "• Verwenden Sie nur Ihnen bereits bekannte Bankverbindungen.",
+          "• Unbekannte IBAN per Suchmaschine auf Betrug prüfen",
+          "• Bei Unsicherheiten direkt beim angeblichen Absender nachfragen – aber nur über eine Ihnen bekannte Nummer."
+        ],
+        "imageSource": "credit_card",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Bleiben Sie wachsam und überprüfen Sie verdächtige E-Mails und Telefonanrufe immer sorgfältig, bevor Sie handeln.</b>"
+        ],
+        "imageSource": "vision_left",
+        "imageFirst": false
+      }
+    }
+  ]
+}

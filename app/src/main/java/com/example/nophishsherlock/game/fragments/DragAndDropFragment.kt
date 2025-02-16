@@ -14,7 +14,6 @@ import com.example.no_phishing_yannick.games.helper.BaseGameFragment
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.GameData
 import org.json.JSONArray
-import kotlin.properties.Delegates
 
 
 class DragAndDropFragment : BaseGameFragment() {
@@ -33,7 +32,6 @@ class DragAndDropFragment : BaseGameFragment() {
     private val DROPZONE_1_INDEX = 0
     private val DROPZONE_2_INDEX = 1
 
-    private var itemCount by Delegates.notNull<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,7 +59,6 @@ class DragAndDropFragment : BaseGameFragment() {
             val empfangeneFrage: GameData? = arguments?.getParcelable<GameData>("game")
 
             currentGameData = empfangeneFrage?.let { parseGameData(it) } as DragAndDropData
-            itemCount = currentGameData.itemToTargetMap.values.sumOf { it.size }
         }
 
         createDragItemViews()
@@ -323,9 +320,9 @@ class DragAndDropFragment : BaseGameFragment() {
         return text
     }
 
-
     data class DragAndDropData(
         val targetNames: List<String> = emptyList(),
         val itemToTargetMap: Map<String, MutableList<String>> = emptyMap()
     )
+
 }

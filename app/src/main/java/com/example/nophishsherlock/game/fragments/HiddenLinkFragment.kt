@@ -16,6 +16,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.no_phishing_yannick.games.helper.BaseGameFragment
 import com.example.nophishsherlock.R
+import com.example.nophishsherlock.contentbuilder.GameAnswerButton
 import com.example.nophishsherlock.data.GameData
 
 class HiddenLinkFragment : BaseGameFragment() {
@@ -23,8 +24,8 @@ class HiddenLinkFragment : BaseGameFragment() {
     lateinit var hiddenLinkFragment: ViewGroup
     lateinit var gameText: TextView
     private var currentGameData = HiddenLink()
-    lateinit var right: Button
-    lateinit var wrong: Button
+    lateinit var right: GameAnswerButton
+    lateinit var wrong: GameAnswerButton
     lateinit var popupWindow: PopupWindow
 
     var hasSeenHiddenLink: Boolean = false
@@ -123,36 +124,31 @@ class HiddenLinkFragment : BaseGameFragment() {
 
         if (currentGameData.isCorrect) {
             right.setOnClickListener {
-                animateButton(right, true)
-                notifyActivity(currentGameData.isCorrect)
+                notifyActivity(true)
+                right.selectButton(true)
+                wrong.deselectButton()
             }
             wrong.setOnClickListener {
-                animateButton(wrong, false)
-                notifyActivity(!currentGameData.isCorrect)
+                notifyActivity(false)
+                wrong.selectButton(false)
+                right.deselectButton()
             }
         } else {
             right.setOnClickListener {
-                animateButton(right, false)
-                notifyActivity(currentGameData.isCorrect)
+                notifyActivity(false)
+                right.selectButton(true)
+                wrong.deselectButton()
             }
             wrong.setOnClickListener {
-                animateButton(wrong, true)
-                notifyActivity(!currentGameData.isCorrect)
+                notifyActivity(true)
+                right.deselectButton()
+                wrong.selectButton(false)
             }
-
         }
 
 
     }
 
-    private fun animateButton(button: View, isCorrect: Boolean) {
-        button.animate().scaleY(1.3f).scaleX(1.3f).setDuration(200).start()
-        if (isCorrect) {
-            button.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.teal_200))
-        } else {
-            button.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.purple_500))
-        }
-    }
 
     override fun updateUI(isCorrect: Boolean) {
     }

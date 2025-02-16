@@ -7,9 +7,51 @@
         "type": "rightOrWrong",
         "content": [
           {
-            "statement": "Bei einer (vermeintlichen) E-Mail von Amazon lautet der Absender info@amazon.de",
+            "statement": "Bei einer (vermeintlichen) E-Mail von <b>Amazon</b> lautet der Absender <u>info@amazon.de</u>",
             "word": "info@amazon.de",
             "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Plausibilitätsprüfung",
+      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "Bei einer (vermeintlichen) E-Mail von <b>Springer</b> lautet der Absender <u>info@spriinger.de</u>",
+            "word": "info@spriinger.de",
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "title": "Plausibilitätsprüfung",
+      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "Bei einer (vermeintlichen) E-Mail von einem <b>Studierenden</b> lautet der Absender <u>max.mayer@kit.student.edu</u>",
+            "word": "max.mayer@kit.student.edu",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Plausibilitätsprüfung",
+      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "Bei einer (vermeintlichen) E-Mail von <b>SAP</b> lautet der Absender <u>sap@info.cc</u>",
+            "word": "sap@info.cc",
+            "isCorrect": false
           }
         ]
       }

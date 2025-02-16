@@ -1,0 +1,76 @@
+{
+  "texts": [
+    {
+      "title": "Webadressen erkennen",
+      "media": {
+        "type": "image",
+        "source": "hacker"
+      }
+    },
+    {
+      "paragraphs": [
+        "Das Internet ist voller betrügerischer Webseiten, die auf den ersten Blick seriös wirken. Um sich davor zu schützen, ist es entscheidend zu verstehen, <b>wie Webadressen aufgebaut sind und wie Kriminelle sie manipulieren können.</b>"
+      ]
+    },
+    {
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "<b>Der Wer-Bereich:</b>",
+            "• Um die Vertrauenswürdigkeit einer Webadresse zu beurteilen, ist es wichtig, ihren Aufbau zu verstehen. Der zentrale Bestandteil ist der sogenannte <b>Wer-Bereich</b> (Domain).",
+            "• Der Wer-Bereich wird ermittelt, indem man von <b>http(s)://</b> bis zum <b>dritten „/“</b> oder bis zum Ende der Webadresse geht.",
+            "• Von rechts nach links betrachtet, sind die ersten beiden Blöcke (blauer Kreis) der Wer-Bereich."
+          ],
+          "media": {
+            "type": "image",
+            "source": "wer_bereich"
+          }
+        },
+        {
+          "paragraphs": [
+            "• Der Wer-Bereich ist einzigartig und muss registriert werden, weshalb Betrüger nicht einfach bekannte Domains nutzen können.</b>",
+            "&#128231; Dennoch gibt es verschiedene Methoden, um täuschend echte Webadressen zu erstellen."
+          ]
+        }
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Beurteilung einer Webadresse</b>",
+          "• <b>HTTPS</b> garantiert nur eine verschlüsselte Übertragung, nicht die Vertrauenswürdigkeit der Webseite. Auch Kriminelle verwenden HTTPS.",
+          "• <b>\"www\"</b> ist kein Indikator für Sicherheit – viele Webseiten nutzen es nicht mehr.",
+          "• <b>Zahlen im Wer-Bereich deuten oft auf eine unsichere Webadresse hin.</b>"
+        ],
+        "imageSource": "windows",
+        "imageFirst": true
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Beispiel:</b>",
+        "Eine angebliche SAP-Ankündigung des KIT verlinkt auf <span style='color:blue;'>https://login.</span><span style='color:red;'>host745.com/</span><span style='color:blue;'>news/internal.</span> Da <b>host745.com</b> nicht zum KIT gehört, ist die Webadresse verdächtig."
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "• Die Länge oder Komplexität einer Webadresse sagt nichts über ihre Vertrauenswürdigkeit aus. <br><b>http://ewraa.zeugs12a2.kit.edu/234%234ser%%/setw5rewsrew45rw435.html</b> wirkt kompliziert, aber der Wer-Bereich <b>kit.edu</b> zeigt, dass sie legitim ist.",
+          "• In einigen Ländern besteht der Wer-Bereich aus drei Blöcken (z. B. <b>amazon.co.uk</b> für Großbritannien oder <b>.ac.at</b> für akademische Institutionen in Österreich)."
+        ],
+        "imageSource": "laptop04",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "Wer den Wer-Bereich einer Webadresse richtig erkennt, kann sich vor vielen Betrugsversuchen im Internet schützen. Nehmen Sie sich daher immer einen Moment Zeit, um Links genau zu prüfen, bevor Sie darauf klicken.",
+          "<b>Achten Sie dabei stets auf den Wer-Bereich!</b>"
+        ],
+        "imageSource": "vision_right",
+        "imageFirst": true
+      }
+    }
+  ]
+}

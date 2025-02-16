@@ -1,0 +1,66 @@
+{
+  "texts": [
+    {
+      "title": "Gefährliche Dateien",
+      "media": {
+        "type": "image",
+        "source": "file_sharing"
+      }
+    },
+    {
+      "paragraphs": [
+        "Gefährliche Dateien können Schadsoftware enthalten und Ihr Gerät infizieren. <b>Deshalb ist es wichtig, Anhänge und Downloads sorgfältig zu prüfen.</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Dateiformat überprüfen:</b>",
+          "• Prüfen Sie immer das Dateiformat der Datei, bevor Sie sie öffnen oder speichern.",
+          "• <b>Das Dateiformat ist die Endung hinter dem letzten Punkt im Dateinamen.</b>",
+          "• Indem Sie <b>mit der Maus über die Datei fahren, können Sie die Dateiendung erfahren</b>, ohne die Datei zu öffnen",
+          "• Manche Programme und E-Mail-Anbieter blenden die Dateiendung aus – aktivieren Sie die Anzeige in den Einstellungen."
+        ],
+        "imageSource": "no_data",
+        "imageFirst": true
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Täuschende Dateinamen erkennen:</b>",
+        "• Kriminelle nutzen mehrere Punkte im Dateinamen, um die echte Endung zu verschleiern.",
+        "• Entscheidend ist die letzte Endung – nicht die vermeintlich sicheren Bezeichnungen davor.",
+        "• Typische Betrugsdateien:",
+        "• sicher-shopping-auf-rechnung.pdf.secure.<span style='color:red;'>exe</span>",
+        "• mahnung-als-pdf.pdf.<span style='color:red;'>syy</span>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Vorsichtsmaßnahmen:</b>",
+          "• Öffnen Sie nur Dateien, deren Quelle Sie sicher kennen.",
+          "• Speichern, öffnen oder führen Sie eine Datei erst aus, wenn Sie das Dateiformat überprüft haben.",
+          "• Schalten Sie, wenn möglich, die automatische Vorschau für Anhänge aus.",
+          "• <b>Bei Unsicherheiten: Fragen Sie IT-Experten oder recherchieren Sie das Dateiformat online.</b>"
+        ],
+        "imageSource": "security",
+        "imageFirst": false
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Aber</b> eine doppelte Endung weist nicht zwangsläufig auf eine gefährliche Datei hin. Im Kontext von Verschlüsselungsprogrammen wird häufig die Endung <b>.asc</b> angehängt."
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Nehmen Sie sich immer Zeit, Webadressen genau zu prüfen. Achten Sie genau auf den Wer-Bereich einer Webadresse, bevor Sie einem Link vertrauen.</b>"
+        ],
+        "imageSource": "vision_right",
+        "imageFirst": true
+      }
+    }
+  ]
+}

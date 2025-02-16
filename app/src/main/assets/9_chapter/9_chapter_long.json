@@ -1,0 +1,63 @@
+{
+  "texts": [
+    {
+      "section": "1/4",
+      "title": "Gefährliche Dateien – Dateiformat",
+      "paragraphs": [
+        "Bisher haben Sie folgendes gelernt:",
+        "1. was „betrügerische Nachrichten“ sind,",
+        "2. wie man jede Nachricht zunächst erstmal auf Plausibilität prüft,",
+        "3. wie man mit Hinblick auf die folgenden drei Aktionen - in auf den ersten Blick plausiblen Nachrichten – überprüft, ob die Aktionen gefährlich sind; es sich also um betrügerische Nachrichten handelt: (a) sensible Informationen oder Daten zurückzuschicken, bzw. (b) Überweisungen oder (c) Anrufe z. B. an vermeintliche Kooperationspartnerinnen oder Kooperationspartner, vermeintliche Freundinnen oder Freunde oder vermeintliche Geschäftspartnerinnen oder Geschäftspartner, zu tätigen; und",
+        "4. wie man gefährliche Links erkennt",
+        "In den folgenden Kapiteln geht es um die potentiell gefährliche Aktion, eine gefährliche Datei (z. B. einen Anhang aus einer E-Mail) zu öffnen. Dabei wird davon ausgegangen, dass die betrügerische Nachricht gut gemacht ist, also bei den in Kapitel 2 kennen gelernten Plausibilitätsprüfungen nichts aufgefallen ist.",
+        "Hinweis: Außerdem helfen die folgenden Kapitel, wenn Sie bereits auf einen Link geklickt haben und sich ein Dialog Fenster öffnet, dass Sie fragt, ob sie eine Datei herunterladen oder öffnen möchten.",
+        "Wenn Sie eine solche gefährliche Datei herunterladen oder öffnen, besteht die Gefahr, dass Sie Schadsoftware auf Ihr Gerät laden. Daher ist es wichtig, dass Sie die angehängte Datei prüfen, bevor Sie diese öffnen und/ oder speichern.",
+        "In diesem und den nächsten beide Kapiteln wird Ihnen erklärt, wie Sie dabei vorgehen sollen."
+      ]
+    },
+    {
+      "section": "2/4",
+      "title": "Gefährliche Dateien – Dateiformat",
+      "paragraphs": [
+        "Der erste Schritt ist herauszufinden, welches Dateiformat die Datei hat, die Sie öffnen, ausführen und/ oder speichern möchten.",
+        "Hier drei Beispiele:",
+        "[Image of Dateiformate Beispiele]",
+        "Auch hier müssen Sie von rechts nach links lesen bzw. für Sie ist nur die Information hinter dem letzten Punkt relevant. Dort finden Sie das Dateiformat. Davor können beliebig viele Namen durch einen Punkt unterteilt stehen.",
+        "Hinweis: Dateinamen können Großbuchstaben beinhalten und es sind auch mehr Sonderzeichen als im Wer-Bereich möglich ist.",
+        "Bitte beachten Sie, dass es Software und E-Mail-Anbieter gibt, die Ihnen das Dateiformat nicht unmittelbar anzeigen (z. B. wenn Sie E-Mails über die Gmail Webseite abrufen). In der Regel kann man dies aber aktivieren oder pro Datei anzeigen lassen (z. B. bei GMail indem Sie mit der Maus die Datei berühren - aber nicht anklicken).",
+        "[Image of Gmail Darstellung einer E-Mail mit Excel-Datei Anhang (rote Rahmen).]",
+        "Es ist also wichtig, dass Sie sich für Ihre Geräte und Ihre Software damit vertraut machen, wie Sie die Information zum Dateiformat erhalten und ggf. die Anzeige dauerhaft aktivieren. Hierzu können Sie bereits erhaltene Dateien aus früheren Nachrichten nutzen."
+      ],
+      "media": {
+        "type": "image",
+        "description": "Gmail Darstellung einer E-Mail mit Excel-Datei Anhang (rote Rahmen).",
+        "source": "support"
+      }
+    },
+    {
+      "section": "3/4",
+      "title": "Gefährliche Dateien – Dateiformat",
+      "paragraphs": [
+        "Die Tatsachen, dass der Dateiname aus mehreren Blöcken bestehen kann und dass Sie es gewohnt sind von links nach rechts zu lesen, nutzen Kriminelle aus, um Sie in die Irre zu führen. Sie verwenden mehrere Blöcke und vertrauenerweckende Namen, in der Hoffnung, dass Sie sich so vom tatsächlichen Dateiformat ablenken lassen.",
+        "Sie verwenden z. B. folgende Dateinamen:",
+        "• sicher-shopping-auf-rechnung.pdf.secure.exe",
+        "• mahnung-als-pdf.pdf.syy",
+        "[Image of Beispiele für Nachrichten mit gefährlichen Dateinamen]",
+        "Hinweis: Bitte beachten Sie, eine doppelte Endung weist nicht zwangsläufig auf eine gefährliche Datei hin. Im Kontext von Verschlüsselungsprogrammen wird häufig die Endung .asc an die eigentliche Datei angehängt, so dass auch dort eine Doppelendung entsteht. Entscheidend ist das tatsächliche Dateiformat – im Fall der Verschlüsselung, nachdem diese entschlüsselt wurde."
+      ],
+      "media": {
+        "type": "image",
+        "description": "Beispiele für Nachrichten mit gefährlichen Dateinamen",
+        "source": "support"
+      }
+    },
+    {
+      "section": "4/4",
+      "title": "Gefährliche Dateien – Dateiformat",
+      "paragraphs": [
+        "Damit Sie sich vor Schadsoftware schützen, ist es wichtig, dass Sie Dateiformate erst identifizieren, dann bewerten (siehe nächstes Kapitel) und dann erst mit der Datei interagieren. Dabei macht es keinen Unterschied, ob Sie die Datei speichern, öffnen oder ausführen.",
+        "Hinweis: Oftmals werden Bild- oder Dokumentanhänge in Nachrichten automatisch angezeigt. Um dies zu vermeiden sollten Sie – sofern möglich – das automatische Anzeigen von Anhängen unterbinden. Sprechen Sie ggf. Ihre lokalen IT-Beauftragten an, ob diese Ihnen bei den Einstellungen helfen können."
+      ]
+    }
+  ]
+}

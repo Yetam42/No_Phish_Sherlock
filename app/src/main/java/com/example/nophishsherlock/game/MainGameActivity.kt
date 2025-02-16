@@ -3,6 +3,7 @@ package com.example.nophishsherlock.game
 import ViewPagerAdapter
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.TranslateAnimation
@@ -17,15 +18,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.no_phishing_yannick.games.EndFragment
-import com.example.no_phishing_yannick.games.pickwrong.PickWrongFragment
+import com.example.nophishsherlock.game.fragments.PickWrongFragment
 import com.example.no_phishing_yannick.games.rightOrwrong.RightOrWrongFragment
 import com.example.nophishsherlock.InfoFragment
 import com.example.nophishsherlock.LevelOverviewActivity
 import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.JsonGameData
-import com.example.nophishsherlock.game.fragments.DragAndDropFragment
 import com.example.nophishsherlock.game.fragments.GameOverFragment
 import com.example.nophishsherlock.game.fragments.HiddenLinkFragment
+import com.example.nophishsherlock.game.fragments.LayoutDragAndDropFragment
+import com.example.nophishsherlock.game.fragments.PractiseWithContextFragment
+import com.example.nophishsherlock.game.fragments.SimpleDragAndDropFragment
 import com.example.nophishsherlock.game.helper.GameFragmentListener
 import com.example.nophishsherlock.game.helper.GameViewModel
 import com.example.nophishsherlock.game.helper.LevelPrefernce
@@ -73,7 +76,9 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     private var hasLostLife = false
 
     //die Variable liveCount speichert die Anzahl der Leben. Es fängt mit 5 Leben an
-    private var liveCount = 2
+    private val maxLives = 5
+    private var liveCount = 0
+
 
     lateinit var gameString: String
 
@@ -86,8 +91,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         setContentView(R.layout.game_main_screen)
 
         supportActionBar?.hide()
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true);
-//        supportActionBar?.setDisplayShowHomeEnabled(true);
 
         gameString = intent.getStringExtra("gameString")!!
 
@@ -109,12 +112,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         title.setTextColor(getColor(R.color.text_color))
         description.setTextColor(getColor(R.color.text_color))
 
-
-
-
-        /*der confirm button wird am anfang unsichtbar gemacht underst,
-        wenn eine entcheidung getroffen wurde sichtbar*/
-        //confirm.visibility = View.INVISIBLE
+        liveCount = maxLives
 
         loadGameDatalist()
 
@@ -130,8 +128,8 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         //initializer für den viewpager
         viewPager.isUserInputEnabled = false
         adapter = ViewPagerAdapter(this, gameFraments)
-
         viewPager.adapter = adapter
+        loadGameInformation()
 
 
 
@@ -141,12 +139,15 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         }
 
         val dialog = MaterialAlertDialogBuilder(this)
-            .setTitle("Info")
+            .setTitle("Möchtest du das Spiel beenden?")
             .setMessage("")
-            .setPositiveButton("OK") { dialog, which ->
+            .setPositiveButton("Nein") { dialog, _ ->
                 dialog.dismiss()
             }
-            .setNeutralButton("Verlassen") { dialog, which ->
+            .setNeutralButton("Neustarten") { _, _ ->
+                restartGame()
+            }
+            .setNegativeButton("Ja") { _, _ ->
                 finish()
             }
             .create()
@@ -157,16 +158,19 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         }
 
         infoButton.setOnClickListener {
-            val dialog = InfoFragment()
-            dialog.show(supportFragmentManager, "InformationFragment")
+            val currentGame = gameDataList[currentGameIndex]
+            val currentGameType = currentGame.game?.type
+            val levelInfoDialog = InfoFragment.newInstance(currentGameType.toString())
+            levelInfoDialog.show(supportFragmentManager, "InformationFragment")
         }
 
         viewModel = ViewModelProvider(this)[GameViewModel::class.java]
         levelPrefernce = LevelPrefernce(this)
 
+
     }
 
-    override fun onOptionsItemSelected(item : MenuItem) : Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish();
         }
@@ -185,8 +189,28 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         when (gameData.game?.type) {
             "rightOrWrong" -> gameFraments.add(prepareFragment(RightOrWrongFragment(), gameData))
             "pickwrong" -> gameFraments.add(prepareFragment(PickWrongFragment(), gameData))
-            "dragAndDrop" -> gameFraments.add(prepareFragment(DragAndDropFragment(), gameData))
+            "dragAndDrop" -> gameFraments.add(
+                prepareFragment(
+                    SimpleDragAndDropFragment(),
+                    gameData
+                )
+            )
+
             "hiddenLink" -> gameFraments.add(prepareFragment(HiddenLinkFragment(), gameData))
+            "dragAndDropLayout" -> gameFraments.add(
+                prepareFragment(
+                    LayoutDragAndDropFragment(),
+                    gameData
+                )
+            )
+
+            "taskWithContext" -> gameFraments.add(
+                prepareFragment(
+                    PractiseWithContextFragment(),
+                    gameData
+                )
+            )
+
             else -> {
                 println("Unknown game type: ${gameData.game?.type}")
             }
@@ -210,7 +234,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     /**
      * Diese Funktion lädt die Daten für das Spiel
      */
-    private fun loadGameDatalist(){
+    private fun loadGameDatalist() {
         gameDataList = jsonGameParser.parse(this, gameString).toMutableList()
     }
 
@@ -242,6 +266,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         progressBar.progress = currentGameIndex + 1
         if (currentGameIndex < gameDataList.size) {
             viewPager.currentItem = currentGameIndex
+            loadGameInformation()
             loadTitel()
         }
         if (currentGameIndex == gameDataList.size) {
@@ -280,10 +305,9 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
     private fun loseLife() {
         removeAppBar()
-        if(liveCount <= 0){
+        if (liveCount <= 0) {
             showGameOver()
-        }
-        else{
+        } else {
             lives.text = "$liveCount"
         }
     }
@@ -300,6 +324,14 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     }
 
 
+    private fun restartGame() {
+        currentGameIndex = 0
+        liveCount = maxLives
+        hasLostLife = false
+        viewPager.currentItem = currentGameIndex
+        progressBar.progress = currentGameIndex + 1
+        recreate()
+    }
 
     private fun addAppBar() {
         bottomAppBarContainer.visibility = View.VISIBLE
@@ -333,8 +365,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     }
 
 
-
-    private fun removeAppBar(){
+    private fun removeAppBar() {
         bottomAppBarContainer.visibility = View.GONE
         val animate = TranslateAnimation(
             0f,  // fromXDelta
@@ -367,19 +398,25 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
 
     private fun showGameOver() {
         adapter.addFragment(GameOverFragment())
-        viewPager.currentItem = adapter.itemCount -1
+        viewPager.currentItem = adapter.itemCount - 1
         adapter.notifyItemInserted(adapter.itemCount - 1)
         removeGameUI()
     }
 
     private fun showEndScreen() {
-        //viewModel.setLevelCompletion(currentLevel, true)
-
-
         adapter.addFragment(EndFragment())
         viewPager.currentItem = currentGameIndex
         adapter.notifyItemInserted(currentGameIndex)
         removeGameUI()
+    }
+
+
+    private fun loadGameInformation() {
+
+        val currentGame = gameDataList[currentGameIndex]
+
+        Log.d("GameInformation", "Game Title: ${currentGame.game?.type}")
+
     }
 
 

@@ -1,0 +1,85 @@
+{
+  "texts": [
+    {
+      "title": "Plausibilitätsprüfung",
+      "media": {
+        "type": "image",
+        "source": "phishing_scam"
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Um nicht auf Phishing hereinzufallen, sollten eingehende Nachrichten zuerst auf ihre Plausibilität geprüft werden.</b>",
+        "Dafür gibt es mehrere Herangehensweisen:"
+      ],
+      "imageText": {
+        "text": [
+          "<b>Absender und Domain prüfen:</b>",
+          "• Vergleichen Sie die E-Mail-Adresse mit der echten Domain des Absenders. Achten Sie auf kleine Abweichungen, z. B. secuso.org vs. secuso-de.org.",
+          "&#128231; <b> Namen und Absender-Adressen können leicht gefälscht werden, daher sind diese allein kein verlässliches Kriterium.</b>"
+        ],
+        "imageSource": "idcard",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Sprache und Format der Nachricht:</b>",
+          "• Betrügerische Nachrichten enthalten oft Rechtschreib- und Grammatikfehler oder sind in einem unpassenden Stil geschrieben.",
+          "• Prüfen Sie das Design der Nachricht. Stimmt es mit offiziellen Vorlagen des angeblichen Absenders überein?",
+          "<span style='color:red;'• Seien sie besonders vorsichtig, wenn sie die Sprache der Nachricht nicht sprechen</span>",
+          "<b>Inhalt auf Plausibilität prüfen:</b>",
+          "• Werden Sie gebeten, sensible Daten wie Bankinformationen oder Passwörter preiszugeben? Seriöse Institutionen fordern dies selten über E-Mail oder SMS.",
+          "• Wird von Ihnen verlangt, Sicherheitsmaßnahmen wie einen Virenscanner zu deaktivieren? Solche Aufforderungen sind ein klarer Hinweis auf Betrug."
+        ],
+        "imageSource": "conversation",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Psychologische Manipulation:</b>",
+          "• Kriminelle setzen oft auf emotionale Tricks, wie z. B. Angst (Androhung von Kontosperrungen) oder Zeitdruck (sofortiges Handeln erforderlich).",
+          "• In manchen Fällen wird durch Social Engineering Vertrauen aufgebaut, bevor ein Angriff erfolgt.",
+          "<b>Aktualität der Themen als Warnsignal:</b>",
+          "• Betrüger greifen oft aktuelle Themen auf, wie z. B. rechtliche Änderungen (DSGVO) oder neue Sicherheitsstandards (Zwei-Faktor-Authentifizierung), um Glaubwürdigkeit vorzutäuschen.",
+          "• Solche Nachrichten wirken oft seriös, sollten jedoch kritisch hinterfragt werden."
+        ],
+        "imageSource": "manipulation",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Unabhängige Verifizierung:</b>",
+          "• Kopieren Sie verdächtige Textpassagen oder Absenderadressen und suchen Sie danach in Suchmaschinen. Oft gibt es Berichte über bekannte Phishing-Angriffe.",
+          "• Kontaktieren Sie die Organisation direkt über deren offizielle Kanäle, um die Echtheit der Nachricht zu überprüfen."
+        ],
+        "imageSource": "phone02",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Legitimität prüfen:</b>",
+          "• Nicht jede verdächtige Nachricht ist betrügerisch. Beispielsweise können Mahnungen oder Rückfragen von Institutionen legitim sein. Dennoch sollten solche Nachrichten genau geprüft werden."
+        ],
+        "imageSource": "checking",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Diese Schritte können helfen, betrügerische Nachrichten zuverlässig zu erkennen und Ihre Daten zu schützen. Bleiben Sie skeptisch, besonders bei unerwarteten Nachrichten mit Aufforderungen zu schnellem Handeln.</b>"
+        ],
+        "imageSource": "vision_right",
+        "imageFirst": true
+      }
+    }
+  ]
+}

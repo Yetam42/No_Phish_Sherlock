@@ -13,7 +13,7 @@ import org.json.JSONObject
  * Diese Klasse verarbeitet den gebenen String bei der Funktion parse() in eine Liste mit JsonTextData Objekten
  * Diese können dann von den anderen Klassen verwendet werden
  */
-class JsonTextParser<AssetManager> {
+class JsonTextParser {
 
     /**
      * Diese Funktion parst den übergebenen String und gibt eine Liste mit JsonTextData Objekten zurück
@@ -61,6 +61,13 @@ class JsonTextParser<AssetManager> {
                     null
                 }
 
+                val paragraphWithMedia = if (textObject.has("paragraphWithMedia")) {
+                    val paragraphWithMediaObject = textObject.getJSONArray("paragraphWithMedia")
+                    getParagraphWithMedia(paragraphWithMediaObject)
+                } else {
+                    null
+                }
+
 //                val imageText = null
 
                 Log.d("JsonTextParser", "ImageText: $imageText")
@@ -76,6 +83,10 @@ class JsonTextParser<AssetManager> {
             e.printStackTrace()
             emptyList()
         }
+    }
+
+    private fun getParagraphWithMedia(paragraphWithMediaObject: JSONArray): List<JsonTextData> {
+        return emptyList()
     }
 
     private fun getParagraphs(jsonArray: JSONArray): MutableList<String> {

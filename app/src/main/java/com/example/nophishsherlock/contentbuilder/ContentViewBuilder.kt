@@ -3,22 +3,23 @@ package com.example.nophishsherlock.contentbuilder
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.GestureDetector
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import com.example.nophishsherlock.data.ImageText
 import com.example.nophishsherlock.data.JsonTextData
+import com.example.nophishsherlock.data.ParagraphWithImage
 import com.google.android.material.textview.MaterialTextView
 
 
@@ -43,6 +44,7 @@ class ContentViewBuilder(private val context: Context) {
         val views = mutableListOf<View>()
 
         for (textData in textDataList) {
+            Log.d("Creating", "Creating view for text data: $textData")
             val scrollView = ScrollView(context).apply {
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT
@@ -58,16 +60,15 @@ class ContentViewBuilder(private val context: Context) {
                 setPadding(32, 16, 32, 16)
             }
 
-            Log.d("ContentViewBuilder", "Section: ${textData.section}")
             if (textData.section != null) {
                 layout.addView(createTextView(textData.section, 14f))
 
             }
 
 
-            //layout.addView(createTextView(instruction.title, 20f))   würde titel hinzufügen
             if (textData.paragraphs != null) {
                 for (paragraph in textData.paragraphs) {
+                    Log.d("Long", paragraph)
                     layout.addView(createTextView(paragraph, 16f))
                 }
             }
@@ -93,15 +94,90 @@ class ContentViewBuilder(private val context: Context) {
                 layout.addView(createTextViewWithImage(imageText, 16f))
             }
 
+            textData.paragraphWithMedia?.let { paragraphWithMedia ->
+                layout.addView(createParagraphWithMedia(paragraphWithMedia))
+            }
 
-            scrollView.addView(layout)
-            views.add(scrollView)
+
+            //scrollView.addView(layout)
+            views.add(layout)
 
         }
 
         return views
     }
 
+
+    private fun createParagraphWithMedia(paragraphWithMedia: List<ParagraphWithImage>): LinearLayout {
+        val layout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+        }
+
+        val layoutParam = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+        )
+        layout.layoutParams = layoutParam
+
+
+        for (textData in paragraphWithMedia) {
+
+            if (textData.paragraphs != null) {
+                for (paragraph in textData.paragraphs) {
+                    layout.addView(createTextView(paragraph, 16f))
+                }
+            }
+
+            if (textData.media2 == null) {
+                textData.media?.let { media ->
+                    when (media.type) {
+                        "video" -> {
+                            layout.addView(createVideo(media.source))
+                            layout.addView(createTextView(media.description, 14f))
+                        }
+
+                        "image" -> {
+                            layout.addView(createImageView(media.source))
+                            layout.addView(createTextView(media.description, 14f))
+                        }
+
+                        else -> {}
+                    }
+                }
+            } else {
+                val imageLayout = LinearLayout(context).apply {
+                    orientation = LinearLayout.HORIZONTAL
+                }
+
+                val imageParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT
+                )
+
+                imageLayout.layoutParams = imageParams
+
+                val image1 = textData.media
+                val image2 = textData.media2
+
+
+
+                if (image1 != null) {
+                    imageLayout.addView(createImageView(image1.source))
+                    //imageLayout.addView(createTextView(image1.description, 14f))
+                }
+
+                if (image2 != null) {
+                    imageLayout.addView(createImageView(image2.source))
+                    imageLayout.addView(createTextView(image2.source, 14f))
+                }
+
+                layout.addView(imageLayout)
+            }
+        }
+
+
+        return layout
+    }
 
     /**
      * Diese Funktion erstellt den TextView
@@ -116,6 +192,14 @@ class ContentViewBuilder(private val context: Context) {
             this.text = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
             this.textSize = textSize
             setPadding(0, 0, 0, 8)
+
+            if (text.contains("href")) {
+                this.movementMethod = LinkMovementMethod.getInstance()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    this.tooltipText = "Hier downloaden"
+                }
+            }
+
         }
     }
 
@@ -125,36 +209,42 @@ class ContentViewBuilder(private val context: Context) {
             orientation = LinearLayout.HORIZONTAL
         }
 
-        val layoutParam = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-        )
-        layout.layoutParams = layoutParam
-
         val textParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2f)
 
-        val textView = createTextView(text.text.toString(), textSize)
-        textView.layoutParams = textParams
 
+        val textLayout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+        }
+        for (line in text.text) {
+            val textView = createTextView(line, textSize)
+            textLayout.addView(textView)
+        }
+
+        textLayout.layoutParams = textParams
+
+
+        //Image wird erstellt
         val imageParams =
-            LinearLayout.LayoutParams(0, textView.maxHeight, 1f)
+            LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
 
         val imageView = createImageView(text.imageSource)
         imageView.layoutParams = imageParams
         imageView.scaleType = ImageView.ScaleType.CENTER_INSIDE
 
-        if (text.imageFirst) {
+        imageView.setPadding(10, 0, 10, 0)
 
+        if (text.imageFirst) {
             layout.addView(imageView)
-            layout.addView(textView)
+            layout.addView(textLayout)
         } else {
-            layout.addView(textView)
+            layout.addView(textLayout)
             layout.addView(imageView)
         }
 
         return layout
 
     }
+
 
     /**
      * Diese Funktion erstellt die ImageView
@@ -163,26 +253,25 @@ class ContentViewBuilder(private val context: Context) {
      * @return ImageView mit Bild
      */
     private fun createImageView(imageUrl: String): ImageView {
+        Log.d("ImageView", "Creating image view for URL: $imageUrl")
         val imageId = context.resources.getIdentifier(imageUrl, "drawable", context.packageName)
         val imageView = ImageView(context)
         imageView.setImageResource(imageId)
-        imageView.layoutParams = LinearLayout.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT, 400
-        ).apply {
-            //setMargins(0, 8, 0, 0)
-        }
-        imageView.scaleType = ImageView.ScaleType.CENTER_CROP
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT, // Set initial width to 0
+            400
+        )
+        layoutParams.weight = 1f // Assign equal weight to each image
+
+        imageView.layoutParams = layoutParams
+        imageView.scaleType = ImageView.ScaleType.FIT_CENTER
         imageView.tag = imageUrl
         return imageView
     }
 
 
     private fun createVideo(videoUrl: String): PlayerView {
-        Log.d("VideoView", "Creating video view for URL: $videoUrl")
         val videoUri = Uri.parse("android.resource://${context.packageName}/raw/example")
-        Log.d("VideoView", "Video URI: $videoUri")
-
-        var isFullscreen = false
 
         // Create ExoPlayer instance
         val player = ExoPlayer.Builder(context).build()
@@ -226,63 +315,4 @@ class ContentViewBuilder(private val context: Context) {
     }
 
 
-    /**
-     * Diese Funktion erstellt den VideoView
-     *
-     * @param videoUrl das Video was eingefügt werden soll
-     * @return VideoView mit Video
-     */
-    private fun createVideoView(videoUrl: String): VideoView {
-        Log.d("VideoView", "Creating video view for URL: $videoUrl")
-        val videoId = context.resources.getIdentifier(videoUrl, "raw", context.packageName)
-        val videoUri = Uri.parse("android.resource://${context.packageName}/raw/$videoId")
-        Log.d("VideoView", "Video URI: $videoUri")
-        val videoView = VideoView(context)
-        videoView.setVideoURI(videoUri)
-        videoView.tag = videoUri
-
-
-        videoView.layoutParams = LinearLayout.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT, 400
-        ).apply {
-            setMargins(0, 16, 0, 16)
-
-        }
-
-
-        gestureDetector =
-            GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-                override fun onDoubleTap(e: MotionEvent): Boolean {
-                    openFullscreenVideo(videoView)
-                    return true
-                }
-
-                override fun onSingleTapUp(e: MotionEvent): Boolean {
-                    if (videoView.isPlaying) videoView.pause() else videoView.start()
-                    return true
-                }
-            })
-
-        videoView.setOnTouchListener { _, event ->
-            gestureDetector.onTouchEvent(event)
-            true
-        }
-
-        return videoView
-    }
-
-    /**
-     * öffnet das Video im Vollbild
-     *
-     * @param videoView das Video was geöffnet werden soll
-     */
-    private fun openFullscreenVideo(videoView: VideoView) {
-        val videoUri = videoView.tag as? Uri
-        if (videoUri != null) {
-            val intent = Intent(context, FullscreenVideoActivity::class.java)
-            intent.putExtra("video_uri", videoUri.toString())
-            intent.putExtra("video_position", videoView.currentPosition)
-            context.startActivity(intent)
-        }
-    }
 }

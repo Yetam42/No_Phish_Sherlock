@@ -1,0 +1,106 @@
+{
+  "game": [
+    {
+      "title": "Drag und Drop Aufgabe",
+      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung",
+      "game": {
+        "type": "dragAndDrop",
+        "content": [
+          {
+            "targetNames": [
+              "nicht relevant",
+              "relevant"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "https://fb.me/starbucks",
+                "http://www.kit.edu/kit/organisation.php",
+                "https://tinyurl.com/y2yzjwwt",
+                "https://deref-gmx.com/mail/client/ZNN8EkHcCqw/dereferrer/?redirectUrl=https%3A%2F%2Fkit.edu%2F"
+              ],
+              "2": [
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Drag und Drop Aufgabe",
+      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung",
+      "game": {
+        "type": "dragAndDrop",
+        "content": [
+          {
+            "targetNames": [
+              "nicht relevant",
+              "relevant"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "https://twitter.com/kitkarlsruhe?lang=de",
+                "https://s.kit.edu/kastel",
+                "https://www.dropbox.com/s/cxndc6731hgr35m/NoPhish%20Poster%2007-10-2019.pdf?dl=0",
+                "https://www.scc.kit.edu/"
+              ],
+              "2": [
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Richtig oder falsch",
+      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "www.host547.com",
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "title": "Richtig oder falsch",
+      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "www.s.kit.edu",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Richtig oder falsch",
+      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "https://s.kit.edu/it-sicherheit.betrueg-nachrichten.poster",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Richtig oder falsch",
+      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "game": {
+        "type": "rightOrWrong",
+        "content": [
+          {
+            "statement": "https://www.host547.com/shopping-total.de/software?id?121232131142",
+            "isCorrect": true
+          }
+        ]
+      }
+    }
+  ]
+}

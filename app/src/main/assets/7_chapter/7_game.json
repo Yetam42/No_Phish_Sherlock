@@ -1,0 +1,70 @@
+{
+  "game": [
+    {
+      "title": "Drag und Drop aufgabe Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDropLayout",
+        "content": [
+          {
+            "targetNames": [
+              "betrügerisch \n Webadresse",
+              "legitime \n Webadresse"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "https://www.arnazon.de/WerkzeugkofferWerkzeugaufbewahrung/b?node=2077179031",
+                "https://de.vvikipedia.de/wiki/Karlsruher_Institut_f%C3%BCr_Technologie",
+                "https://www.de-webpayment.com/https://paypal.com/mpp/features/login"
+              ],
+              "2": [
+                "https://link.springer.com/signup-login?previousUrl=%2F",
+                "https://www.computerbild.de/artikel/cb-News-Sicherheit-Volksbank-Phishing-Bankdaten-19823699.html"
+              ]
+            },
+            "itemToOrganisation": {
+              "https://www.arnazon.de/WerkzeugkofferWerkzeugaufbewahrung/b?node=2077179031": "Amazon",
+              "https://de.vvikipedia.de/wiki/Karlsruher_Institut_f%C3%BCr_Technologie": "Wikipedia",
+              "https://www.de-webpayment.com/https://paypal.com/mpp/features/login": "PayPal",
+              "https://link.springer.com/signup-login?previousUrl=%2F": "Springer",
+              "https://www.computerbild.de/artikel/cb-News-Sicherheit-Volksbank-Phishing-Bankdaten-19823699.html": "Computerbild"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Drag und Drop aufgabe Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDropLayout",
+        "content": [
+          {
+            "targetNames": [
+              "betrügerisch \n Webadresse",
+              "legitime \n Webadresse"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "https://www.bibliothek.kit.edu.springer-acm-ieee.com/cms/open-access.php",
+                "https://www.amazzoon.de/uas/request-password-reset?trk=uno-reg-guest-home-forgot-password",
+                "https://www.mein-paketsrevice.de/de/category/_kaffeevollautomaten-459555.html"
+              ],
+              "2": [
+                "https://www.youtube.com/channel/UC6AqaL6fH91U5YhyUCI0ZOQ",
+                "https://www.verbraucherzentrale.de/wissen/digitale-welt/apps-und-software/die-wahren-kosten-von"
+              ]
+            },
+            "itemToOrganisation": {
+              "https://www.bibliothek.kit.edu.springer-acm-ieee.com/cms/open-access.php": "KIT",
+              "https://www.amazzoon.de/uas/request-password-reset?trk=uno-reg-guest-home-forgot-password": "Amazon",
+              "https://www.mein-paketsrevice.de/de/category/_kaffeevollautomaten-459555.html": "MediaMarkt",
+              "https://www.youtube.com/channel/UC6AqaL6fH91U5YhyUCI0ZOQ": "YouTube",
+              "https://www.verbraucherzentrale.de/wissen/digitale-welt/apps-und-software/die-wahren-kosten-von": "Verbraucherzentrale"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

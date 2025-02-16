@@ -1,0 +1,130 @@
+{
+  "texts": [
+    {
+      "section": "1/8",
+      "title": "Tricks: Kleine Abweichungen im Wer-Bereich",
+      "paragraphs": [
+        "Ein weiterer Ansatz von Kriminellen, um Sie hinters Licht zu führen, ist es, einen Wer-Bereich zu registrieren, der bis auf kleine Abweichungen identisch zu dem tatsächlichen Wer-Bereich ist. Um diese zu erkennen, müssen Sie genau hinschauen.",
+        "Mit dieser Art des Angriffs beschäftigen wir uns in diesem Kapitel. Sie werden staunen, was sich Kriminelle so alles einfallen lassen.",
+        "Damit Sie diese Abweichungen auch alle erkennen können, ist es zunächst wichtig, noch etwas über die möglichen Zeichen im Wer-Bereich zu erfahren:",
+        "Verwendet werden können nur kleine Buchstaben und Zahlen sowie der Bindestrich (-) aber keine anderen Sonderzeichen. Das hat z. B. folgende Konsequenzen:",
+        "• KIT wird zu kit.edu",
+        "• Shopping Total kann entweder shoppingtotal verwenden oder shopping-total; ein Leerzeichen ist aber nicht möglich",
+        "• 1&1 muss das Sonderzeichen ausschreiben z.B. 1und1.de oder 1-und-1.de",
+        "• Kommt in dem Web-Bereich ein großes „O“ vor, dann muss das die Zahl Null sein, weil Großbuchstaben im Wer-Bereich nicht möglich sind",
+        "• Früher waren Umlaute nicht möglich. Entsprechend wurde z.B. muenchen.de verwendet. Einige haben inzwischen umgestellt, aber nicht alle.",
+        "Im Wesentlichen können drei Arten der Abweichung unterschieden werden. Diese werden im Folgenden erläutert."
+      ]
+    },
+    {
+      "section": "2/8",
+      "title": "Tricks: Kleine Abweichungen im Wer-Bereich",
+      "paragraphs": [
+        "Der erste Trick: Buchstabendreher werden im Wer-Bereich eingebaut, z.B.",
+        "• aus microsoft.com wird mircosoft.com",
+        "• aus springer.de wird sprniger.com",
+        "• aus bauernmarkt-total.de wird bauenrmarkt-total.de oder baurenmarkt-total.de",
+        "Schauen Sie also die wichtigsten zwei Blöcke der Webadresse, den Wer-Bereich, in Ruhe und ganz genau an.",
+        ""
+      ],
+      "media": {
+        "type": "video",
+        "description": "URL-auseinanderziehen-2.mp4",
+        "source": "example"
+      }
+    },
+    {
+      "section": "3/8",
+      "title": "Tricks: Kleine Abweichungen im Wer-Bereich",
+      "paragraphs": [
+        "Der zweite Trick: Kleine Rechtschreibfehler werden im Wer-Bereich eingebaut, z.B.",
+        "• aus amazon.de wird amazzon.de",
+        "• aus google.com wird googel.com",
+        "• aus bauernmarkt-total.de wird bauernmarkt-totall.de",
+        "• aus shopping-total.de wird schopping-totall.de",
+        "• aus facebook.de wird facebock.de",
+        "Dies ist gerade bei Firmennamen schwer zu erkennen, vor allem wenn diese englisch ausgesprochen werden.",
+        "Auch auf die Gefahr hin, dass wir uns wiederholen ☺: Solche Änderungen erkennen Sie i.d.R. nur, wenn Sie sich Zeit nehmen und Buchstabe für Buchstabe lesen."
+      ]
+    },
+    {
+      "section": "4/8",
+      "title": "Tricks: Kleine Abweichungen im Wer-Bereich",
+      "paragraphs": [
+        "Der dritte Trick: Buchstaben werden im Wer-Bereich durch ähnlich aussehende Buchstaben ersetzt, z.B.",
+        "• aus amazon.de wird arnazon.de",
+        "• aus deutschland-wetter.de wird deutschland-vvetter.de",
+        "• aus wetter-deutschland.de wird wetter-cleutschland.de",
+        "• aus paypal.com wird paypa1.com",
+        "• aus sparkasse-duesseldorf.de wird sparkasse-duesselclorf.de Prinzip verstanden?",
+        "Übrigens, Forscher haben gezeigt, dass geübte Leserinnen und Leser bekannte Wörter nicht Buchstabe für E-Mail einzeln lesen sondern in Kombniation wahrnehenen. Daher ist es besnonders wicln- tig, dass Sie Buchstabe für Buchsabe lessen, wenn Sie den Wer-Berich überpüfen - gemerkt :-)",
+        "",
+        "Vielleicht erscheinen Ihnen die folgenden Übungen als solche einfach. Sie sollten aber nicht vergessen: In diesen Übungen ist Ihr primäres Ziel die Prüfung von Nachrichten oder Webadressen. Im realen Leben ist Ihr primäres Ziel die effektive und effiziente Erledigung Ihrer Arbeit, wozu das Abarbeiten von Nachrichten (insbesondere E-Mails) zählt.",
+        "Daher auch im Alltag: Wer-Bereiche Buchstabe für Buchstabe lesen damit Sie auch solche gut gemachten Nachrichten erkennen:",
+        "[Image of Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste.]"
+      ],
+      "media": {
+        "type": "image",
+        "description": "Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste.",
+        "source": "data_thief"
+      }
+    },
+    {
+      "section": "5/8",
+      "title": "Nur zu erkennen, wenn Wer-Bereich bekannt",
+      "paragraphs": [
+        "Leider gibt es noch drei weitere Kategorien an Tricks, die Kriminelle anwenden und die Ihnen die Plausibilitätsprüfung des Wer-Bereichs erschweren. Genau genommen, setzt eine Erkennung dieser Tricks voraus, dass Sie den tatsächlichen Wer-Bereich kennen.",
+        "Die Kategorien sind:",
+        "• Der Wer-Bereich wird um einen oder mehrere Begriffe erweitert oder gekürzt.",
+        "• Der Wer-Bereich wird um ein oder mehrere Zeichen erweitert oder gekürzt.",
+        "• Der rechte Teil des Wer-Bereichs (nach dem Punkt) wird verändert.",
+        "Der entsprechend leicht abgewandelte Wer-Bereich wird von Kriminellen registriert."
+      ]
+    },
+    {
+      "section": "6/8",
+      "title": "Nur zu erkennen, wenn Wer-Bereich bekannt",
+      "paragraphs": [
+        "Ein Trick von Kriminellen ist es, den Wer-Bereich links des Punktes (also z.B. bei gmail.com wird gmail verändert) dahin gehend zu verändern, dass Begriffe hinzugefügt oder entfernt werden, insbesondere auch vertrauenserweckende Begriffe.",
+        "Zum Beispiel würden Sie einen der folgenden Wer-Bereiche sehen:",
+        "• amazon-sicher.de statt amazon.de",
+        "• ebay-kaufen.de statt ebay.de",
+        "• shopping.de statt stopping-total.de",
+        "• kit-de.edu statt kit.edu",
+        "Ohne zu wissen, was der wirkliche Wer-Bereich ist, kann leider nicht entschieden werden, ob der Wer-Bereich vertrauenswürdig ist oder nicht. Der Wer-Bereich erscheint erst einmal plausibel.",
+        "Hinweis: Das Vorkommen von mehreren Begriffen im Wer-Bereich bedeutet nicht zwangsweise, dass es sich um eine gefährliche Webadresse handelt (z. B. sparkasse-karlsruhe.de gehört der Sparkasse in Karlsruhe). Eine Erweiterung des Namens der Organisation weist nicht zwangsläufig auf eine gefährliche Webadresse hin. So gehört kit-shop.de dem KIT (eigentlich kit.edu).",
+        "Ein weiterer Trick von Kriminellen ist es, den linken Block des Wer-Bereichs dahin gehend zu verändern, dass Zeichen – insbesondere Bindestriche - eingefügt oder entfernt werden.",
+        "Zum Beispiel würden Sie dann einen der folgenden Wer-Bereiche sehen:",
+        "• g-mail.com statt gmail.com",
+        "• google-mail.com statt googlemail.com",
+        "• sparkassekarlsruhe.de statt sparkasse-karlsruhe.de",
+        "• k-i-t.edu statt kit.edu",
+        "• amazon24-7.de statt amazon.de",
+        "In beiden Fällen können Sie den Wer-Bereich nur beurteilen, wenn Sie den tatsächlichen Wer-Bereich kennen. Wenn dies nicht der Fall ist, können Sie diese Fälle nur beurteilen, wenn Sie weitere Informationen einholen, z.B. mittels einer Suche der Webadresse oder des Wer-Bereichs in einer Suchmaschine oder indem Sie die Absenderin oder den Absender über einen anderen Kanal und Ihnen bekannte Kontaktdaten kontaktieren.",
+        "Alternativ können Sie in solchen Situationen (diese sollten nicht besonders oft vorkommen) den Wer-Bereich, der Ihnen bekannt ist, selbst in den Browser eingeben (oder über die Favoriten aufrufen) und versuchen, die Informationen aus der Nachricht so auf der Webseite zu finden. Das dauert … das ist uns auch klar… aber so sind Sie auf der sicheren Seite. Und alles ist besser als Schadsoftware auf dem eigenen Gerät zu haben ☺.",
+        "Oder Sie kontaktieren das BSI."
+      ]
+    },
+    {
+      "section": "7/8",
+      "title": "Nur zu erkennen, wenn Wer-Bereich bekannt",
+      "paragraphs": [
+        "Sicherlich ist Ihnen schon aufgefallen, dass der zweite Teil des Wer-Bereichs unterschiedlich sein kann: z.B. facebook.com, amazon.de, kit.edu. Das nutzen auch Kriminelle aus und versuchen dann z.B. kit.com oder kit.cc zu registrieren und Sie so entsprechend in die Irre zu führen.",
+        "Sprich: es ist wichtig, dass Sie sich beide Blöcke des Wer-Bereichs anschauen und kennen. Wenn Sie Zweifel haben, holen Sie lieber analog zu den beiden Fällen auf der letzten Seite weitere Informationen ein oder nutzen den Ihnen bekannten Wer-Bereich."
+      ]
+    },
+    {
+      "section": "8/8",
+      "title": "Nur zu erkennen, wenn Wer-Bereich bekannt",
+      "paragraphs": [
+        "Hier nochmal eine Zusammenfassung über die Prüfungen bezogen auf potentiell betrügerische Nachrichten mit Links:",
+        "(1) Identifizieren der Webadresse hinter dem Link",
+        "(2) Identifizieren des Wer-Bereichs der Webadresse",
+        "(3) Prüfen der Plausibilität des Wer-Bereichs und zwar nur des Wer-Bereichs und nicht der Angaben davor oder danach",
+        "(4) Prüfen, ob der Wer-Bereich korrekt geschrieben ist",
+        "(5) Wenn der Wer-Bereich auf einen Sonderfall hinweist, dann nutzen Sie die entsprechenden Hilfsmittel (z. B. Kurz-URL auflösen)",
+        "(6) Wenn der Wer-Bereich plausibel ist, Sie sich aber nicht sicher sind, ob dieser korrekt ist, holen Sie weitere Informationen ein, z. B. mittels einer Suchmaschine"
+      ]
+    }
+  ]
+}

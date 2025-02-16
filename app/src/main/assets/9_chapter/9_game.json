@@ -1,0 +1,94 @@
+{
+  "game": [
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Rechnung.osuc",
+            "word": "osuc",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Proble.Loesung.pdf",
+            "word": "pdf",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Rechnung03.pdf.exe",
+            "word": "exe",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Rechnung-pdf.exe",
+            "word": "exe",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Rechnung420-pdf.exe",
+            "word": "exe",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Textauswahl Aufgabe",
+      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "game": {
+        "type": "pickwrong",
+        "content": [
+          {
+            "text": "Bezahlung-exe.pdf",
+            "word": "pdf",
+            "isCorrect": true,
+            "feedback": "Richtig: Das ist der Datentyp"
+          }
+        ]
+      }
+    }
+  ]
+}

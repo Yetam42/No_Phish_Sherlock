@@ -1,0 +1,108 @@
+{
+  "texts": [
+    {
+      "title": "Abweichungen im Wer-Bereich",
+      "media": {
+        "type": "image",
+        "source": "authentication"
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Kriminelle nutzen oft subtile Veränderungen in Webadressen, um vertrauenswürdige Seiten zu imitieren.</b> Lernen Sie, wie Sie solche Manipulationen erkennen."
+      ]
+    },
+    {
+      "paragraphs": [
+        "<b>Basiswissen zum Wer-Bereich</b>",
+        "• Es sind nur kleine Buchstaben, Zahlen und Bindestriche erlaubt",
+        "• Sonderzeichen, Großbuchstaben und Leerzeichen gibt es nicht",
+        "z.B.",
+        "• KIT wird zu kit.edu (keine Großbuchstaben)",
+        "• Shopping Total wird zu shopping-total (kein Leerzeichen)",
+        "• 1&1 wird zu 1-und-1 (keine Sonderzeichen)",
+        "• &#128231; <b>Mehrere Arten der subtilen Abweichungen möglich</b>"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 1: Buchstabendreher</b>",
+          "z.B.",
+          "• microsoft.com wird zu <i>mircosoft.com</i>",
+          "• springer.de wird zu <i>sprniger.com</i>"
+        ],
+        "imageSource": "turn_left_icon",
+        "imageFirst": true
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 2: Rechtschreibfehler</b>",
+          "z.B.:",
+          "• amazon.de wird zu <i>amazzon.de</i>",
+          "• google.com wird zu <i>googel.com</i>"
+        ],
+        "imageSource": "cross",
+        "imageFirst": false
+      }
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 3: Ähnlich aussehende Buchstaben</b>",
+          "z.B.",
+          "• amazon.de wird zu <i>arnazon.de</i>",
+          "• paypal.com wird zu <i>paypa1.com</i>"
+        ],
+        "imageSource": "filter",
+        "imageFirst": true
+      }
+    },
+    {
+      "paragraphs": [
+        "Studien zeigen, dass wir bekannte Wörter oft als Ganzes wahrnehmen ohne auf Details zu achten. Sehen Sie sich daher Webadressen gründlich an und <b>prüfen Sie Buchstabe für Buchstabe, um Manipulationen zu erkennen.</b>\n\n",
+        "Bei manchen Formen der Manipulation vom Wer-Bereich sind Vorkenntnisse nötig, um diese zu erkennen:"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Trick 4: Hinzufügen/Entfernen von Begriffen im Wer-Bereich</b>",
+          "• z.B.:",
+          "• <i>amazon-sicher.de</i> statt amazon-sicher.de",
+          "• <i>shopping.de</i> statt stopping-total.de"
+        ],
+        "imageSource": "delete",
+        "imageFirst": false
+      }
+    },
+    {
+      "paragraphs": [
+        "<b>Trick 5: Veränderung von Zeichen</b>",
+        "• vor allem bei Bindestrichen",
+        "z.B.:",
+        "• <i>google-mail.com</i> statt googlemail.com",
+        "• <i>sparkassekarlsruhe.de</i> statt sparkasse-karlsruhe.de"
+      ]
+    },
+    {
+      "paragraphs": [
+        "<b>Trick 6: Änderung der Endung nach dem Punkt</b>",
+        "z.B.:",
+        "• <i>kit.com</i> statt kit.edu",
+        "• <i>amazon.io</i> statt amazon.de"
+      ]
+    },
+    {
+      "imageText": {
+        "text": [
+          "<b>Bei Unsicherheiten suchen Sie – bevor Sie auf den Link klicken – die Webadresse in einer Suchmaschine oder besuchen Sie die Webseite direkt, indem Sie die Adresse manuell in den Browser eingeben.</b>"
+        ],
+        "imageSource": "vision_left",
+        "imageFirst": true
+      }
+    }
+  ]
+}

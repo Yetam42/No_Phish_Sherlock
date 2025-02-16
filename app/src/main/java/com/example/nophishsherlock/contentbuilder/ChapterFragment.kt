@@ -1,4 +1,4 @@
-package com.example.nophishsherlock.game.helper
+package com.example.nophishsherlock.contentbuilder
 
 import android.os.Bundle
 import android.util.Log
@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.example.nophishsherlock.contentbuilder.ContentViewBuilder
 import com.example.nophishsherlock.data.JsonTextData
 import com.example.nophishsherlock.databinding.FragmentLongscreenBinding
 
-class LongChapterFragment : Fragment() {
+class ChapterFragment : Fragment() {
 
     private var gameViewButton: Button? = null
     private lateinit var contentContainer: LinearLayout
@@ -43,6 +42,8 @@ class LongChapterFragment : Fragment() {
 
             if (content != null) {
                 for (c in content) {
+                    Log.d("LongChapterFragment", "Adding $c to content container")
+
                     contentContainer.addView(c)
                 }
             }

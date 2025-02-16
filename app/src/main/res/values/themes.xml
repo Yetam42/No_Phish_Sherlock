@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.NoPhishSherlock" parent="Theme.Material3.DayNight">
+    <style name="Theme.NoPhishSherlock" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
 
         <!-- Prevent layout from going behind the AppBar -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
+
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 </resources>

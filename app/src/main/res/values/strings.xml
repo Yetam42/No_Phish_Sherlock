@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">No Phish Sherlock</string>
+    <string name="scenario_chapter_10">"**Szenario: Nachrichten-Analyse**
+
+Um Nachrichten mit gefährlichem Inhalt von echten Nachrichten zu unterscheiden, analysieren Sie Beispiele in unterschiedlichen Kontexten.
+
+**Ihre Identität:**
+*   Name: Martin Müller
+*   E-Mail-Adressen: martin.mueller.77@web.de, martin.mueller.77@posteo.de
+*   Sprachen: Deutsch, Englisch
+
+**Ihr Arbeitsumfeld:**
+*   Vorgesetzter: Wolfgang Lange (wolfgang.lange.54@web.de)
+*   Arbeitskollege: Jonas Schmidt (jonas.schmidt.77@web.de, jonas.schmidt.77@posteo.de)
+
+**Technische Hinweise:**
+*   Formate ".pdf" und ".txt" werden als "nicht gefährlich" behandelt.
+*   Berücksichtigen Sie verschiedene Absender, Diensteanbieter, Betriebssysteme und Programme."</string>
 </resources>
