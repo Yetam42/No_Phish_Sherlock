@@ -3,7 +3,6 @@ package com.example.nophishsherlock
 import android.app.Dialog
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,21 +15,28 @@ import com.google.gson.Gson
 
 class InfoFragment : BottomSheetDialogFragment() {
 
-//    private lateinit var gestureDetector: GestureDetector
-//    private val parser = JsonTextParser<Any>()
 
 
     private var infoText: String? = null
+    private var contextText: CharSequence? = null
     private val tutorialLocation = "info/tutorial.json"
 
     companion object {
         private const val ARG_INFO_TEXT = "infoText"
+        private const val ARG_CONTEXT_TEXT = "contextText"
 
-        // Static factory method to create a new instance of InfoFragment with text
         fun newInstance(text: String): InfoFragment {
             val fragment = InfoFragment()
             val args = Bundle()
             args.putString(ARG_INFO_TEXT, text)
+            fragment.arguments = args
+            return fragment
+        }
+
+        fun newContextInstance(text: CharSequence): InfoFragment {
+            val fragment = InfoFragment()
+            val args = Bundle()
+            args.putCharSequence(ARG_CONTEXT_TEXT, text)
             fragment.arguments = args
             return fragment
         }
@@ -55,6 +61,8 @@ class InfoFragment : BottomSheetDialogFragment() {
 
         arguments?.let {
             infoText = it.getString(ARG_INFO_TEXT)
+            contextText = it.getString(ARG_CONTEXT_TEXT)
+
         }
         return view
     }
@@ -70,16 +78,17 @@ class InfoFragment : BottomSheetDialogFragment() {
         val contentContainer = view.findViewById<LinearLayout>(R.id.contentContainer)
 
 
-//        for (i in 0 until 100) {
-//            val firstText = TextView(requireContext()).apply {
-//                text = infoText
-//            }
-//
-//            contentContainer.addView(firstText)
-//        }
+        if (infoText != null) {
+            addInfoText(contentContainer)
+        }
+        if (contextText != null) {
+            addContextText(contentContainer)
+        }
 
 
-        Log.d("InfoFragment", "infoText: $infoText")
+    }
+
+    private fun addInfoText(contentContainer: LinearLayout) {
         val tutorialMap = getTutorialText()
 
         var contentString = ""
@@ -89,8 +98,19 @@ class InfoFragment : BottomSheetDialogFragment() {
 
         val contentTextView = createTextView(contentString)
         contentContainer.addView(contentTextView)
+    }
 
+    private fun addContextText(contentContainer: LinearLayout) {
+        val contextTextView = createTextView(contextText!!)
+        contentContainer.addView(contextTextView)
+    }
 
+    private fun createTextView(text: CharSequence): TextView {
+        return TextView(requireContext()).apply {
+            this.text = text
+            this.setTextColor(resources.getColor(R.color.text_color))
+            this.textSize = 16f
+        }
     }
 
     private fun createTextView(text: String): TextView {
@@ -109,13 +129,11 @@ class InfoFragment : BottomSheetDialogFragment() {
                 .use { it.readText() }
             val tutorialData: TutorialData = gson.fromJson(jsonString, TutorialData::class.java)
             if (tutorialData.tutorial != null) {
-                Log.d("TutorialData", "Tutorial data found: $tutorialData")
                 for (tutorial in tutorialData.tutorial!!) {
                     val gameName = tutorial.game
                     val contentList = mutableListOf<String>()
                     for (value in tutorial.content!!) {
                         contentList.add(value)
-                        Log.d("TutorialData", "Added value: $value")
                     }
                     tutorialMap[gameName!!] = contentList
                 }

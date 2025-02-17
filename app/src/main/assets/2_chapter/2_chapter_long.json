@@ -4,97 +4,125 @@
       "section": "1/8",
       "title": "Plausibilitätsprüfungen",
       "paragraphs": [
-        "Einige Kriminelle geben sich beim Versenden ihrer betrügerischen Nachrichten nicht viel Mühe (sogenannte schlecht gemachte betrügerische Nachrichten).",
+        "Einige Kriminelle geben sich beim Versenden ihrer betrügerischen Nachrichten nicht viel Mühe (sogenannte <b>schlecht gemachte betrügerische Nachrichten</b>).",
         "Da sie diese an viele potentielle Opfer schicken, hoffen sie einfach, dass genügend Menschen in Eile sind und unüberlegt reagieren (z. B. eine Datei öffnen oder auf einen Link klicken), bevor sie sich die Nachricht genauer angesehen haben.",
-        "In diesem Kapitel wird erklärt, wie Sie solche schlecht gemachten betrügerischen Nachrichten erkennen können. Entsprechende einfache Plausibilitätsprüfungen werden Ihnen vorgestellt."
+        "In diesem Kapitel wird erklärt, wie Sie solche schlecht gemachten betrügerischen Nachrichten erkennen können. Entsprechende <b>einfache Plausibilitätsprüfungen</b> werden Ihnen vorgestellt."
       ]
     },
     {
       "section": "2/8",
       "title": "Plausibilitätsprüfungen",
-      "paragraphs": [
-        "Bei einer E-Mail geht es darum, dass geprüft wird, ob die E-Mail-Adresse zum Inhalt der E-Mail passt. Eine E-Mail, die beispielsweise vorgibt von Springer-Verlag zu sein, aber als Absender mx- sy@yahoo.com verwendet, sollte als unplausibel eingestuft werden und entsprechend entweder gelöscht oder gemeldet werden.",
-        "Gleiches gilt bei einer E-Mail, die vermeintlich von einem Mitarbeiter von SECUSO kommen soll, aber dann folgende Absender-Adresse hat: max.meyer@host-de.de",
-        "Bei der Beurteilung der Plausibilität der E-Mail-Adresse ist wichtig zu wissen, welches der relevante Bereich der E-Mail-Adresse ist. Der wichtige Bereich der E-Mail-Adresse sind die beiden letzten Blöcke, die durch einen Punkt getrennt sind.",
-        "Im Folgenden finden Sie einige Beispiel E-Mail-Adressen:",
-        "1. meyer@secuso.org",
-        "2. meyer@secuso.org.host-de.de",
-        "3. meyer@secuso-de.org",
-        "4. meyer@scc.secuso.org",
-        "5. de@max.meyer.cc",
-        "6. meyer@se-cu-so.org",
-        "7. max.meyer@seccuso.org",
-        "Nur im ersten und vierten Fall handelt es sich um eine Adresse von SECUSO. Alles andere könnten Kriminelle sich selbst überlegt und angelegt haben. Entsprechend wären dies keine plausiblen Absender. Dabei ist es wichtig diese letzten beiden Blöcke genau zu betrachten. Leichte Abwandlungen deuten bereits auf eine betrügerische Nachricht hin (wie in den Beispielen 6 und 7). Gleiches gilt für Erweiterungen wie in Beispiel 3 (von secuso.org nach secuso-de.org).",
-        "Entsprechend ist auch bei max.meyer@g-mail.com oder max.meyer@web.de als Absender unklar, wer da wirklich dahintersteckt. Viele Web-Mail-Anbieter erlauben es, für eine beliebige noch freie E- Mail-Adresse ein Benutzerkonto zu eröffnen. Daher sagt hier der Name vor dem „@“ Zeichen nahezu nichts aus.",
-        "Hier steht in der Absender-Adresse „host547.com“. Dies ist bei einer E- Mail, die angeblich von Mein Paketservice geschickt wurde unplausibel. Es handelt sich hierbei um eine betrügerische Nachricht.",
-        "Die Absenderinformationen können unterschiedlich dargestellt werden. Bei der E-Mail ist die E-Mail-Adresse die relevante Information. Immer häufiger zeigen Programme und Dienste jedoch nur noch den (vermeintlichen) Namen der Absenderin oder des Absenders an. Den anzuzeigenden Absender- namen kann jeder (nicht nur Kriminelle) in seinem E-Mail-Programm selbst angeben. Entsprechend ist diese Angabe noch einfacher für den Kriminellen zu fälschen als die Absender-E-Mail-Adresse selbst.",
-        "In Fall, dass nur der Name, nicht aber die E-Mail-Adresse angezeigt wird, kann z. B. das Führen des Mauszeigers über den Namen oder das Anklicken des Namens helfen, die (vermeintliche) E-Mail- Adresse des Absenders zu sehen.",
-        "Hinweis: „Vermeintlich“ deshalb, weil man diese E-Mail-Adresse auch oft einfach fälschen kann, wie wir Ihnen im ersten Kapitel gezeigt haben: Auch wenn hier eine plausible E-Mail-Adresse steht, können Sie nicht sicher sein, dass die E-Mail wirklich von diesem Absender kommt. Wenn die E-Mail- Adresse aber unplausibel ist, wissen Sie, dass es sich hierbei ziemlich sicher um eine betrügerische E-Mail handelt.",
-        "Hier sieht man die Absender-E-Mail-Adresse nicht. Sondern nur den Namen. Hier gilt es zunächst herauszufinden, wie man sich die Absender E-Mail-Adresse anzeigenlassen kann.",
-        "Bei anderen Diensten wie Skype oder WhatsApp gibt es keine E-Mail-Adresse. Dort wird der (vermeintliche) Name oder die Telefonnummer des Absenders angezeigt. Diese Angabe sollte genauso hinsichtlich der Plausibilität überprüft werden."
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Bei einer E-Mail geht es darum, dass geprüft wird, ob die <b>E-Mail-Adresse</b> zum Inhalt der E-Mail passt. Eine E-Mail, die beispielsweise vorgibt von Springer-Verlag zu sein, aber als Absender mx- sy@yahoo.com verwendet, sollte als unplausibel eingestuft werden und entsprechend entweder gelöscht oder gemeldet werden.",
+            "Gleiches gilt bei einer E-Mail, die vermeintlich <b>von einem Mitarbeiter von SECUSO</b> kommen soll, aber dann folgende Absender-Adresse hat: max.meyer@host-de.de",
+            "Bei der Beurteilung der <b>Plausibilität der E-Mail-Adresse</b> ist wichtig zu wissen, welches der relevante Bereich der E-Mail-Adresse ist. Der wichtige Bereich der E-Mail-Adresse sind die beiden letzten Blöcke, die durch einen Punkt getrennt sind.",
+            "Im Folgenden finden Sie einige Beispiel E-Mail-Adressen:",
+            "1. meyer@secuso.org",
+            "2. meyer@secuso.org.host-de.de",
+            "3. meyer@secuso-de.org",
+            "4. meyer@scc.secuso.org",
+            "5. de@max.meyer.cc",
+            "6. meyer@se-cu-so.org",
+            "7. max.meyer@seccuso.org",
+            "Nur im ersten und vierten Fall handelt es sich um eine Adresse von SECUSO. Alles andere könnten Kriminelle sich selbst überlegt und angelegt haben. Entsprechend wären dies keine plausiblen Absender. Dabei ist es wichtig diese letzten beiden Blöcke genau zu betrachten. Leichte Abwandlungen deuten bereits auf eine betrügerische Nachricht hin (wie in den Beispielen 6 und 7). Gleiches gilt für Erweiterungen wie in Beispiel 3 (von secuso.org nach secuso-de.org).",
+            "Entsprechend ist auch bei max.meyer@g-mail.com oder max.meyer@web.de als Absender unklar, wer da wirklich dahintersteckt. Viele Web-Mail-Anbieter erlauben es, für eine beliebige noch freie E- Mail-Adresse ein Benutzerkonto zu eröffnen. Daher sagt hier der Name vor dem „@“ Zeichen nahezu nichts aus.",
+            "Hier steht in der Absender-Adresse „host547.com“. Dies ist bei einer E- Mail, die angeblich von Mein Paketservice geschickt wurde unplausibel. Es handelt sich hierbei um eine betrügerische Nachricht."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_01"
+          }
+        },
+        {
+          "paragraphs": [
+            "Die Absenderinformationen können unterschiedlich dargestellt werden. Bei der E-Mail ist die E-Mail-Adresse die relevante Information. Immer häufiger zeigen Programme und Dienste jedoch nur noch den (vermeintlichen) Namen der Absenderin oder des Absenders an. Den anzuzeigenden Absender- namen kann jeder (nicht nur Kriminelle) in seinem E-Mail-Programm selbst angeben. Entsprechend ist diese Angabe noch einfacher für den Kriminellen zu fälschen als die Absender-E-Mail-Adresse selbst.",
+            "In Fall, dass nur der Name, nicht aber die E-Mail-Adresse angezeigt wird, kann z. B. das Führen des Mauszeigers über den Namen oder das Anklicken des Namens helfen, die (vermeintliche) E-Mail- Adresse des Absenders zu sehen.",
+            "Hinweis: „Vermeintlich“ deshalb, weil man diese E-Mail-Adresse auch oft einfach fälschen kann, wie wir Ihnen im ersten Kapitel gezeigt haben: Auch wenn hier eine plausible E-Mail-Adresse steht, können Sie nicht sicher sein, dass die E-Mail wirklich von diesem Absender kommt. Wenn die E-Mail- Adresse aber unplausibel ist, wissen Sie, dass es sich hierbei ziemlich sicher um eine betrügerische E-Mail handelt.",
+            "Hier sieht man die Absender-E-Mail-Adresse nicht. Sondern nur den Namen. Hier gilt es zunächst herauszufinden, wie man sich die Absender E-Mail-Adresse anzeigenlassen kann."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_02"
+          }
+        },
+        {
+          "paragraphs": [
+            "Bei anderen Diensten wie Skype oder WhatsApp gibt es keine E-Mail-Adresse. Dort wird der (vermeintliche) Name oder die Telefonnummer des Absenders angezeigt. Diese Angabe sollte genauso hinsichtlich der Plausibilität überprüft werden."
+          ]
+        }
       ]
     },
     {
       "section": "3/8",
       "title": "Plausibilitätsprüfungen",
-      "paragraphs": [
-        "Auch die folgenden Plausibilitätsprüfungen können Ihnen helfen:",
-        "(2) Sprechen Sie die Sprache, in der die Nachricht verfasst ist?",
-        "Wenn man der Sprache nicht fähig ist, dann sollte man besonders vorsichtig sein.",
-        "(3) Wenn die (vermeintliche) Absenderin oder der (vermeintliche) Absender eine Organisation bzw. ein Webdienst ist, haben Sie dort überhaupt ein Nutzerkonto? Falls ja, sind:",
-        "• Anrede,",
-        "• Stil und",
-        "• Design der Nachricht",
-        "so wie gewohnt?",
-        "Falls nein, wird in der E-Mail ein plausibler Grund genannt, warum diese Organisation Ihnen schreiben sollte?",
-        "[Image of Falscher Stil und Design vs. Original Nachricht]",
-        "(4) Kennen Sie die (vermeintliche) Absenderin oder den (vermeintlichen) Absender? Falls ja, passt:",
-        "• der Inhalt der Nachricht allgemein,",
-        "• die Anrede,",
-        "• das konkrete Thema und",
-        "• der Stil der Nachricht",
-        "zur (vermeintlichen) Absenderin oder zum (vermeintlichen) Absender?",
-        "Falls nein, wird in der E-Mail ein plausibler Grund genannt, warum diese Person Ihnen schreiben sollte?"
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Auch die folgenden Plausibilitätsprüfungen können Ihnen helfen:",
+            "(2) Sprechen Sie die Sprache, in der die Nachricht verfasst ist?",
+            "Wenn man der Sprache nicht fähig ist, dann sollte man besonders vorsichtig sein."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_03"
+          }
+        },
+        {
+          "paragraphs": [
+            "(3) Wenn die (vermeintliche) Absenderin oder der (vermeintliche) Absender eine Organisation bzw. ein Webdienst ist, haben Sie dort überhaupt ein Nutzerkonto? Falls ja, sind:",
+            "• Anrede,",
+            "• Stil und",
+            "• Design der Nachricht",
+            "so wie gewohnt?",
+            "Falls nein, wird in der E-Mail ein plausibler Grund genannt, warum diese Organisation Ihnen schreiben sollte?"
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_04"
+          }
+        },
+        {
+          "paragraphs": [
+            "(4) Kennen Sie die (vermeintliche) Absenderin oder den (vermeintlichen) Absender? Falls ja, passt:",
+            "• der Inhalt der Nachricht allgemein,",
+            "• die Anrede,",
+            "• das konkrete Thema und",
+            "• der Stil der Nachricht",
+            "zur (vermeintlichen) Absenderin oder zum (vermeintlichen) Absender?",
+            "Falls nein, wird in der E-Mail ein plausibler Grund genannt, warum diese Person Ihnen schreiben sollte?"
+          ]
+        }
       ]
     },
     {
       "section": "4/8",
       "title": "Plausibilitätsprüfungen",
-      "paragraphWithMedia": [
-        {
-          "paragraphs": [
-            "(5) Ist der Inhalt der Nachricht plausibel? Beispiele für nicht plausible Inhalte:",
-            "• Werden Sie aufgefordert, Sicherheits- mechanismen zu umgehen oder ganz auszuschalten, handelt es sich sicher um eine betrügerische Nachricht. Dies würden vertrauenswürdige Absender nicht tun. Beispiele hierfür sind:",
-            "• „Bitte deaktivieren Sie zunächst Ihren Virenscanner, damit Sie die Datei ohne Probleme ansehen und auch verändern können“.",
-            "• „Wenn Sie einen Virenscanner nutzen, kann es sein, dass eine Sicherheitswarnung nach dem Öffnen des Links im Browser an- gezeigt wird. Es handelt sich hier- bei um ein technisches Problem, was uns bereits bekannt ist. Falls das Problem bei Ihnen auch auf- tritt, deaktivieren Sie den Viren- scanner und versuchen Sie es er- neut.“",
-            "• „Mir ist bewusst, dass Sie nach der neuen Datenschutzgrundver- ordnung, keine Informationen über die Abwesenheit von Kolle-"
-          ],
-          "media": {
-            "type": "image",
-            "description": "Hier ein Beispiel, um zu zeigen, wie schwer es ist, die legitime Nachricht von der gut gemachten betrügerischen Nachricht zu unterscheiden.",
-            "source": "support"
-          },
-          "media2": {
-            "type": "image",
-            "description": "Hier ein Beispiel, um zu zeigen, wie schwer es ist, die legitime Nachricht von der gut gemachten betrügerischen Nachricht zu unterscheiden.",
-            "source": "data_thief"
-          }
-        },
-        {
-          "paragraphs": [
-            "[Image of Im Abschnitt \"Bitte beachten Sie\" werden Sie dazu aufge- forderte einen Sicherheitsmechanismus zu umgehen.]",
-            "gen geben dürfen. Um die dringende Terminabsprache mit den Vertretern des Ministeri- ums abschließen zu können, wäre es wichtig, wenn Sie mir die Verfügbarkeit von Herrn Müller und Frau Mayer für die nächsten zwei Wochen bitte zeitnah mitteilen. Vielen Dank für Ihre Unterstützung.“",
-            "• Beinhaltet die Nachricht Informationen, die eigentlich in Deutschland nicht elektronisch versendet werden, handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
-            "• Gerichtsbeschlüsse werden nicht per E-Mail verschickt und sind auch nicht per Link in ei- ner E-Mail abrufbar.",
-            "• Bußgeldbescheide werden auch nicht per E-Mail verschickt und sind auch nicht per Link in einer E-Mail abrufbar.",
-            "• Auch Ankündigungen von entsprechenden Bescheiden werden nicht elektronisch getä- tigt.",
-            "• Man wird in einer Nachricht um Informationen gebeten (z.B. diese direkt zurückzuschicken, auf einer Webseite einzugeben oder in der angehängten Datei einzutragen). Es handelt sich aber um Informationen, die dem angeblichen Absender vorliegen müssten. Hinzu kommt, dass vertrauenswürdige Organisation, diese nicht per (unverschlüsselter) E-Mail anfragen wür- den. Entsprechend handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
-            "• Die (vermeintliche) eigene Bank fragt nach Kontodaten.",
-            "• Die (vermeintliche) Personalabteilung fragt nach Adresse, Geburtsdatum, Vertragslauf- zeit und Gehaltseinstufung.",
-            "[Image of Die Nachricht ist unplausibel, weil die Informationen dem Unternehmen vorliegen müssen, wenn Sie dort Kunde sind. Hier versuchen Kriminelle Sie dennoch zu überreden, weil Sie Ihnen Angst machen, dass Sie 1000 Euro verlieren, wenn Sie nicht reagieren.]"
-          ]
-        }
-      ]
+      "imageText": {
+        "text": [
+          "(5) Ist der Inhalt der Nachricht plausibel? Beispiele für nicht plausible Inhalte:",
+          "• Werden Sie aufgefordert, Sicherheits- mechanismen zu umgehen oder ganz auszuschalten, handelt es sich sicher um eine betrügerische Nachricht. Dies würden vertrauenswürdige Absender nicht tun. Beispiele hierfür sind:",
+          "• „Bitte deaktivieren Sie zunächst Ihren Virenscanner, damit Sie die Datei ohne Probleme ansehen und auch verändern können“."
+        ],
+        "imageSource": "chapter2_05",
+        "imageFirst": true
+      },
+      "paragraphs": [
+        "• „Wenn Sie einen Virenscanner nutzen, kann es sein, dass eine Sicherheitswarnung nach dem Öffnen des Links im Browser an- gezeigt wird. Es handelt sich hier- bei um ein technisches Problem, was uns bereits bekannt ist. Falls das Problem bei Ihnen auch auf- tritt, deaktivieren Sie den Viren- scanner und versuchen Sie es er- neut.“",
+        "• „Mir ist bewusst, dass Sie nach der neuen Datenschutzgrundver- ordnung, keine Informationen über die Abwesenheit von Kollegen geben dürfen. Um die dringende Terminabsprache mit den Vertretern des Ministeri- ums abschließen zu können, wäre es wichtig, wenn Sie mir die Verfügbarkeit von Herrn Müller und Frau Mayer für die nächsten zwei Wochen bitte zeitnah mitteilen. Vielen Dank für Ihre Unterstützung.“",
+        "Beinhaltet die <b>Nachricht Informationen, die eigentlich in Deutschland nicht elektronisch versendet werden</b>, handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
+        "• Gerichtsbeschlüsse werden nicht per E-Mail verschickt und sind auch nicht per Link in ei- ner E-Mail abrufbar.",
+        "• Bußgeldbescheide werden auch nicht per E-Mail verschickt und sind auch nicht per Link in einer E-Mail abrufbar.",
+        "• Auch Ankündigungen von entsprechenden Bescheiden werden nicht elektronisch getä- tigt.",
+        "Man wird in einer Nachricht um <b>Informationen</b> gebeten (z.B. diese direkt zurückzuschicken, auf einer Webseite einzugeben oder in der angehängten Datei einzutragen). Es handelt sich aber um Informationen, <b>die dem angeblichen Absender vorliegen müssten</b>. Hinzu kommt, dass vertrauenswürdige Organisation, diese nicht per (unverschlüsselter) E-Mail anfragen wür- den. Entsprechend handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
+        "• Die (vermeintliche) eigene Bank fragt nach Kontodaten.",
+        "• Die (vermeintliche) Personalabteilung fragt nach Adresse, Geburtsdatum, Vertragslauf- zeit und Gehaltseinstufung."
+      ],
+      "media": {
+        "type": "image",
+        "source": "chapter2_06"
+      }
     },
     {
       "section": "5/8",
@@ -110,16 +138,28 @@
     {
       "section": "6/8",
       "title": "Plausibilitätsprüfungen",
-      "paragraphs": [
-        "Die Durchführung der Plausibilitätsprüfung wird in einigen betrügerischen Nachrichten dadurch erschwert, dass Kriminelle psychologische Tricks anwenden, z. B.:",
-        "• Erzeugen von Emotionen wie z. B. Angst (Kontosperrung wird angedroht, Androhung einer Geldstrafe, Informationen über tragisches Ereignis) oder Glücksgefühle (Gewinn/ Sonderangebot wird in Aussicht gestellt).",
-        "• Erzeugen von Zeitdruck (d. h. es wird gesagt, dass innerhalb weniger Stunden reagiert werden muss, weil sonst z. B. das Benutzerkonto gesperrt wird oder der Gewinn/das Sonderangebot verfällt).",
-        "• Ausnutzen von Hilfsbereitschaft (z. B. vermeintliche Kolleginnen oder Kollegen geben vor, dass sie Hilfe benötigen, um ihre eigene wichtige Aufgabe im vorgegebenen Zeitrahmen zu erledigen).",
-        "[Image of Hier wird mit einem 24 Stunden Limit versucht Druck aufzubau- en.]",
-        "Hinweis: In Einzelfällen gehen Kriminelle soweit, dass Sie über eine oder mehrere Nachrichten eine soziale Beziehung zu Ihren potentiellen Opfern aufbauen. Daher gehören betrügerische Nachrichten auch zu den sogenannten Social Engineering Angriffen.",
-        "Emotionen und Zeitdruck werden auch durch ungefährliche Nachrichten hervorgerufen. Daher sind diese Inhalte zwar ein möglicher Indikator für eine betrügerische Nachricht, aber in der Regel brauchen Sie weitere Prüfungen, um die Nachricht zu beurteilen. Wie diese Prüfungen funktionieren, hängt von der Aktion ab, zu der Sie aufgefordert werden (z. B. eine Überweisung oder einen Anruf zu tätigen, sensible Informationen oder Daten zu verschicken, einem Link zu folgen oder eine Datei zu öffnen).",
-        "Nehmen Sie sich die Zeit, in Ruhe weitere Prüfungen durchzuführen. Niemand erwartet im Kontext von elektronischen Nachrichten, dass Sie innerhalb von Sekunden reagieren. Kriminellen ist auch in der Regel nicht bekannt, wann Sie die Nachricht laden bzw. lesen.",
-        "Hinweis: Sie sollten Nachrichten aber auch nicht zu schnell als betrügerische Nachricht klassifizieren, da durchaus auch echte Nachrichten Mahnungen enthalten können, weil man z.B. wirklich eine Rechnung nicht bezahlt hat. Aber auch das ist nur bei einem Unternehmen zu erwarten, welches Rechnungen allgemein per E-Mail verschickt."
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Die Durchführung der Plausibilitätsprüfung wird in einigen betrügerischen Nachrichten dadurch erschwert, dass Kriminelle psychologische Tricks anwenden, z. B.:",
+            "• Erzeugen von Emotionen wie z. B. Angst (Kontosperrung wird angedroht, Androhung einer Geldstrafe, Informationen über tragisches Ereignis) oder Glücksgefühle (Gewinn/ Sonderangebot wird in Aussicht gestellt).",
+            "• Erzeugen von Zeitdruck (d. h. es wird gesagt, dass innerhalb weniger Stunden reagiert werden muss, weil sonst z. B. das Benutzerkonto gesperrt wird oder der Gewinn/das Sonderangebot verfällt).",
+            "• Ausnutzen von Hilfsbereitschaft (z. B. vermeintliche Kolleginnen oder Kollegen geben vor, dass sie Hilfe benötigen, um ihre eigene wichtige Aufgabe im vorgegebenen Zeitrahmen zu erledigen)."
+          ],
+          "media": {
+            "type": "image",
+            "description": "Hier wird mit einem 24 Stunden Limit versucht Druck aufzubauen.",
+            "source": "chapter2_07"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hinweis: In Einzelfällen gehen Kriminelle soweit, dass Sie über eine oder mehrere Nachrichten eine soziale Beziehung zu Ihren potentiellen Opfern aufbauen. Daher gehören betrügerische Nachrichten auch zu den sogenannten Social Engineering Angriffen.",
+            "Emotionen und Zeitdruck werden auch durch ungefährliche Nachrichten hervorgerufen. Daher sind diese Inhalte zwar ein möglicher Indikator für eine betrügerische Nachricht, aber in der Regel brauchen Sie weitere Prüfungen, um die Nachricht zu beurteilen. Wie diese Prüfungen funktionieren, hängt von der Aktion ab, zu der Sie aufgefordert werden (z. B. eine Überweisung oder einen Anruf zu tätigen, sensible Informationen oder Daten zu verschicken, einem Link zu folgen oder eine Datei zu öffnen).",
+            "Nehmen Sie sich die Zeit, in Ruhe weitere Prüfungen durchzuführen. Niemand erwartet im Kontext von elektronischen Nachrichten, dass Sie innerhalb von Sekunden reagieren. Kriminellen ist auch in der Regel nicht bekannt, wann Sie die Nachricht laden bzw. lesen.",
+            "Hinweis: Sie sollten Nachrichten aber auch nicht zu schnell als betrügerische Nachricht klassifizieren, da durchaus auch echte Nachrichten Mahnungen enthalten können, weil man z.B. wirklich eine Rechnung nicht bezahlt hat. Aber auch das ist nur bei einem Unternehmen zu erwarten, welches Rechnungen allgemein per E-Mail verschickt."
+          ]
+        }
       ]
     },
     {
@@ -127,20 +167,48 @@
       "title": "Plausibilitätsprüfungen",
       "paragraphs": [
         "Weitere Tricks, die die Plausibilitätsprüfungen erschweren.",
-        "1) Ein weiterer Ansatz von Kriminellen ist es, aktuelle Umstellungen, die in den Medien besonders präsent sind, zu nutzen, um auf den ersten Blick plausibel aussehende Nachrichten zu verschicken.",
-        "So wurden beispielsweise:",
-        "• im Kontext der neuen Datenschutzgrundverordnung entsprechende betrügerische Nachrichten verschickt.",
-        "• im Kontext der Umstellung der Banking Systeme auf die Zwei-Faktor-Authentifizierung (starke Kundenauthentifizierung) entsprechende betrügerische Nachrichten verschickt",
-        "Hinweis: Gerade viele Banken sind für die Problematik sensibilisiert und würden deswegen solche Informationen nicht via E-Mail verschicken, sondern per Post. Falls Sie sich unsicher sind, fragen Sie bei Ihrer Bank nach (aber nicht über die Kontaktdaten in der Nachricht :-)).",
-        "Es gibt immer wieder aktuelle Themen, die Kriminelle als Aufhänger nehmen um Angriffe gegen Nutzer zu starten.",
-        "2) Kriminelle „gründen“ eine neue fiktive Organisation, z.B. eine Stiftung oder einen Verlag mit eigenem Internetauftritt. Diese fiktiven Organisationen können mit dem Namen auch an existierende Organisationen angelehnt werden, um die Unterscheidung zu verkomplizieren. Im Anschluss werden authentisch aussehende Nachrichten verschickt, z.B. mit der Anfrage nach einer zukünftigen Kooperation und der Bitte dazu Daten zuzusenden, einen Link anzuklicken oder einen Anhang zu öffnen.",
-        "3) Kriminelle gestalten die Nachricht so, dass es zwei Optionen gibt, auf die Nachricht zu reagieren, und damit quasi für jeden Empfänger eine Option plausibel erscheint. Beispiele für solche Nachrichten sind:",
-        "• Es wird von einem Problem berichtet, z. B. mit dem Benutzerkonto. Um das Problem zu beheben, soll dem Link gefolgt, ein Anhang geöffnet werden oder entsprechende Informationen zurückgeschickt werden. Dieser Link ist für die Empfänger gedacht, die wirklich bei dem entsprechenden Dienst ein Benutzerkonto haben. Die Nachricht geht anschließend auf den Fall ein, dass der Empfänger von dem genannten Problem gar nicht betroffen sein kann, z. B. weil dieser dort gar kein Benutzerkonto hat. Dann entschuldigt man sich für den Fehler und bittet darum, den Fehler durch Klicken eines Links, Ausfüllen des Anhangs oder Zurückschicken von entsprechenden Informationen zu melden.",
-        "• Newsletter sind ein weit verbreitetes Mittel von Unternehmen, um im Kontakt zu bleiben mit Kundeninnen und Kunden/Nutzerinnen und Nutzern. Aber auch diese Art Nachricht wird von Kriminellen genutzt. Hier versenden Kriminelle entsprechende gefälschte Newsletter mit einem gefährlichen „Newsletter abmelden“ Link und einem Link zum angeblichen Newsletter. Oder sie hängen den vermeintlichen Newsletter an und hoffen, dass jemand neugierig ist und die Datei öffnet. Zusätzlich wird ein Dokument angehängt, welches angeblich genutzt werden kann, um sich beim Newsletter abzumelden. Viele Nutzerinnen und Nutzer sind von solchen Nachrichten genervt und tendieren dazu, vorschnell sich entsprechend abzumelden.",
-        "Einladungen mit der Bitte, die Einladung entweder zu bestätigen oder abzulehnen. Entweder per Link oder per Datei im Anhang.",
-        "Hinweis: Solche Nachrichten müssen aber nicht betrügerisch sein. Solche Nachrichten erhalten ins- besondere Wissenschaftlerinnen und Wissenschaftler z.B. immer dann, wenn angefragt wird, ob ein Paper begutachtet werden kann oder auch wenn man angefragt wird Projekte zu reviewen oder an einer Veranstaltung teilzunehmen. Hier kann zugestimmt oder abgelehnt werden. Dennoch ist hier besondere Vorsicht geboten, denn auch diese Art von Nachrichten können einfach kopiert und die URL hinter dem Link ausgetauscht werden.",
-        "Sie sollten in allen Fällen besonders aufmerksam sein und genau prüfen, ob die Plausibilität gegeben ist oder weitere Prüfungen vornehmen, bevor Sie mit der Nachricht interagieren. Diese weiteren Prüfungen lernen Sie in den folgenden Kapiteln kennen.",
-        "Hinweis: Eine entsprechende Nachricht könnte in allen drei Fällen auch legitim sein, daher kann es auch negative Konsequenzen haben, die Nachricht voreilig zu löschen. Genau das macht diese Strategien so interessant für Kriminelle"
+        "1) Ein weiterer Ansatz von Kriminellen ist es, aktuelle Umstellungen, die in den Medien besonders präsent sind, zu nutzen, um auf den ersten Blick plausibel aussehende Nachrichten zu verschicken."
+      ],
+      "imageText": {
+        "text": [
+          "So wurden beispielsweise:",
+          "• im Kontext der neuen Datenschutzgrundverordnung entsprechende betrügerische Nachrichten verschickt.",
+          "• im Kontext der Umstellung der Banking Systeme auf die Zwei-Faktor-Authentifizierung (starke Kundenauthentifizierung) entsprechende betrügerische Nachrichten verschickt"
+        ],
+        "imageSource": "chapter2_08",
+        "imageFirst": false
+      },
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Hinweis: Gerade viele Banken sind für die Problematik sensibilisiert und würden deswegen solche Informationen nicht via E-Mail verschicken, sondern per Post. Falls Sie sich unsicher sind, fragen Sie bei Ihrer Bank nach (aber nicht über die Kontaktdaten in der Nachricht :-)).",
+            "Es gibt immer wieder aktuelle Themen, die Kriminelle als Aufhänger nehmen um Angriffe gegen Nutzer zu starten."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_09"
+          }
+        },
+        {
+          "paragraphs": [
+            "2) Kriminelle „gründen“ eine neue fiktive Organisation, z.B. eine Stiftung oder einen Verlag mit eigenem Internetauftritt. Diese fiktiven Organisationen können mit dem Namen auch an existierende Organisationen angelehnt werden, um die Unterscheidung zu verkomplizieren. Im Anschluss werden authentisch aussehende Nachrichten verschickt, z.B. mit der Anfrage nach einer zukünftigen Kooperation und der Bitte dazu Daten zuzusenden, einen Link anzuklicken oder einen Anhang zu öffnen.",
+            "3) Kriminelle gestalten die Nachricht so, dass es zwei Optionen gibt, auf die Nachricht zu reagieren, und damit quasi für jeden Empfänger eine Option plausibel erscheint. Beispiele für solche Nachrichten sind:",
+            "• Es wird von einem Problem berichtet, z. B. mit dem Benutzerkonto. Um das Problem zu beheben, soll dem Link gefolgt, ein Anhang geöffnet werden oder entsprechende Informationen zurückgeschickt werden. Dieser Link ist für die Empfänger gedacht, die wirklich bei dem entsprechenden Dienst ein Benutzerkonto haben. Die Nachricht geht anschließend auf den Fall ein, dass der Empfänger von dem genannten Problem gar nicht betroffen sein kann, z. B. weil dieser dort gar kein Benutzerkonto hat. Dann entschuldigt man sich für den Fehler und bittet darum, den Fehler durch Klicken eines Links, Ausfüllen des Anhangs oder Zurückschicken von entsprechenden Informationen zu melden.",
+            "• Newsletter sind ein weit verbreitetes Mittel von Unternehmen, um im Kontakt zu bleiben mit Kundeninnen und Kunden/Nutzerinnen und Nutzern. Aber auch diese Art Nachricht wird von Kriminellen genutzt. Hier versenden Kriminelle entsprechende gefälschte Newsletter mit einem gefährlichen „Newsletter abmelden“ Link und einem Link zum angeblichen Newsletter. Oder sie hängen den vermeintlichen Newsletter an und hoffen, dass jemand neugierig ist und die Datei öffnet. Zusätzlich wird ein Dokument angehängt, welches angeblich genutzt werden kann, um sich beim Newsletter abzumelden. Viele Nutzerinnen und Nutzer sind von solchen Nachrichten genervt und tendieren dazu, vorschnell sich entsprechend abzumelden.",
+            "Einladungen mit der Bitte, die Einladung entweder zu bestätigen oder abzulehnen. Entweder per Link oder per Datei im Anhang.",
+            "Hinweis: Solche Nachrichten müssen aber nicht betrügerisch sein. Solche Nachrichten erhalten ins- besondere Wissenschaftlerinnen und Wissenschaftler z.B. immer dann, wenn angefragt wird, ob ein Paper begutachtet werden kann oder auch wenn man angefragt wird Projekte zu reviewen oder an einer Veranstaltung teilzunehmen. Hier kann zugestimmt oder abgelehnt werden. Dennoch ist hier besondere Vorsicht geboten, denn auch diese Art von Nachrichten können einfach kopiert und die URL hinter dem Link ausgetauscht werden."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_10"
+          }
+        },
+        {
+          "paragraphs": [
+            "Sie sollten in allen Fällen besonders aufmerksam sein und genau prüfen, ob die Plausibilität gegeben ist oder weitere Prüfungen vornehmen, bevor Sie mit der Nachricht interagieren. Diese weiteren Prüfungen lernen Sie in den folgenden Kapiteln kennen.",
+            "Hinweis: Eine entsprechende Nachricht könnte in allen drei Fällen auch legitim sein, daher kann es auch negative Konsequenzen haben, die Nachricht voreilig zu löschen. Genau das macht diese Strategien so interessant für Kriminelle"
+          ]
+        }
       ]
     },
     {

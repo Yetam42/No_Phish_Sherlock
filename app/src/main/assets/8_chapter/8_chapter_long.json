@@ -34,28 +34,48 @@
     {
       "section": "3/5",
       "title": "Nur mit Hilfsmitteln erkennbare Tricks in Webadressen",
-      "paragraphs": [
-        "Aus unterschiedlichen Gründen werden in Nachrichten (vor allem in E-Mails) Webadressen durch eine Weiterleitung (nicht Kurz-URL) über einen (externen) Dienst zu der eigentlichen Webseite geleitet. Dies geschieht z. B. bei manchen Newslettern, um die Klickzahlen für Marketingzwecke zu erfassen. Andere Gründe können die Steigerung der Sicherheit sein oder um festzustellen, welche Empfänger reagiert haben (also eine Art des Trackings).",
-        "Einige deutsche E-Mail-Dienstanbieter (z. B. gmx und web.de) setzen Weiterleitungen beim Aufruf der E-Mails im Webbrowser ein. Hierbei werden alle Webadressen hinter Links in den angezeigten E-Mails durch Weiterleitungen zu diesen Webadressen ersetzt. Hier ein Beispiel:",
-        "[Image of https://deref-gmx.net/mail/client/QRJNnxLmS4Y/dereferrer/? redirectUrl=https%3A%2F%2Fdrive.google.com%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7]",
-        "Der Wer-Bereich ist entsprechend bei allen Webadressen gleich. Der Wer-Bereich lässt daher keine Aussage über die Vertrauenswürdigkeit der finalen Webadresse zu.",
-        "Bei dieser Form der Weiterleitung finden Sie die Webadresse, zu der Sie weitergeleitet werden, hinter dem eigentlichen Wer-Bereich. Hier sollten Sie zunächst prüfen, ob dieser Dienst dafür bekannt ist, solche Weiterleitungen zu verwenden und wie Sie aus dem Pfad die wirkliche URL ableiten können.",
-        "Im Folgenden erklären wir Ihnen an dem obigen Beispiel wie Sie die den tatsächlichen Wer-Bereich im Fall von gmx identifizieren können.",
-        "https://deref-gmx.net/mail/client/QRJNnxLmS4Y/dereferrer/? redirectUrl=https%3A%2F%2Fdrive.google.com%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7",
-        "1) Sie erkennen, dass es eine Weiterleitung ist, weil der Wer-Bereich der dargestellten URL „deref- gmx.de“ ist.",
-        "2) Sie gehen nach rechts hinter diesem Wer-Bereich bis zu dem „redirectUrl=“. Dahinter steht die eigentliche Webadresse: https%3A%2F%2Fdrive.google.com%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7",
-        "3) Aus technischen Gründen können hier die Sonderzeichen nicht wie gewohnt dargestellt werden. Daher müssen Sie nun noch wissen, dass:",
-        "• %3A für \":\" steht und",
-        "• %2F für \"/\" steht.",
-        "4) Der Wer-Bereich der tatsächlichen Webadresse zu der weitergeleitet wird lautet google.com Weiterleitung Auflösung",
-        "[Image of Auflösung einer GMX Weiterleitung zum Phishing Poster im Goog- le Drive.]",
-        "Hinweis: Im Fall von mehreren Weiterleitungen in einer Webadresse kann es sich sogar um einen legitimen Fall handeln, wenn bspw. beide (Absenderin und Absender und Empfängerin und Empfänger) mit einem Dienst arbeiten, der die Webadresse mit einer Weiterleitung ergänzt. Dies muss nicht unbedingt direkt auf eine betrügerische Nachricht hindeuten. Wenn Sie selbst aber keinen solchen Dienst verwenden, sollten Sie in diesem Fall besonders vorsichtig sein. Es handelt sich wahrscheinlich um eine betrügerische Nachricht."
-      ],
-      "media": {
-        "type": "image",
-        "description": "https://deref-gmx.net/mail/client/QRJNnxLmS4Y/dereferrer/? redirectUrl=https%3A%2F%2Fdrive.google.com%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7",
-        "source": "support"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Aus unterschiedlichen Gründen werden in Nachrichten (vor allem in E-Mails) Webadressen durch eine Weiterleitung (nicht Kurz-URL) über einen (externen) Dienst zu der eigentlichen Webseite geleitet. Dies geschieht z. B. bei manchen Newslettern, um die Klickzahlen für Marketingzwecke zu erfassen. Andere Gründe können die Steigerung der Sicherheit sein oder um festzustellen, welche Empfänger reagiert haben (also eine Art des Trackings).",
+            "Einige deutsche E-Mail-Dienstanbieter (z. B. gmx und web.de) setzen Weiterleitungen beim Aufruf der E-Mails im Webbrowser ein. Hierbei werden alle Webadressen hinter Links in den angezeigten E-Mails durch Weiterleitungen zu diesen Webadressen ersetzt. Hier ein Beispiel:"
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter8_01"
+          }
+        },
+        {
+          "paragraphs": [
+            "Der Wer-Bereich ist entsprechend bei allen Webadressen gleich. Der Wer-Bereich lässt daher keine Aussage über die Vertrauenswürdigkeit der finalen Webadresse zu.",
+            "Bei dieser Form der Weiterleitung finden Sie die Webadresse, zu der Sie weitergeleitet werden, hinter dem eigentlichen Wer-Bereich. Hier sollten Sie zunächst prüfen, ob dieser Dienst dafür bekannt ist, solche Weiterleitungen zu verwenden und wie Sie aus dem Pfad die wirkliche URL ableiten können.",
+            "Im Folgenden erklären wir Ihnen an dem obigen Beispiel wie Sie die den tatsächlichen Wer-Bereich im Fall von gmx identifizieren können."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter8_01"
+          }
+        },
+        {
+          "paragraphs": [
+            "1) Sie erkennen, dass es eine Weiterleitung ist, weil der Wer-Bereich der dargestellten URL „deref- gmx.de“ ist.",
+            "2) Sie gehen nach rechts hinter diesem Wer-Bereich bis zu dem „redirectUrl=“. Dahinter steht die eigentliche Webadresse: https%3A%2F%2Fdrive.google.com%2Fo- pen%3Fid%3D1nJyiFvFBQ95hqEkhn8kcfGhmzBIg_XT7",
+            "3) Aus technischen Gründen können hier die Sonderzeichen nicht wie gewohnt dargestellt werden. Daher müssen Sie nun noch wissen, dass:",
+            "• %3A für \":\" steht und",
+            "• %2F für \"/\" steht.",
+            "4) Der Wer-Bereich der tatsächlichen Webadresse zu der weitergeleitet wird lautet google.com Weiterleitung Auflösung"
+          ],
+          "media": {
+            "type": "video",
+            "source": "example"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hinweis: Im Fall von mehreren Weiterleitungen in einer Webadresse kann es sich sogar um einen legitimen Fall handeln, wenn bspw. beide (Absenderin und Absender und Empfängerin und Empfänger) mit einem Dienst arbeiten, der die Webadresse mit einer Weiterleitung ergänzt. Dies muss nicht unbedingt direkt auf eine betrügerische Nachricht hindeuten. Wenn Sie selbst aber keinen solchen Dienst verwenden, sollten Sie in diesem Fall besonders vorsichtig sein. Es handelt sich wahrscheinlich um eine betrügerische Nachricht."
+          ]
+        }
+      ]
     },
     {
       "section": "4/5",
@@ -70,18 +90,24 @@
     {
       "section": "5/5",
       "title": "Nur mit Hilfsmitteln erkennbare Tricks in Webadressen",
-      "paragraphs": [
-        "Kriminelle suchen immer wieder neue Ansätze, um ihre betrügerischen Nachrichten an den Firewalls und anderen Schutzmechanismen vorbei zu schleusen. Ein Ansatz, der verwendet wird, ist das Einbetten der Webadresse in einen QR-Code entweder direkt in der Nachricht oder in der angehängten Datei.",
-        "Eigentlich gibt es keinen Grund für eine vertrauenswürdige Organisation Ihnen die Webadresse in einer elektronischen Nachricht in Form eines QR-Codes zuzuschicken. Entsprechend ist die Wahrscheinlichkeit in diesem Fall sehr hoch, dass es sich um eine betrügerische Nachricht handelt, wenn Ihnen die Webadresse in Form eines QR-Codes mitgeteilt wird.",
-        "Falls Sie Gründe haben, dennoch herausfinden zu wollen, ob die Webadresse zu einer betrügerischen Webseite führt oder nicht, können Sie sich den Inhalt des QR-Codes mit Ihrem Smartphone anzeigen lassen. Dabei ist aber zu beachten, dass es QR-Code Apps gibt, die die Webadresse direkt aufrufen. Installieren Sie unbedingt eine QR-Code App, die Ihnen die Webadresse und/oder den Wer-Bereich der Webadresse zunächst anzeigt. Anderenfalls laufen Sie Gefahr, dass Sie direkt die betrügerische Webseite aufrufen und versucht wird Schadsoftware auf Ihrem Gerät zu installieren. Wenn Ihnen die Webadresse und/oder der Wer-Bereich angezeigt wird, dann prüfen Sie diese wie Sie es in den vorherigen Kapiteln gelernt haben.",
-        "[Image of Ein Beispiel für einen solchen Angriff.]",
-        "Hinweis: Für Android-Geräte empfehlen wir folgende App: https://play.google.com/store/apps/details?id=com.secuso.privacyFriendlyCodeScanner"
-      ],
-      "media": {
-        "type": "image",
-        "description": "Ein Beispiel für einen solchen Angriff.",
-        "source": "support"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Kriminelle suchen immer wieder neue Ansätze, um ihre betrügerischen Nachrichten an den Firewalls und anderen Schutzmechanismen vorbei zu schleusen. Ein Ansatz, der verwendet wird, ist das Einbetten der Webadresse in einen QR-Code entweder direkt in der Nachricht oder in der angehängten Datei.",
+            "Eigentlich gibt es keinen Grund für eine vertrauenswürdige Organisation Ihnen die Webadresse in einer elektronischen Nachricht in Form eines QR-Codes zuzuschicken. Entsprechend ist die Wahrscheinlichkeit in diesem Fall sehr hoch, dass es sich um eine betrügerische Nachricht handelt, wenn Ihnen die Webadresse in Form eines QR-Codes mitgeteilt wird.",
+            "Falls Sie Gründe haben, dennoch herausfinden zu wollen, ob die Webadresse zu einer betrügerischen Webseite führt oder nicht, können Sie sich den Inhalt des QR-Codes mit Ihrem Smartphone anzeigen lassen. Dabei ist aber zu beachten, dass es QR-Code Apps gibt, die die Webadresse direkt aufrufen. Installieren Sie unbedingt eine QR-Code App, die Ihnen die Webadresse und/oder den Wer-Bereich der Webadresse zunächst anzeigt. Anderenfalls laufen Sie Gefahr, dass Sie direkt die betrügerische Webseite aufrufen und versucht wird Schadsoftware auf Ihrem Gerät zu installieren. Wenn Ihnen die Webadresse und/oder der Wer-Bereich angezeigt wird, dann prüfen Sie diese wie Sie es in den vorherigen Kapiteln gelernt haben."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter8_02"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hinweis: Für Android-Geräte empfehlen wir folgende App: https://play.google.com/store/apps/details?id=com.secuso.privacyFriendlyCodeScanner"
+          ]
+        }
+      ]
     }
   ]
 }

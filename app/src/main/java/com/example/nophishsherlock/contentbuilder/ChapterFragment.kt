@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
 import com.example.nophishsherlock.data.JsonTextData
 import com.example.nophishsherlock.databinding.FragmentLongscreenBinding
 
@@ -19,14 +21,15 @@ class ChapterFragment : Fragment() {
 
     private lateinit var binding: FragmentLongscreenBinding
 
+    private var playerView: PlayerView? = null
+    private var exoPlayer: ExoPlayer? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-//        val view = inflater.inflate(R.layout.fragment_longscreen, container, false)
-//        contentContainer = view.findViewById(R.id.fragment_container)
-//        return view
+    ): View {
+
         binding = FragmentLongscreenBinding.inflate(inflater, container, false)
         contentContainer = binding.fragmentContainer
         return binding.root
@@ -42,12 +45,16 @@ class ChapterFragment : Fragment() {
 
             if (content != null) {
                 for (c in content) {
-                    Log.d("LongChapterFragment", "Adding $c to content container")
-
                     contentContainer.addView(c)
                 }
             }
         }
+
+        playerView = findPlayerView(contentContainer)
+        if (playerView != null) {
+            exoPlayer = playerView?.player as? ExoPlayer
+        }
+
 
         if (gameViewButton != null) {
 
@@ -60,6 +67,32 @@ class ChapterFragment : Fragment() {
 
     }
 
+    private fun findPlayerView(viewGroup: ViewGroup): PlayerView? {
+        for (i in 0 until viewGroup.childCount) {
+            val child = viewGroup.getChildAt(i)
+            Log.d("VIDEO", "Checking child: $child")
+            if (child is PlayerView) {
+                return child
+            } else if (child is ViewGroup) {
+                val found = findPlayerView(child)
+                if (found != null) {
+                    return found
+                }
+            }
+        }
+        return null
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        playerView?.player = null
+        exoPlayer?.release()
+        exoPlayer = null
+        playerView = null
+    }
+
+
 
     fun setGameViewButton(button: Button, layoutParams: LinearLayout.LayoutParams) {
 
@@ -69,11 +102,9 @@ class ChapterFragment : Fragment() {
     }
 
     private fun removeFromParent(button: Button) {
-        Log.d("LongChapterFragment", "Removing button from parent")
         if (button.parent != null) {
             val parent = button.parent as ViewGroup
             parent.removeView(button)
-            Log.d("LongChapterFragment", "Button removed from parent")
         }
     }
 }

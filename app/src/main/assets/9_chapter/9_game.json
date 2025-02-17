@@ -8,9 +8,7 @@
         "content": [
           {
             "text": "Rechnung.osuc",
-            "word": "osuc",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "word": "osuc"
           }
         ]
       }
@@ -24,8 +22,7 @@
           {
             "text": "Proble.Loesung.pdf",
             "word": "pdf",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "isCorrect": true
           }
         ]
       }
@@ -38,9 +35,7 @@
         "content": [
           {
             "text": "Rechnung03.pdf.exe",
-            "word": "exe",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "word": "exe"
           }
         ]
       }
@@ -53,9 +48,7 @@
         "content": [
           {
             "text": "Rechnung-pdf.exe",
-            "word": "exe",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "word": "exe"
           }
         ]
       }
@@ -68,9 +61,7 @@
         "content": [
           {
             "text": "Rechnung420-pdf.exe",
-            "word": "exe",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "word": "exe"
           }
         ]
       }
@@ -83,9 +74,7 @@
         "content": [
           {
             "text": "Bezahlung-exe.pdf",
-            "word": "pdf",
-            "isCorrect": true,
-            "feedback": "Richtig: Das ist der Datentyp"
+            "word": "pdf"
           }
         ]
       }

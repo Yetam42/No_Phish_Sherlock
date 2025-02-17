@@ -7,9 +7,12 @@
         "Wenn Sie herausgefunden haben, wie die (tatsächliche) Webadresse hinter einem Link lautet, dann gilt es anschließend die Vertrauenswürdigkeit der aufzurufenden Webadresse zu beurteilen. Dazu ist es wichtig, den Aufbau einer Webadresse zu verstehen.",
         "Zunächst ein Beispiel für eine Webadresse:",
         "https://secuso.aifb.kit.edu/642.php",
-        "Der wichtigste Bestandteil einer Webadresse zur Beurteilung der Vertrauenswürdigkeit ist der sogenannte Wer-Bereich (Fachbegriff „Domain“). Um den Wer-Bereich zu bestimmen, starten Sie bei http bzw. https und gehen zum dritten „/“ oder, falls nicht vorhanden, zum Ende der Webadresse. Von dort lesen Sie von rechts nach links die ersten beiden mit Punkt getrennten Begriffe. Jeden Abschnitt davon bezeichnen wir auch als „Block“ d.h. es gibt den Block „.kit“ und den Block „.edu“.",
-        "[Image of Der Wer-Bereich ist deswegen so wichtig, weil man diesen registrieren muss, um ihn nutzen zu können. Dabei ist zu beachten, dass bereits registrierte Wer-Bereiche nicht noch einmal registriert werden können. Dies hat zur Folge, dass Kriminelle beispielsweise nicht den Wer-Bereich „kit.edu“ registrieren können, da das KIT selbst dies bereits getan hat.]"
-      ]
+        "Der wichtigste Bestandteil einer Webadresse zur Beurteilung der Vertrauenswürdigkeit ist der sogenannte Wer-Bereich (Fachbegriff „Domain“). Um den Wer-Bereich zu bestimmen, starten Sie bei http bzw. https und gehen zum dritten „/“ oder, falls nicht vorhanden, zum Ende der Webadresse. Von dort lesen Sie von rechts nach links die ersten beiden mit Punkt getrennten Begriffe. Jeden Abschnitt davon bezeichnen wir auch als „Block“ d.h. es gibt den Block „.kit“ und den Block „.edu“."
+      ],
+      "media": {
+        "type": "image",
+        "source": "chapter5_01"
+      }
     },
     {
       "section": "2/3",

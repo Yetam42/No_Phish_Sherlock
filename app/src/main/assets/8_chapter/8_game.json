@@ -2,7 +2,7 @@
   "game": [
     {
       "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung",
+      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung\nKannst du nur aufgrund des Wer-Bereichs die Phishing erkennen",
       "game": {
         "type": "dragAndDrop",
         "content": [
@@ -14,11 +14,11 @@
             "itemToTargetMap": {
               "1": [
                 "https://fb.me/starbucks",
-                "http://www.kit.edu/kit/organisation.php",
                 "https://tinyurl.com/y2yzjwwt",
                 "https://deref-gmx.com/mail/client/ZNN8EkHcCqw/dereferrer/?redirectUrl=https%3A%2F%2Fkit.edu%2F"
               ],
               "2": [
+                "http://www.kit.edu/kit/organisation.php"
               ]
             }
           }
@@ -27,7 +27,7 @@
     },
     {
       "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung",
+      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung\nKannst du nur aufgrund des Wer-Bereichs die Phishing erkennen",
       "game": {
         "type": "dragAndDrop",
         "content": [
@@ -38,12 +38,13 @@
             ],
             "itemToTargetMap": {
               "1": [
-                "https://twitter.com/kitkarlsruhe?lang=de",
                 "https://s.kit.edu/kastel",
-                "https://www.dropbox.com/s/cxndc6731hgr35m/NoPhish%20Poster%2007-10-2019.pdf?dl=0",
-                "https://www.scc.kit.edu/"
+                "https://www.dropbox.com/s/cxndc6731hgr35m/NoPhish%20Poster%2007-10-2019.pdf?dl=0"
               ],
               "2": [
+                "https://twitter.com/kitkarlsruhe?lang=de",
+                "https://www.scc.kit.edu/"
+
               ]
             }
           }
@@ -97,7 +98,7 @@
         "content": [
           {
             "statement": "https://www.host547.com/shopping-total.de/software?id?121232131142",
-            "isCorrect": true
+            "isCorrect": false
           }
         ]
       }

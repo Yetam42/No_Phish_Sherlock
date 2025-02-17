@@ -14,18 +14,23 @@
     {
       "section": "2/4",
       "title": "Gefährliche Aktionen (sensible Daten, Überweisungen, Anrufe) erkennen",
+      "imageText": {
+        "text": [
+          "Sensible Informationen/Daten sind Informationen/Daten, die besonders schützenwert sind, wie z.B.:",
+          "• Zugangsdaten, Passwörter,",
+          "• Kreditkarteninformationen,",
+          "• unveröffentlichte Forschungsergebnisse,"
+        ],
+        "imageSource": "chapter3_01",
+        "imageFirst": false
+      },
       "paragraphs": [
-        "Sensible Informationen/Daten sind Informationen/Daten, die besonders schützenwert sind, wie z.B.:",
-        "• Zugangsdaten, Passwörter,",
-        "• Kreditkarteninformationen,",
-        "• unveröffentlichte Forschungsergebnisse,",
         "• personenbezogene Daten wie Einstellungs- und Bewerbungsunterlagen oder Notenlisten,",
         "• der interne Aufbau Ihres Unternehmens,",
         "• die Reise- oder Urlaubspläne von Beschäftigten und/oder Kolleginnen und Kollegen.",
         "Schicken Sie versehentlich sensible Daten zurück an Kriminelle, können diese von diesen missbraucht werden, um Ihnen zu schaden. Teilweise geschieht dies stufenweise: D.h. erst werden nach Daten gefragt, die dann in einem zweiten Schritt von Kriminellen genutzt werden:",
         "• z. B. könnte nach einem Scan Ihres Ausweises gefragt werden. Im nächsten Schritt können die Kriminellen damit eine dritte Person davon überzeugen, dass diese Person mit Ihnen kommuniziert.",
         "• z. B. könnte nach Informationen zur Abwesenheit von Kolleginnen oder Kollegen und/oder Vorgesetzen gefragt werden. Diese nutzten Kriminelle im nächsten Schritt, um so Abwesenheitsvertreterinnen oder -vertreter gezielt anzuschreiben und auf vermeintliche Absprachen vor der Abwesenheit hinzuweisen und so diese oder diesen dazu zu bringen, eine entsprechende gefährliche Aktion auszuführen.",
-        "[Image of Keine vertrauenswürdige Organisation würde jemals via E- Mail oder anderen elektronischen Nachrichtenform, Sie bitten Zugangsdaten zu verschicken.]",
         "Hinweis: Seriöse Anbieter würden Sie nie auffordern, dass Sie ihnen Ihr Passwort zusenden.",
         "Daher gilt: Auch wenn die Nachricht, in der sensible Daten angefordert werden, plausibel erscheint, gilt: Sensible Informationen bzw. sensible Daten sollten Sie nur elektronisch verschicken, wenn Sie sicher sind, dass nur der beabsichtigte Absender den Inhalt der Nachricht lesen kann, z.B. weil Sie die E-Mail mit S/MIME verschlüsseln. Prüfen Sie, ob Sie ein S/MIME Zertifikat der Empfängerin oder des Empfängers haben.",
         "Hinweis: Kriminelle versuchen an sensible Daten auch über Telefonanrufe zu gelangen, indem sie sich z.B. als vermeintlich neue lokale IT-Beauftragte oder vermeintliche Mitarbeiterinnen oder Mitarbeiter bei Microsoft oder Apple Support ausgeben."
@@ -34,9 +39,18 @@
     {
       "section": "3/4",
       "title": "Gefährliche Aktionen (sensible Daten, Überweisungen, Anrufe) erkennen",
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Wenn Sie eine Nachricht erhalten, die plausibel erscheint, in der Sie gebeten werden, Geld zu überweisen, z. B. um eine Rechnung zu begleichen, und hierzu eine Kontonummer/ IBAN angegeben ist, dann kann es immer noch sein, dass die Kontonummer/ IBAN verändert wurde."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter3_02"
+          }
+        }
+      ],
       "paragraphs": [
-        "Wenn Sie eine Nachricht erhalten, die plausibel erscheint, in der Sie gebeten werden, Geld zu überweisen, z. B. um eine Rechnung zu begleichen, und hierzu eine Kontonummer/ IBAN angegeben ist, dann kann es immer noch sein, dass die Kontonummer/ IBAN verändert wurde.",
-        "[Image of Die E-Mail mit der Xing Rechnung kann einfach abgeändert werden an der Stelle der IBAN und dann an potentielle Opfer verschickt werden.]",
         "Daher gilt: Falls Ihnen die Kontonummer/ IBAN für die entsprechende Überweisung bereits aus früheren Transaktionen bekannt ist, nutzen Sie die bekannte und nicht die aus der Nachricht. Damit sind Sie auf der sicheren Seite.",
         "Wenn Sie die Kontonummer des Absenders nicht bereits kennen, dann prüfen Sie die in der Nachricht angegebene Kontonummer auf Plausibilität:",
         "• Prüfen, Sie ob es eine ausländischen IBAN (solche, die nicht mit DE beginnen) ist. Seien Sie dann besonders vorsichtig.",

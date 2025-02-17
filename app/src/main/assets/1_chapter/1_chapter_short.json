@@ -4,7 +4,7 @@
       "title": "Betrügerische Nachrichten",
       "media": {
         "type": "image",
-        "source": "drawable/data_thief"
+        "source": "data_thief"
       }
     },
     {
@@ -29,7 +29,7 @@
           "• Nachrichten in Messenger (z.B. WhatsApp, Instagram, Snapchat) und",
           "• Nachrichten in sozialen und beruflichen Netzwerken (z.B. Facebook, Twitter, Xing, LinkedIn)."
         ],
-        "imageSource": "drawable/phone",
+        "imageSource": "phone",
         "imageFirst": true
       }
     },
@@ -57,7 +57,7 @@
           "Verhalten nach versehentlichem Klicken oder Datenverlust:",
           "• Ebenfalls das BSI kontaktieren, um Hilfe zu erhalten und den Schaden zu minimieren."
         ],
-        "imageSource": "drawable/support",
+        "imageSource": "support",
         "imageFirst": false
       }
     }

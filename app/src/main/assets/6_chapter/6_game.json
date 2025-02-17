@@ -13,9 +13,7 @@
             ],
             "itemToTargetMap": {
               "1": [
-                "https://shop.www.host547.com",
-                "https://www.129.13.152.9/friends",
-                "https://linkyzt.com/journal"
+                "https://www.129.13.152.9/friends"
               ],
               "2": [
                 "https://secuso.aifb.kit.edu/642.php",
@@ -23,10 +21,8 @@
               ]
             },
             "itemToOrganisation": {
-              "https://shop.www.host547.com": "Amazon",
               "https://www.129.13.152.9/friends": "Facebook",
               "https://secuso.aifb.kit.edu/642.php": "KIT",
-              "https://linkyzt.com/journal": "Springer",
               "https://www.paypal.com/de/home": "PayPal"
             }
           }
@@ -46,21 +42,48 @@
             ],
             "itemToTargetMap": {
               "1": [
-                "https://future-communication.forbusiness.de",
                 "https://mediathek.129.13.152.9/nachrichten",
                 "https://docs.host547.com/document"
               ],
               "2": [
-                "https://link.springer.com/journal",
+                "https://link.springer.com/journal"
+              ]
+            },
+            "itemToOrganisation": {
+              "https://link.springer.com/journal": "Springer",
+              "https://mediathek.129.13.152.9/nachrichten": "ARD",
+              "https://docs.host547.com/document": "Google"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Drag und Drop Aufgabe",
+      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "game": {
+        "type": "dragAndDropLayout",
+        "content": [
+          {
+            "targetNames": [
+              "betrügerisch \n Webadresse",
+              "legitime \n Webadresse"
+            ],
+            "itemToTargetMap": {
+              "1": [
+                "https://future-communication.forbusiness.de",
+                "https://linkyzt.com/journal",
+                "https://shop.www.host547.com"
+              ],
+              "2": [
                 "https://www.youtube.com/user"
               ]
             },
             "itemToOrganisation": {
               "https://future-communication.forbusiness.de": "Snapchat",
-              "https://mediathek.129.13.152.9/nachrichten": "ARD",
-              "https://docs.host547.com/document": "Google",
-              "https://link.springer.com/journal": "Springer",
-              "https://www.youtube.com/user": "YouTube"
+              "https://www.youtube.com/user": "YouTube",
+              "https://linkyzt.com/journal": "Springer",
+              "https://shop.www.host547.com": "Amazon"
             }
           }
         ]

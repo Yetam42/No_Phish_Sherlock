@@ -21,7 +21,7 @@
 
     <com.example.nophishsherlock.contentbuilder.GameAnswerButton
         android:id="@+id/right"
-        android:text="RIGHT"
+        android:text="Richtig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -31,7 +31,7 @@
 
     <com.example.nophishsherlock.contentbuilder.GameAnswerButton
         android:id="@+id/wrong"
-        android:text="WRONG"
+        android:text="Falsch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

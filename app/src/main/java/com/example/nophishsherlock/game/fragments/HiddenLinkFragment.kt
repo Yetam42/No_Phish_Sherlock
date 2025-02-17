@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -54,8 +53,6 @@ class HiddenLinkFragment : BaseGameFragment() {
             context?.let { gameText.setTextColor(it.getColor(R.color.text_color)) }
 
 
-//            gameText.setTextColor(android.graphics.Color.BLUE)
-//            gameText.isClickable = true
 
 
             val inflater: LayoutInflater = layoutInflater
@@ -94,6 +91,7 @@ class HiddenLinkFragment : BaseGameFragment() {
                     Log.d("HiddenLinkFragment", "Link clicked")
                     handleUserSelection()
                 }
+
 
                 override fun updateDrawState(ds: TextPaint) {
                     super.updateDrawState(ds)

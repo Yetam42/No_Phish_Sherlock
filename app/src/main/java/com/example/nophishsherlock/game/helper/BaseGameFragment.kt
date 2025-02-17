@@ -51,6 +51,5 @@ abstract class BaseGameFragment : Fragment() {
      * @return die jeweilige Spieldatenklasse
      */
     abstract fun parseGameData(gameData: GameData): Any
-    //TODO Any?
 
 }

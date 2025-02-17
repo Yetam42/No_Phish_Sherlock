@@ -30,6 +30,62 @@
           }
         ]
       }
+    },
+    {
+      "title": "Aufgabe mit Kontext",
+      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "game": {
+        "type": "taskWithContext",
+        "content": [
+          {
+            "imageSource": "game10_01",
+            "context": "scenario_chapter_10",
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "title": "Aufgabe mit Kontext",
+      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "game": {
+        "type": "taskWithContext",
+        "content": [
+          {
+            "imageSource": "game10_02",
+            "context": "scenario_chapter_10",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Aufgabe mit Kontext",
+      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "game": {
+        "type": "taskWithContext",
+        "content": [
+          {
+            "imageSource": "game10_03",
+            "context": "scenario_chapter_10",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Aufgabe mit Kontext",
+      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "game": {
+        "type": "taskWithContext",
+        "content": [
+          {
+            "imageSource": "game10_04",
+            "context": "scenario_chapter_10",
+            "isCorrect": true
+          }
+        ]
+      }
     }
   ]
 }

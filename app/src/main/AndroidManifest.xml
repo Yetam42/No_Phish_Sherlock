@@ -25,7 +25,6 @@
         <activity android:name=".game.MainGameActivity"/>
         <activity android:name=".game.GameSelectionActivty"/>
         <activity android:name=".game.DragNDrop"/>
-        <activity android:name=".contentbuilder.FullscreenVideoActivity"/>
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".contentbuilder.NewFullScreen"

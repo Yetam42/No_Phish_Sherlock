@@ -3,7 +3,6 @@ package com.example.nophishsherlock.game
 import ViewPagerAdapter
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.TranslateAnimation
@@ -18,7 +17,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.no_phishing_yannick.games.EndFragment
-import com.example.nophishsherlock.game.fragments.PickWrongFragment
 import com.example.no_phishing_yannick.games.rightOrwrong.RightOrWrongFragment
 import com.example.nophishsherlock.InfoFragment
 import com.example.nophishsherlock.LevelOverviewActivity
@@ -27,6 +25,7 @@ import com.example.nophishsherlock.data.JsonGameData
 import com.example.nophishsherlock.game.fragments.GameOverFragment
 import com.example.nophishsherlock.game.fragments.HiddenLinkFragment
 import com.example.nophishsherlock.game.fragments.LayoutDragAndDropFragment
+import com.example.nophishsherlock.game.fragments.PickWrongFragment
 import com.example.nophishsherlock.game.fragments.PractiseWithContextFragment
 import com.example.nophishsherlock.game.fragments.SimpleDragAndDropFragment
 import com.example.nophishsherlock.game.helper.GameFragmentListener
@@ -35,7 +34,6 @@ import com.example.nophishsherlock.game.helper.LevelPrefernce
 import com.example.nophishsherlock.parser.JsonGameParser
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-// ... rest of your code ...
 /**
  * Diese Klasse ist die Activity für das Hauptspiel
  *
@@ -129,7 +127,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         viewPager.isUserInputEnabled = false
         adapter = ViewPagerAdapter(this, gameFraments)
         viewPager.adapter = adapter
-        loadGameInformation()
 
 
 
@@ -266,7 +263,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         progressBar.progress = currentGameIndex + 1
         if (currentGameIndex < gameDataList.size) {
             viewPager.currentItem = currentGameIndex
-            loadGameInformation()
             loadTitel()
         }
         if (currentGameIndex == gameDataList.size) {
@@ -411,13 +407,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
     }
 
 
-    private fun loadGameInformation() {
-
-        val currentGame = gameDataList[currentGameIndex]
-
-        Log.d("GameInformation", "Game Title: ${currentGame.game?.type}")
-
-    }
 
 
     override fun onGameFinished(isCompleted: Boolean) {

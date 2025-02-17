@@ -4,21 +4,24 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.AssetManager
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.nophishsherlock.game.helper.GameViewModel
 import com.example.nophishsherlock.game.helper.LevelPrefernce
-import com.example.nophishsherlock.parser.Gson.Parser
 import com.example.nophishsherlock.parser.JsonTextParser
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.card.MaterialCardView
+import com.google.android.material.color.MaterialColors
 import java.io.IOException
 
 class LevelOverviewActivity : AppCompatActivity() {
 
     private lateinit var elementContainer: LinearLayout
-    private lateinit var titel: TextView
+    private lateinit var topAppBar: MaterialToolbar
 
     private var shortChapterString = "#_chapter/#_chapter_short.json"
     private var longChapterString = "#_chapter/#_chapter_long.json"
@@ -44,9 +47,21 @@ class LevelOverviewActivity : AppCompatActivity() {
         setContentView(R.layout.level_overview_screen)
 
         elementContainer = findViewById(R.id.elementContainer)
-        titel = findViewById(R.id.title)
+        topAppBar = findViewById(R.id.topAppBar)
+        setSupportActionBar(topAppBar)
 
-        titel.isClickable
+        topAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_reset -> {
+                    for (i in 1..chapterCount) {
+                        viewModel.setLevelCompleted(i, false)
+                    }
+                    true
+                }
+
+                else -> super.onOptionsItemSelected(it)
+            }
+        }
 
         chapterCount = countDirectories(this)
 
@@ -54,29 +69,34 @@ class LevelOverviewActivity : AppCompatActivity() {
         levelPreferences = LevelPrefernce(this)
         viewModel = ViewModelProvider(this)[GameViewModel::class.java]
 
-        titel.setOnClickListener {
-            for (i in 1..chapterCount) {
-                viewModel.setLevelCompleted(i, false)
-            }
-        }
 
         for (i in 1..chapterCount) {
             createElemente(i)
         }
 
+
         viewModel.levelCompletion.observe(this) { map ->
-            Log.d("LevelOverview", "levelCompletion changed")
 
             for (i in 1..chapterCount) {
-                // Find the UI element for level i
                 val element = elementContainer.getChildAt(i - 1)
-                val titleTextView = element.findViewById<TextView>(R.id.title)
+                val chapterNumberCard =
+                    element.findViewById<MaterialCardView>(R.id.chapterNumberCard)
 
-                // Update the text based on whether the level is completed
+                // Verändert die Farbe, wenn Kapitel abgeschlossen wurde
                 if (map[i] == true) {
-                    titleTextView.text = "Completed"
+                    chapterNumberCard.setBackgroundColor(
+                        MaterialColors.getColor(
+                            chapterNumberCard,
+                            com.google.android.material.R.attr.colorSecondary
+                        )
+                    )
                 } else {
-                    titleTextView.text = getChapterTitle(i)
+                    chapterNumberCard.setBackgroundColor(
+                        MaterialColors.getColor(
+                            chapterNumberCard,
+                            com.google.android.material.R.attr.colorSurfaceContainer
+                        )
+                    )
                 }
             }
         }
@@ -85,12 +105,17 @@ class LevelOverviewActivity : AppCompatActivity() {
 
 
         viewModel.currentLevel.observe(this) { newLevel ->
-            Log.d("LevelOverview", "currentLevel changed to $newLevel")
             if (newLevel != levelPreferences.getCurrentChapter()) {
                 levelPreferences.setCurrentChapter(newLevel)
                 startChapter(newLevel)
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_overview, menu)
+        return true
     }
 
 
@@ -109,7 +134,6 @@ class LevelOverviewActivity : AppCompatActivity() {
             currentTitel = getTitleFromLong(index)
         }
 
-        //TODO besserer check dafür
         element.findViewById<TextView>(R.id.title).text = currentTitel
 
 
@@ -125,15 +149,12 @@ class LevelOverviewActivity : AppCompatActivity() {
         levelPreferences.setCurrentLevel(chapterIndex)
         levelPreferences.setCurrentChapter(chapterIndex)
 
-        Log.d("GAME", "Set current level to $chapterIndex")
 
         intent.putExtra("shortChapterString", getCurrentChapterStrings(chapterIndex)[0])
         intent.putExtra("longChapterString", getCurrentChapterStrings(chapterIndex)[1])
 
         if (hasGame(chapterIndex)) {
             intent.putExtra("gameString", getCurrentChapterStrings(chapterIndex)[2])
-            Log.d("Level", "has game")
-            Log.d("Level", getCurrentChapterStrings(chapterIndex)[2])
         } else {
             intent.putExtra("gameString", "noGame")
         }
@@ -186,7 +207,6 @@ class LevelOverviewActivity : AppCompatActivity() {
 
     private fun getCurrentChapterStrings(index: Int): List<String> {
 
-        Log.d("LevelOverview", "getting current chapter strings $index")
         val currentShortChapterString = shortChapterString.replace("#", index.toString())
         val currentLongChapterString = longChapterString.replace("#", index.toString())
         val currentGameString = gameString.replace("#", index.toString())
@@ -200,9 +220,6 @@ class LevelOverviewActivity : AppCompatActivity() {
         val assetList: Array<String>? =
             chapterDirectories?.let { assetManager.list(it[index - 1]) }
 
-        for (element in assetList!!) {
-            Log.d("LevelOverview", element)
-        }
 
 
         var hasGame = false

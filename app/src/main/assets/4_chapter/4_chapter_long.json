@@ -27,73 +27,108 @@
     {
       "section": "3/6",
       "title": "Webadresse hinter einem Link finden",
-      "paragraphs": [
-        "Zunächst aber die Frage – wie sieht ein Link aus?",
-        "Ein Link kann in verschiedenen Formen in einer Nachricht (oder auf einer Webseite vorkommen):",
-        "• Als Wort: hier klicken",
-        "• Als Webadresse: kit.edu oder auch https://www.kit.edu",
-        "• In Form eines Bildes z.B. die KIT-Karte oder einem „Hier Klicken“ Button",
-        "• Als QR-Code"
-      ]
+      "imageText": {
+        "text": [
+          "Zunächst aber die Frage – wie sieht ein Link aus?",
+          "Ein Link kann in verschiedenen Formen in einer Nachricht (oder auf einer Webseite vorkommen):",
+          "• Als Wort: hier klicken",
+          "• Als Webadresse: kit.edu oder auch https://www.kit.edu",
+          "• In Form eines Bildes z.B. die KIT-Karte oder einem „Hier Klicken“ Button",
+          "• Als QR-Code"
+        ],
+        "imageSource": "chapter4_01",
+        "imageFirst": false
+      },
+      "media": {
+        "type": "image",
+        "source": "chapter4_02"
+      }
     },
     {
       "section": "4/6",
       "title": "Webadresse hinter einem Link finden",
-      "paragraphs": [
-        "Die Information, welche Webadresse hinter einem Link steckt, ist je nach Gerät und Software (z. B. E-Mail-Programm oder Browser) an unterschiedlichen Stellen zu finden. Sie sollten sich daher für jedes Gerät und jede Software damit vertraut machen, wo die (tatsächliche) Webadresse zu finden ist.",
-        "Im Folgenden gehen wir auf die Fälle ein, die am häufigsten vorkommen.",
-        "Bei PCs und Laptops erscheinen die Webadressen in der Regel, wenn Sie mit der Maus den Link berühren, aber ohne ihn anzuklicken. Der Link wird in den meisten Fällen entweder:",
-        "• in der Statusleiste am Fuß des Fensters oder",
-        "• in einem Infofeld, auch Tooltip genannt, erscheinen.",
-        "[Image of Webadresse in der Statusleiste.]",
-        "[Image of Webadresse im Tooltip.]"
-      ],
-      "media": {
-        "type": "image",
-        "description": "Webadresse in der Statusleiste.",
-        "source": "example_image"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Die Information, welche Webadresse hinter einem Link steckt, ist je nach Gerät und Software (z. B. E-Mail-Programm oder Browser) an unterschiedlichen Stellen zu finden. Sie sollten sich daher für jedes Gerät und jede Software damit vertraut machen, wo die (tatsächliche) Webadresse zu finden ist.",
+            "Im Folgenden gehen wir auf die Fälle ein, die am häufigsten vorkommen.",
+            "Bei PCs und Laptops erscheinen die Webadressen in der Regel, wenn Sie mit der Maus den Link berühren, aber ohne ihn anzuklicken. Der Link wird in den meisten Fällen entweder:",
+            "• in der Statusleiste am Fuß des Fensters oder",
+            "• in einem Infofeld, auch Tooltip genannt, erscheinen."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter4_03"
+          }
+        },
+        {
+          "media": {
+            "type": "image",
+            "source": "chapter4_04"
+          }
+        }
+      ]
     },
     {
       "section": "5/6",
       "title": "Webadresse hinter einem Link finden",
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Bei mobilen Geräten (Smartphones und Tablets) hängt das Vorgehen zum Identifizieren der Webadresse eines Links stark vom Gerät ab. Meist ist es so, dass Sie für mindestens zwei Sekunden mit dem Finger auf dem Link verweilen oder diesen für mindestens zwei Sekunden drücken müssen.",
+            "Achten Sie darauf, dass Sie den Link dabei nicht versehentlich öffnen, d. h. kurz antippen. Auch die Vorschau (mittels Force Touch) bei iOS sollten Sie vermeiden. Hier besteht die Gefahr, dass sie aus Versehen die Webadresse aufrufen."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter4_05"
+          }
+        }
+      ],
       "paragraphs": [
-        "Bei mobilen Geräten (Smartphones und Tablets) hängt das Vorgehen zum Identifizieren der Webadresse eines Links stark vom Gerät ab. Meist ist es so, dass Sie für mindestens zwei Sekunden mit dem Finger auf dem Link verweilen oder diesen für mindestens zwei Sekunden drücken müssen.",
-        "Achten Sie darauf, dass Sie den Link dabei nicht versehentlich öffnen, d. h. kurz antippen. Auch die Vorschau (mittels Force Touch) bei iOS sollten Sie vermeiden. Hier besteht die Gefahr, dass sie aus Versehen die Webadresse aufrufen.",
-        "[Image of Durch das Verweilen wird die Webadresse in einem Dialogfenster angezeigt.]",
         "Haben Sie eine Idee, wie Sie an Ihrem Smartphone aus Ihrem Lieblingsmessenger oder in Ihrem E- Mail-Programm an die Webadresse hinter einem Link kommen?",
         "Probieren Sie es doch einfach mal aus! Nachrichten mit Links haben Sie sicher reichlich empfangen.",
         "Hinweis: Grundsätzlich ist es auf dem mobilen Gerät oft schwieriger den Link aufgrund der Größe oder der Gefahr des ungewollten Klickens auf seine Legitimität zu prüfen. Deshalb empfiehlt es sich im Zweifel zu warten und erst am PC oder Laptop die Prüfung durchzuführen."
-      ],
-      "media": {
-        "type": "image",
-        "description": "Durch das Verweilen wird die Webadresse in einem Dialogfenster angezeigt.",
-        "source": "example_image"
-      }
+      ]
     },
     {
       "section": "6/6",
       "title": "Webadresse hinter einem Link finden",
-      "paragraphs": [
-        "Es gibt zwei gängige Tricks, die Kriminelle anwenden, um Sie in die Irre zu führen:",
-        "1) Der sogenannte Mismatch-Fall",
-        "Lassen Sie sich nicht durch Webadressen, die direkt im Text der Nachricht angegeben sind, in die Irre führen. Es ist sehr einfach möglich eine Webadresse in der Nachricht anzuzeigen, auch wenn eine andere Webadresse (die tatsächliche Webadresse) hinter dem Link zu finden ist.",
-        "Entsprechend versuchen Kriminelle Sie zu täuschen, indem der Text in der Nachricht wie eine Webadresse aussieht. Deshalb ist es wichtig, dass Sie nicht auf Webadressen im Text der Nachricht achten, sondern wissen, wo Sie die tatsächliche Webadresse finden.",
-        "Klicken Sie doch mal auf www.kit.edu und achten Sie darauf, wo sie letztlich landen → www.kit.edu",
-        "",
-        "2) Der sogenannte programmierte Tooltip Fall",
-        "Es ist möglich, dass ein Programm z.B. Thunderbird, dass normalerweise keinen Tooltip anzeigt, trotzdem einen solchen anzeigt. Lassen Sie sich dann nicht durch Webadresse, die in einem Tooltip direkt neben dem Link angezeigt werden, in die Irre führen.",
-        "Der Inhalt von diesem Tooltip kann von der Absenderin oder dem Absender komplett beeinflusst werden und ist daher nicht vertrauenswürdig. Die dort angezeigte Information ist nicht zu berücksichtigen, wenn Sie die Webadresse hinter dem Link versuchen zu identifizieren.",
-        "Hier ist es wichtig zu wissen, ob das eigene Programm einen Tooltip anzeigt.",
-        "[Image of Es ist für Kriminelle möglich, einen zusätzlichen Tooltip anzuzeigen. Dieser kann frei gewählt werden.]",
-        "Hinweis: Wenn das Programm einen Tooltip anzeigt, dann ist es auch wichtig zu wissen, wie der Tooltip normalerweise aussieht. Ansonsten könnte es Sie in die Irre führen, wenn Sie zwei Tooltips sehen, und Sie wissen nicht, welchem Sie vertrauen sollten.",
-        "[Image of Wenn das Programm standardmäßig einen Tooltip anzeigt, können in so einem Fall auch zwei zu sehen sein.]"
-      ],
-      "media": {
-        "type": "image",
-        "description": "Es ist für Kriminelle möglich, einen zusätzlichen Tooltip anzuzeigen. Dieser kann frei gewählt werden.",
-        "source": "example_image"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Es gibt zwei gängige Tricks, die Kriminelle anwenden, um Sie in die Irre zu führen:",
+            "1) Der sogenannte Mismatch-Fall",
+            "Lassen Sie sich nicht durch Webadressen, die direkt im Text der Nachricht angegeben sind, in die Irre führen. Es ist sehr einfach möglich eine Webadresse in der Nachricht anzuzeigen, auch wenn eine andere Webadresse (die tatsächliche Webadresse) hinter dem Link zu finden ist.",
+            "Entsprechend versuchen Kriminelle Sie zu täuschen, indem der Text in der Nachricht wie eine Webadresse aussieht. Deshalb ist es wichtig, dass Sie nicht auf Webadressen im Text der Nachricht achten, sondern wissen, wo Sie die tatsächliche Webadresse finden.",
+            "Klicken Sie doch mal auf www.kit.edu und achten Sie darauf, wo sie letztlich landen → www.kit.edu"
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter4_06"
+          }
+        },
+        {
+          "paragraphs": [
+            "2) Der sogenannte programmierte Tooltip Fall",
+            "Es ist möglich, dass ein Programm z.B. Thunderbird, dass normalerweise keinen Tooltip anzeigt, trotzdem einen solchen anzeigt. Lassen Sie sich dann nicht durch Webadresse, die in einem Tooltip direkt neben dem Link angezeigt werden, in die Irre führen.",
+            "Der Inhalt von diesem Tooltip kann von der Absenderin oder dem Absender komplett beeinflusst werden und ist daher nicht vertrauenswürdig. Die dort angezeigte Information ist nicht zu berücksichtigen, wenn Sie die Webadresse hinter dem Link versuchen zu identifizieren.",
+            "Hier ist es wichtig zu wissen, ob das eigene Programm einen Tooltip anzeigt."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter4_07"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hinweis: Wenn das Programm einen Tooltip anzeigt, dann ist es auch wichtig zu wissen, wie der Tooltip normalerweise aussieht. Ansonsten könnte es Sie in die Irre führen, wenn Sie zwei Tooltips sehen, und Sie wissen nicht, welchem Sie vertrauen sollten."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter4_08"
+          }
+        }
+      ]
     }
   ]
 }

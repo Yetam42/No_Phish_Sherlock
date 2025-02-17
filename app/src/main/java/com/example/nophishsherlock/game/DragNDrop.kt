@@ -1,22 +1,6 @@
 package com.example.nophishsherlock.game
 
-import android.content.ClipData
-import android.graphics.Color
-import android.graphics.Typeface
-import android.os.Bundle
-import android.util.Log
-import android.view.DragEvent
-import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.example.nophishsherlock.R
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 
 
 /**
@@ -26,7 +10,6 @@ import kotlinx.serialization.json.Json
  * @property type der Typ des Items
  * @property text der Text des Items
  */
-@Serializable
 data class DragItem(val id: Int, val type: String, val text: String? = null)
 
 /**
@@ -35,7 +18,7 @@ data class DragItem(val id: Int, val type: String, val text: String? = null)
  * Das wird aber noch implementiert
  */
 class DragNDrop : AppCompatActivity() {
-
+    /**
     //hier werden die Elemente der Activity initialisiert
     private lateinit var draggableItem1: TextView
     private lateinit var draggableItem2: TextView
@@ -231,4 +214,5 @@ class DragNDrop : AppCompatActivity() {
             draggableItem2.visibility = View.VISIBLE
         }
     }
+     **/
 }

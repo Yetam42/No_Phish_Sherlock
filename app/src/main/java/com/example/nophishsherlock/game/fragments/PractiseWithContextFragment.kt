@@ -1,23 +1,18 @@
 package com.example.nophishsherlock.game.fragments
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.children
 import com.example.no_phishing_yannick.games.helper.BaseGameFragment
+import com.example.nophishsherlock.InfoFragment
 import com.example.nophishsherlock.R
-import com.example.nophishsherlock.contentbuilder.CollapsibelTextView
 import com.example.nophishsherlock.contentbuilder.GameAnswerButton
 import com.example.nophishsherlock.data.GameData
-import com.google.android.material.card.MaterialCardView
-import com.google.common.reflect.TypeToken
-import com.google.gson.Gson
 
 class PractiseWithContextFragment : BaseGameFragment() {
 
@@ -28,8 +23,6 @@ class PractiseWithContextFragment : BaseGameFragment() {
 
     private lateinit var contextButton: Button
 
-    private lateinit var sidesheetContainer: FrameLayout
-    private lateinit var sidesheetText: TextView
 
     private var currentGameData = PractiseWithContextData()
 
@@ -49,9 +42,7 @@ class PractiseWithContextFragment : BaseGameFragment() {
         image = view.findViewById(R.id.image)
         right = view.findViewById(R.id.right)
         wrong = view.findViewById(R.id.wrong)
-        contextButton = view.findViewById(R.id.kontextButton)
-        sidesheetContainer = view.findViewById(R.id.sidesheetContainer)
-        sidesheetText = view.findViewById(R.id.sidesheetText)
+        contextButton = view.findViewById(R.id.contextButton)
 
         if (arguments != null) {
             val empfangeneFrage = arguments?.getParcelable<GameData>("game")
@@ -67,27 +58,22 @@ class PractiseWithContextFragment : BaseGameFragment() {
                 )
 
 
-            Log.d("imageId", currentGameData.imageSource)
 
 
-            sidesheetText.text = currentGameData.context
 
             if (imageId != null) {
                 image.setImageResource(imageId)
-
-                Log.d("PractiseWithContextFragment", "Build Image: ${imageId}")
             }
 
 
+            val contextText = getContextString(currentGameData.context)
 
             contextButton.setOnClickListener {
-                toggleSidesheetVisibility()
+                val contextInfoDialog = InfoFragment.newContextInstance(contextText)
+                contextInfoDialog.show(childFragmentManager, "InformationFragment")
+
             }
 
-            sidesheetContainer.isClickable = true
-            sidesheetContainer.setOnClickListener {
-                toggleSidesheetVisibility()
-            }
 
 
 
@@ -96,39 +82,36 @@ class PractiseWithContextFragment : BaseGameFragment() {
         }
     }
 
-    private fun toggleSidesheetVisibility() {
-        if (sidesheetContainer.visibility == View.GONE) {
-            sidesheetContainer.bringToFront()
-            showSidesheet()
-
-        } else {
-            hideSidesheet()
-        }
-    }
-
-
-    private fun showSidesheet() {
-        sidesheetContainer.visibility = View.VISIBLE
-        // Optionale Animation für das Einblenden (Beispiel mit Fade-In):
-        sidesheetContainer.animate()
-            .alpha(1f)
-            .setDuration(200) // Animationsdauer in Millisekunden
-            .start()
-    }
-
-    private fun hideSidesheet() {
-        // Optionale Animation für das Ausblenden (Beispiel mit Fade-Out):
-        sidesheetContainer.animate()
-            .alpha(0f)
-            .setDuration(200) // Animationsdauer in Millisekunden
-            .withEndAction { // Nach der Animation:
-                sidesheetContainer.visibility = View.GONE // Tatsächlich ausblenden
-            }
-            .start()
-    }
 
     override fun handleUserSelection() {
 
+    }
+
+    private fun getContextString(resourceName: String): CharSequence {
+        val contextText = try {
+            val resourceName = currentGameData.context
+
+            val resources = resources
+
+            val resourceId = resources.getIdentifier(
+                resourceName, "string",
+                context?.packageName
+            )
+
+            if (resourceId == 0) {
+                Log.e("Context Error", "Resource not found: $resourceName")
+                "Error: Context not found"
+            } else {
+                getText(resourceId)
+            }
+
+        } catch (e: Resources.NotFoundException) {
+            "Error"
+        } catch (e: Exception) {
+            "Error"
+        }
+
+        return contextText
     }
 
     override fun updateUI(isCorrect: Boolean) {

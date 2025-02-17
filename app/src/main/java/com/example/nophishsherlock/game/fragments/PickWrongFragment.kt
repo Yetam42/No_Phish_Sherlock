@@ -70,12 +70,6 @@ class PickWrongFragment : BaseGameFragment() {
     ): SpannableString {
         val spannableString = SpannableString(currentGameData.text)
 
-        /***
-         * TODO delimiter in json mitgeben
-         * val pattern: Pattern = Pattern.compile("\\b\\w+\\b|[.,!]") // Regex zum Finden von Wörtern und Satzzeichen
-         * und das ausgewählter bereich leuchtet
-         */
-
         val words = currentGameData.text.split(Regex("[./]"))
 
         val rightWords = currentGameData.pickWord.split(Regex("[.]"))

@@ -51,23 +51,29 @@
     {
       "section": "5/5",
       "title": "Einfach zu erkennende Tricks in Webadressen",
-      "paragraphs": [
-        "Sie haben jetzt also schon gelernt, was Sie tun, wenn Sie eine plausible Nachricht vorfinden und überlegen, ob Sie auf den Link klicken können oder nicht:",
-        "1. Identifizieren der Webadresse hinter dem Link",
-        "2. Identifizieren des Wer-Bereichs der Webadresse",
-        "3. Prüfen der Plausibilität des Wer-Bereichs und zwar nur des Wer-Bereichs und nicht der Angaben davor (Trick 1) oder danach (Trick 2)",
-        "Jetzt ist es Zeit, dass wir die beiden Beispiele aus Kapitel 1 auflösen und erklären, welches davon die betrügerische Nachricht ist und welche die legitime ist.",
-        "Hier nochmal die Beispiele aus dem ersten Kapitel.",
-        "[Image of Legitime Nachricht vs Betrügerische Nachricht]",
-        "Hätten Sie es selbst gemerkt?",
-        "Bei der betrügerischen Nachricht wurde statt shopping-total.de im Wer-Bereich shoppingsi- cher.de verwendet. Dafür wurde in den Bereich davor shopping-total.de geschrieben. Wenn man nun nicht aufmerksam liest oder nicht Ihr Wissen hat, dass nur der Wer-Bereich registriert werden muss, könnte man denken, dass es sich um eine legitime E-Mail von Shopping Total handelt.",
-        "Dass Sie sich von all dem nicht beeindrucken lassen, können Sie gleich bei der Übung zeigen. Danach geht’s weiter mit schwerer erkennbaren Tricks der Kriminellen…. Aber erstmal „Viel Erfolg.“"
-      ],
-      "media": {
-        "type": "image",
-        "description": "Legitime Nachricht vs Betrügerische Nachricht",
-        "source": "example_image"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Sie haben jetzt also schon gelernt, was Sie tun, wenn Sie eine plausible Nachricht vorfinden und überlegen, ob Sie auf den Link klicken können oder nicht:",
+            "1. Identifizieren der Webadresse hinter dem Link",
+            "2. Identifizieren des Wer-Bereichs der Webadresse",
+            "3. Prüfen der Plausibilität des Wer-Bereichs und zwar nur des Wer-Bereichs und nicht der Angaben davor (Trick 1) oder danach (Trick 2)",
+            "Jetzt ist es Zeit, dass wir die beiden Beispiele aus Kapitel 1 auflösen und erklären, welches davon die betrügerische Nachricht ist und welche die legitime ist.",
+            "Hier nochmal die Beispiele aus dem ersten Kapitel."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter6_01"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hätten Sie es selbst gemerkt?",
+            "Bei der betrügerischen Nachricht wurde statt shopping-total.de im Wer-Bereich shoppingsi- cher.de verwendet. Dafür wurde in den Bereich davor shopping-total.de geschrieben. Wenn man nun nicht aufmerksam liest oder nicht Ihr Wissen hat, dass nur der Wer-Bereich registriert werden muss, könnte man denken, dass es sich um eine legitime E-Mail von Shopping Total handelt.",
+            "Dass Sie sich von all dem nicht beeindrucken lassen, können Sie gleich bei der Übung zeigen. Danach geht’s weiter mit schwerer erkennbaren Tricks der Kriminellen…. Aber erstmal „Viel Erfolg.“"
+          ]
+        }
+      ]
     }
   ]
 }

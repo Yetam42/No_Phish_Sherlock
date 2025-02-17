@@ -29,7 +29,6 @@ class JsonTextParser {
             for (i in 0 until textArray.length()) {
 
                 val textObject = textArray.getJSONObject(i)
-                Log.d("JsonTextParser", "textObject: $textObject")
                 val section =
                     if (textObject.has("section")) textObject.getString("section") else null
                 val title = if (textObject.has("title")) textObject.getString("title") else null
@@ -67,10 +66,6 @@ class JsonTextParser {
                 } else {
                     null
                 }
-
-//                val imageText = null
-
-                Log.d("JsonTextParser", "ImageText: $imageText")
 
                 dataList.add(JsonTextData(section, title, paragraphList, media, imageText))
 

@@ -57,17 +57,27 @@
         "• aus wetter-deutschland.de wird wetter-cleutschland.de",
         "• aus paypal.com wird paypa1.com",
         "• aus sparkasse-duesseldorf.de wird sparkasse-duesselclorf.de Prinzip verstanden?",
-        "Übrigens, Forscher haben gezeigt, dass geübte Leserinnen und Leser bekannte Wörter nicht Buchstabe für E-Mail einzeln lesen sondern in Kombniation wahrnehenen. Daher ist es besnonders wicln- tig, dass Sie Buchstabe für Buchsabe lessen, wenn Sie den Wer-Berich überpüfen - gemerkt :-)",
-        "",
-        "Vielleicht erscheinen Ihnen die folgenden Übungen als solche einfach. Sie sollten aber nicht vergessen: In diesen Übungen ist Ihr primäres Ziel die Prüfung von Nachrichten oder Webadressen. Im realen Leben ist Ihr primäres Ziel die effektive und effiziente Erledigung Ihrer Arbeit, wozu das Abarbeiten von Nachrichten (insbesondere E-Mails) zählt.",
-        "Daher auch im Alltag: Wer-Bereiche Buchstabe für Buchstabe lesen damit Sie auch solche gut gemachten Nachrichten erkennen:",
-        "[Image of Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste.]"
+        "Übrigens, Forscher haben gezeigt, dass geübte Leserinnen und Leser bekannte Wörter nicht Buchstabe für E-Mail einzeln lesen sondern in Kombniation wahrnehenen. Daher ist es besnonders wicln- tig, dass Sie Buchstabe für Buchsabe lessen, wenn Sie den Wer-Berich überpüfen - gemerkt :-)"
       ],
       "media": {
-        "type": "image",
-        "description": "Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste.",
-        "source": "data_thief"
-      }
+        "type": "video",
+        "description": "URL-auseinanderziehen-2.mp4",
+        "source": "example"
+      },
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Vielleicht erscheinen Ihnen die folgenden Übungen als solche einfach. Sie sollten aber nicht vergessen: In diesen Übungen ist Ihr primäres Ziel die Prüfung von Nachrichten oder Webadressen. Im realen Leben ist Ihr primäres Ziel die effektive und effiziente Erledigung Ihrer Arbeit, wozu das Abarbeiten von Nachrichten (insbesondere E-Mails) zählt.",
+            "Daher auch im Alltag: Wer-Bereiche Buchstabe für Buchstabe lesen damit Sie auch solche gut gemachten Nachrichten erkennen:",
+            "Image of Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste.",
+            "Hier gibt es eine Abweichung zwischen dem Text in der E-Mail und dem tatsächlichen Wer-Bereich in der Statusleiste."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter7_01"
+          }
+        }
+      ]
     },
     {
       "section": "5/8",

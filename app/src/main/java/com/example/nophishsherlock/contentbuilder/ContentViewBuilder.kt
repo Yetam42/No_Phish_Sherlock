@@ -74,6 +74,10 @@ class ContentViewBuilder(private val context: Context) {
             }
 
 
+            textData.imageText?.let { imageText ->
+                layout.addView(createTextViewWithImage(imageText, 16f))
+            }
+
             textData.media?.let { media ->
                 when (media.type) {
                     "video" -> {
@@ -90,9 +94,7 @@ class ContentViewBuilder(private val context: Context) {
                 }
             }
 
-            textData.imageText?.let { imageText ->
-                layout.addView(createTextViewWithImage(imageText, 16f))
-            }
+
 
             textData.paragraphWithMedia?.let { paragraphWithMedia ->
                 layout.addView(createParagraphWithMedia(paragraphWithMedia))
@@ -168,7 +170,7 @@ class ContentViewBuilder(private val context: Context) {
 
                 if (image2 != null) {
                     imageLayout.addView(createImageView(image2.source))
-                    imageLayout.addView(createTextView(image2.source, 14f))
+                    //imageLayout.addView(createTextView(image2.source, 14f))
                 }
 
                 layout.addView(imageLayout)
@@ -233,13 +235,30 @@ class ContentViewBuilder(private val context: Context) {
 
         imageView.setPadding(10, 0, 10, 0)
 
-        if (text.imageFirst) {
-            layout.addView(imageView)
-            layout.addView(textLayout)
+        if (text.description != null) {
+            val description = createTextView(text.description, 14f)
+
+
+            if (text.imageFirst) {
+                layout.addView(imageView)
+                layout.addView(description)
+                layout.addView(textLayout)
+            } else {
+                layout.addView(textLayout)
+                layout.addView(imageView)
+                layout.addView(description)
+            }
         } else {
-            layout.addView(textLayout)
-            layout.addView(imageView)
+            if (text.imageFirst) {
+                layout.addView(imageView)
+                layout.addView(textLayout)
+            } else {
+                layout.addView(textLayout)
+                layout.addView(imageView)
+            }
         }
+
+
 
         return layout
 
@@ -284,7 +303,11 @@ class ContentViewBuilder(private val context: Context) {
         val playerView = PlayerView(context)
 
 
+        player.volume = 0f
+
         player.setMediaItem(mediaItem)
+
+
         player.prepare()
         player.playWhenReady = false
 
@@ -299,6 +322,7 @@ class ContentViewBuilder(private val context: Context) {
         }
 
         playerView.setFullscreenButtonClickListener {
+            player.stop()
             openFullscreen(player)
 
         }

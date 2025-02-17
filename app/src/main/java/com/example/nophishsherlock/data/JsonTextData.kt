@@ -35,12 +35,12 @@ data class MediaData(
     val source: String,
 ) : Parcelable
 
-
 @Parcelize
 data class ImageText(
     val text: List<String>? = null,
     val imageSource: String,
-    val imageFirst : Boolean = false
+    val imageFirst: Boolean = false,
+    val description: String? = null
 ) : Parcelable
 
 @Parcelize

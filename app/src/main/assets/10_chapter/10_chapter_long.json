@@ -4,13 +4,13 @@
       "section": "1/6",
       "title": "Gefährliche Dateien - potentiell (sehr) gefährliche Dateiformate",
       "paragraphs": [
-        "Leider kann sich in nahezu jeder Datei eine Schadsoftware verstecken. Allerdings ist es viel einfacher Schadsoftware in komplexe Dateiformate einzubauen.",
+        "Leider kann sich in nahezu <b>jeder Datei eine Schadsoftware verstecken</b>. Allerdings ist es viel <b>einfacher Schadsoftware in komplexe Dateiformate</b> einzubauen.",
         "Daher ist es wichtig diese komplexeren Dateiformate zu kennen, um insbesondere dort besondere Vorsicht walten zu lassen.",
-        "Komplexe und damit potentiell (sehr) gefährliche Dateiformate sind:",
-        "• Direkt ausführbare Dateiformate (sehr gefährlich): Beispiele für entsprechende Endungen bei Windows sind .exe, .bat, .com, .cmd, .scr, .pif",
-        "• Dateiformate, die Makros enthalten können (mehr hierzu auf den nächsten Seiten)",
-        "• Komprimierte Dateiformate (gleich mehr hierzu)",
-        "• Dateiformate, die Sie nicht kennen (diese sollten Sie vorsichtshalber als gefährlich einstufen)",
+        "Komplexe und damit <b>potentiell (sehr) gefährliche Dateiformate</b> sind:",
+        "• Direkt <b>ausführbare Dateiformate (sehr gefährlich)</b>: Beispiele für entsprechende Endungen bei Windows sind .exe, .bat, .com, .cmd, .scr, .pif",
+        "• Dateiformate, die <b>Makros</b> enthalten können (mehr hierzu auf den nächsten Seiten)",
+        "• <b>Komprimierte</b> Dateiformate (gleich mehr hierzu)",
+        "• <b>Dateiformate, die Sie nicht kennen</b> (diese sollten Sie vorsichtshalber als gefährlich einstufen)",
         "Hinweis: Nur weil pdfs hier nicht in der Liste sind, heißt dies nicht, dass darin keine Schadsoftware enthalten sein kann. Es ist nur aufwendiger und wird daher weniger oft genutzt.",
         "Hinweis: Eine Übersicht über als potentiell gefährlich angesehene Formate finden Sie (in englischer Sprache) unter: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-(http://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-) dangerous-on-windows/"
       ]
@@ -18,50 +18,64 @@
     {
       "section": "2/6",
       "title": "Gefährliche Dateien - potentiell (sehr) gefährliche Dateiformate",
-      "paragraphs": [
-        "Makros sind den direkt ausführbaren Dateien sehr ähnlich bzgl. des Aufwands und des Schadensumfangs. Sie werden in bekannte Dateiformate eingebettet. Anders als die direkt ausführbaren Dateien werden Makros daher in oder über ein Programm ausgeführt.",
-        "Welches Programm das ist, hängt vom Dateiformat ab. Sie erhalten in der Regel aber eine Warnung beim Starten des Programms. Sie werden darauf hingewiesen, dass Makros enthalten sind und diese gefährlich sein können. Sie können sich dann an dieser Stelle noch schützen, wenn Sie nicht fortfahren, sondern das Programm schließen und die Datei löschen. Ggf. bitten Sie Ihre lokalen IT- Beauftragten zu prüfen, ob auch bei Ihnen das Ausführen von Macros erst bestätigt werden muss.",
-        "Makros werden von Kriminellen vor allem in Microsoft Office Dateien eingebettet. Beispiele für entsprechende Endungen sind .doc, .docm, .ppt, . pptm, .xls, .xlsm",
-        "[Image of Aktuelles Design der Makro Sicherheitswarnung Office Stand 08.10.2019]",
-        "Hinweis: Makros können teilweise auch ohne Klicken ausgeführt werden z.B. die neue Funktion \"Power Query\" in Office kann hier Probleme bereiten (weil hier keine Abfrage erfolgt sondern diese gleich ausgeführt werden). Office Dateien können so gefährliche Inhalte nachladen, die vorher noch nicht in der Datei waren, d.h. eine Anti-Viren-Software kann zwar die Datei prüfen, aber findet erst- mal nichts Gefährliches."
-      ],
-      "media": {
-        "type": "image",
-        "description": "Aktuelles Design der Makro Sicherheitswarnung Office Stand 08.10.2019",
-        "source": "support"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "<b>Makros</b> sind den direkt ausführbaren Dateien sehr ähnlich bzgl. des Aufwands und des Schadensumfangs. Sie werden in <b>bekannte Dateiformate eingebettet</b>. Anders als die direkt ausführbaren Dateien werden Makros daher in oder über ein Programm ausgeführt.",
+            "Welches Programm das ist, hängt vom Dateiformat ab. Sie erhalten in der Regel aber eine Warnung beim Starten des Programms. Sie werden darauf hingewiesen, dass Makros enthalten sind und diese gefährlich sein können. Sie können sich dann an dieser Stelle noch schützen, wenn Sie <b>nicht fortfahren</b>, sondern das Programm schließen und die Datei löschen. Ggf. bitten Sie Ihre <b>lokalen IT- Beauftragten zu prüfen</b>, ob auch bei Ihnen das Ausführen von Macros erst bestätigt werden muss.",
+            "Makros werden von Kriminellen vor allem in <b>Microsoft Office Dateien</b> eingebettet. Beispiele für entsprechende Endungen sind .doc, .docm, .ppt, . pptm, .xls, .xlsm"
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter10_01"
+          }
+        },
+        {
+          "paragraphs": [
+            "Hinweis: Makros können teilweise auch ohne Klicken ausgeführt werden z.B. die neue Funktion \"Power Query\" in Office kann hier Probleme bereiten (weil hier keine Abfrage erfolgt sondern diese gleich ausgeführt werden). Office Dateien können so gefährliche Inhalte nachladen, die vorher noch nicht in der Datei waren, d.h. eine Anti-Viren-Software kann zwar die Datei prüfen, aber findet erst- mal nichts Gefährliches."
+          ]
+        }
+      ]
     },
     {
       "section": "3/6",
       "title": "Gefährliche Dateien - potentiell (sehr) gefährliche Dateiformate",
       "paragraphs": [
-        "Kriminelle komprimieren gefährliche Dateien gerne. Dadurch sieht die Datei auf den ersten Blick für Sie harmlos aus. Es wird hierdurch auch für Firewalls und Virenscanner schwieriger, die Dateien als gefährlich einzustufen.",
-        "Beispiele für entsprechende Endungen sind .zip, .rar, gz oder .7z",
-        "Das Anklicken von solchen komprimierten Dateien ist besonders dann gefährlich, wenn Ihr Dekomprimierungsprogramm den Inhalt direkt nach dem Dekomprimieren ausführt. Dann haben Sie keine Zeit, die Dateien selbst nochmal zu überprüfen und zu entscheiden, ob Sie diese öffnen möchten. Ggf. bitten Sie Ihre lokalen IT-Beauftragten zu prüfen, ob Sie ein anderes Dekomprimierungs- programm nutzen sollten.",
+        "<b>Kriminelle komprimieren gefährliche Dateien gerne</b>. Dadurch sieht die Datei auf den ersten Blick für Sie harmlos aus. Es wird hierdurch auch für Firewalls und Virenscanner schwieriger, die Dateien als gefährlich einzustufen.",
+        "Beispiele für entsprechende Endungen sind <b>.zip, .rar, gz oder .7z</b>",
+        "Das Anklicken von solchen komprimierten Dateien ist besonders dann <b>gefährlich</b>, wenn Ihr Dekomprimierungsprogramm den Inhalt <b>direkt nach dem Dekomprimieren ausführt</b>. Dann haben Sie keine Zeit, die Dateien selbst nochmal zu überprüfen und zu entscheiden, ob Sie diese öffnen möchten. Ggf. bitten Sie Ihre <b>lokalen IT-Beauftragten zu prüfen</b>, ob Sie ein anderes Dekomprimierungs- programm nutzen sollten.",
         "Diese Dateiformate werden auch in legitimen Nachrichten verwendet, wenn die eigentliche Datei zu groß ist. Daher sollten Sie solche Dateien nicht voreilig als gefährlich einstufen. Wichtig ist, dass Sie zunächst die Dateien mit Ihrem Dekomprimierungsprogramm (z.B. Winzip, Winrar oder 7-Zip) nur wiederherstellen und anschließend für jede enthaltene Datei prüfen, ob Sie diese öffnen möchten oder nicht."
       ]
     },
     {
       "section": "4/6",
       "title": "Gefährliche Dateien - potentiell (sehr) gefährliche Dateiformate",
-      "paragraphs": [
-        "Kriminelle wenden manchmal folgenden Trick an, um Sie in die Irre zu führen.",
-        "Sie erzeugen Schadsoftware als ausführbare Datei (.exe). Dann ändern Sie die Datei-Endung zu z.B.",
-        ".txt.",
-        "Rechnung.exe → Rechnung.txt",
-        "Diese Datei hängen sie dann an die betrügerische Nachricht an. Dies hat den Vorteil, dass die Datei so an der Firewall und dem Virenscanner vorbeikommt. Außerdem wären Sie bei einer .txt Datei auch wenig skeptisch, weil .txt zu den weniger komplexen Dateiformaten zählt und daher es unwahrscheinlich ist, dass beim Öffnen Schadsoftware geladen wird.",
-        "Kriminelle wissen aber auch, dass diese Datei wegen der Umbenennung von .exe zu .txt sich nicht öffnen lassen wird, sondern es zu einer Fehlermeldung bei Ihnen kommen wird.",
-        "[Image of Fehlermeldung bei einem Windows unbekannten Dateiformat]",
-        "[Image of Fehlermeldung bei einem Windows bekannten Dateiformat]",
-        "Daher erwähnen Kriminelle dies bereits in der Nachricht selbst und weisen darauf hin, dass das u.U. auftretende Problem am Schnellsten zu lösen ist, wenn man den Dateinamen ändert: z. B. indem ein .exe angehängt wird und die Datei dann mit einem Doppelklick geöffnet wird.",
-        "Jetzt öffnet sich zwar die Datei ohne Fehlermeldung - Sie wären dann aber gerade dabei eine Schadsoftware auf Ihren Rechner zu laden.",
-        "Sie sollten dieser Art von Anweisungen daher nicht nachkommen und den Dateinamen oder das Dateiformat nicht ändern."
-      ],
-      "media": {
-        "type": "image",
-        "description": "Fehlermeldung bei einem Windows unbekannten Dateiformat",
-        "source": "support"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "Kriminelle wenden manchmal folgenden <b>Trick</b> an, um Sie in die Irre zu führen.",
+            "Sie erzeugen Schadsoftware als ausführbare Datei (.exe). <b>Dann ändern Sie die Datei-Endung zu z.B. .txt.</b>",
+            "Rechnung.exe → Rechnung.txt",
+            "Diese Datei hängen sie dann an die betrügerische Nachricht an. Dies hat den Vorteil, dass die Datei so an der Firewall und dem Virenscanner vorbeikommt. Außerdem wären Sie bei einer .txt Datei auch wenig skeptisch, weil .txt zu den weniger komplexen Dateiformaten zählt und daher es unwahrscheinlich ist, dass beim Öffnen Schadsoftware geladen wird.",
+            "Kriminelle wissen aber auch, dass diese Datei wegen der Umbenennung von .exe zu .txt sich nicht öffnen lassen wird, sondern es zu einer Fehlermeldung bei Ihnen kommen wird."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter10_02"
+          },
+          "media2": {
+            "type": "image",
+            "source": "chapter10_03"
+          }
+        },
+        {
+          "paragraphs": [
+            "Daher erwähnen Kriminelle dies bereits in der Nachricht selbst und weisen darauf hin, dass das u.U. auftretende Problem am Schnellsten zu lösen ist, wenn man den Dateinamen ändert: z. B. indem ein .exe angehängt wird und die Datei dann mit einem Doppelklick geöffnet wird.",
+            "Jetzt öffnet sich zwar die Datei ohne Fehlermeldung - Sie wären dann aber gerade dabei eine Schadsoftware auf Ihren Rechner zu laden.",
+            "<b>Sie sollten dieser Art von Anweisungen daher nicht nachkommen und den Dateinamen oder das Dateiformat nicht ändern.</b>"
+          ]
+        }
+      ]
     },
     {
       "section": "5/6",
@@ -83,8 +97,8 @@
       "title": "Gefährliche Dateien - Umgang mit potentiell gefährlichen Dateiformaten",
       "paragraphs": [
         "(2) Die Nachricht wurde nicht angekündigt, aber Sie kennen die (angegebene) Absenderin oder den (angegebenen) Absender.",
-        "Wenn die (angegebene) Absenderin oder der (angegebene) Absender die Datei nicht in dem Format angekündigt hat, Sie die Absenderin oder den Absender aber kennen, dann kontaktieren Sie die Absenderin oder den Absender (nicht über die Kontaktdaten aus der Nachricht :)) und fragen nach, ob die Nachricht von ihr oder ihm kommt",
-        "Außerdem können Sie die Absenderin oder den Absender bitten, Ihnen die Datei in einem weniger gefährlichen Format zu schicken. Sie könnten z. B. darum bitten die Dateien einzeln zu schicken, statt komprimiert oder sie auf einen Server zu legen. Oder Sie bitten darum, dass man Ihnen statt eines Word Dokuments ein PDF schickt.",
+        "Wenn die (angegebene) Absenderin oder der (angegebene) Absender die Datei nicht in dem Format angekündigt hat, Sie die Absenderin oder den Absender aber kennen, dann <b>kontaktieren Sie die Absenderin oder den Absender</b> (nicht über die Kontaktdaten aus der Nachricht :)) und fragen nach, ob die Nachricht von ihr oder ihm kommt",
+        "Außerdem können Sie die Absenderin oder den Absender bitten, Ihnen die Datei in einem <b>weniger gefährlichen Format</b> zu schicken. Sie könnten z. B. darum bitten die Dateien einzeln zu schicken, statt komprimiert oder sie auf einen Server zu legen. Oder Sie bitten darum, dass man Ihnen statt eines Word Dokuments ein PDF schickt.",
         "Hinweis: Bitte beachten Sie, auch hier kann der Fall vorliegen, dass die Absenderin oder der Absender Ihnen zwar diese Datei willentlich geschickt hat, allerdings sich selbst nicht bewusst ist, dass dort eine Schadsoftware eingebettet ist.",
         "(3) Sie kennen die Absenderin oder den Absender nicht.",
         "Hier kontaktieren Sie im Zweifelsfall besser das BSI oder löschen die Nachricht."

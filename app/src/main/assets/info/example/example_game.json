@@ -87,6 +87,35 @@
           }
         ]
       }
+    },
+    {
+      "title": "Aufgabe mit Kontext",
+      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "game": {
+        "type": "taskWithContext",
+        "content": [
+          {
+            "imageSource": "game10_01",
+            "context": "scenario_chapter_10",
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "title": "Plausibilitätsprüfung",
+      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "game": {
+        "type": "hiddenLink",
+        "content": [
+          {
+            "shownText": "Hier ist der Link zu den Kopfhörer https://www.amazon.de/SonyXm9",
+            "shownLink": "https://www.amazon.de/SonyXm9",
+            "trueLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "isCorrect": false
+          }
+        ]
+      }
     }
   ]
 }

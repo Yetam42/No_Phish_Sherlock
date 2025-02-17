@@ -78,7 +78,6 @@ class DragAndDropFragment : BaseGameFragment() {
     }
 
 
-    //TODO GSON
     override fun parseGameData(gameData: GameData): DragAndDropData {
         return try {
             val jsonArray = gameData.content

@@ -50,11 +50,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // für DragNDrop
-    implementation(libs.kotlinx.serialization.json)
-
-    //viewmodel für spieldaten
-    implementation(libs.androidx.fragment.ktx)
 
     //für json parser
     implementation(libs.gson)

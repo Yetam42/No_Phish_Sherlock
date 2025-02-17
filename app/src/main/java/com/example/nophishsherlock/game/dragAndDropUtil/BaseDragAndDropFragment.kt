@@ -1,7 +1,6 @@
 package com.example.nophishsherlock.game.dragAndDropUtil
 
 import android.content.ClipData
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.DragEvent
@@ -210,7 +209,7 @@ abstract class BaseDragAndDropFragment : BaseGameFragment() {
 
 
     override fun updateUI(isCorrect: Boolean) {
-        TODO("Not yet implemented")
+        TODO()
     }
 
     abstract fun createDragItemViews()
