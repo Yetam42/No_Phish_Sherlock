@@ -1,0 +1,47 @@
+{
+  "tutorial": [
+    {
+      "game": "pickwrong",
+      "content": [
+        "Hier muss auf den richtigen Teil im Text geklickt werden.",
+        "Wird z.B dem Wer-Bereich von <b>www.amazon.de/login</b> gefragt, dann muss auf <b>amazon</b> und <b>de</b> geklickt werden.",
+        "Wenn nach dem Datei Typ von <b>Hausarbeit.pdf</b> gefragt wird muss auf man auf <b>pdf</b> klicken."
+      ]
+    },
+    {
+      "game": "dragAndDrop",
+      "content": [
+        "Hier müssen die einzelnen Elemente (Links/Dateien) den richtigen Kategorien per Drag-und-Drop zugeordnet werden."
+      ]
+    },
+    {
+      "game": "dragAndDropLayout",
+      "content": [
+        "Hier müssen ddie einzelnen Elemente (Links mit Organisation) den richtigen Kategorien per Drag-und-Drop zugeordnet werden."
+      ]
+    },
+    {
+      "game": "rightOrWrong",
+      "content": [
+        "Hier muss angeben werden, ob die Aussage richtig oder falsch ist."
+      ]
+    },
+    {
+      "game": "hiddenLink",
+      "content": [
+        "Bei dieser Aufgabe muss man zuerst lange auf den blau hinterlegten Text klicken.",
+        "Anschließend wird der <i> wahre </i> Link angezeigt.",
+        "Als letzten Schritt muss man überprüfen, ob es der gleiche Link ist."
+      ]
+    },
+    {
+      "game": "taskWithContext",
+      "content": [
+        "In dieser Aufgabe ist eine Realsituation abgebildet.",
+        "In dieser hat der Empfänger eine Nachricht bekommen.",
+        "Hier ist die Aufgabe zu sagen, ob es sich bei der Nachricht um eine Phishingangriff handelt.",
+        "Dabei soll der gegebene Kontext und die Informationen mit in die Entscheidung einfließen."
+      ]
+    }
+  ]
+}

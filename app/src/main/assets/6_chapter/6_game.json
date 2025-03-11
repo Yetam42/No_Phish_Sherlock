@@ -1,8 +1,8 @@
 {
   "game": [
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
@@ -30,8 +30,8 @@
       }
     },
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
@@ -59,8 +59,8 @@
       }
     },
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
@@ -90,8 +90,8 @@
       }
     },
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
@@ -121,8 +121,8 @@
       }
     },
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [

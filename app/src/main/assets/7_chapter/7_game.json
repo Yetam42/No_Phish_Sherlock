@@ -1,14 +1,14 @@
 {
   "game": [
     {
-      "title": "Drag und Drop aufgabe Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
           {
             "targetNames": [
-              "betrügerisch \n Webadresse",
+              "betrügerische \n Webadresse",
               "legitime \n Webadresse"
             ],
             "itemToTargetMap": {
@@ -32,14 +32,14 @@
       }
     },
     {
-      "title": "Drag und Drop aufgabe Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
           {
             "targetNames": [
-              "betrügerisch \n Webadresse",
+              "betrügerische \n Webadresse",
               "legitime \n Webadresse"
             ],
             "itemToTargetMap": {
@@ -61,14 +61,14 @@
       }
     },
     {
-      "title": "Drag und Drop aufgabe Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDropLayout",
         "content": [
           {
             "targetNames": [
-              "betrügerisch \n Webadresse",
+              "betrügerische \n Webadresse",
               "legitime \n Webadresse"
             ],
             "itemToTargetMap": {

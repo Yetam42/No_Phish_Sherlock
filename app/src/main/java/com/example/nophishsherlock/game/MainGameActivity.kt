@@ -129,7 +129,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         viewPager.adapter = adapter
 
 
-
         // Click Funktionene für die Buttons
         confirm.setOnClickListener {
             nextFragment()
@@ -173,6 +172,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     /**
      * Diese Funktion lädt die Fragmente der Spiele
@@ -350,7 +350,7 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
             this,
             android.R.color.holo_green_light
         )
-        feedBack.text = "Voll gut richtig gemacht"
+        feedBack.text = "Voll gut, richtig gemacht! \uD83D\uDE42"
         weiterButton.text = "Weiter"
 
         weiterButton.setOnClickListener {
@@ -383,7 +383,8 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
             liveCount--
             hasLostLife = true
         }
-        feedBack.text = "Schade man, dass war falsch :/"
+
+        feedBack.text = "Schade Mann, das war falsch \uD83D\uDE1F"
         weiterButton.text = if (liveCount == 0) "Vorbei" else "Wiederholen"
         weiterButton.setOnClickListener {
             loseLife()
@@ -405,8 +406,6 @@ class MainGameActivity : AppCompatActivity(), GameFragmentListener {
         adapter.notifyItemInserted(currentGameIndex)
         removeGameUI()
     }
-
-
 
 
     override fun onGameFinished(isCompleted: Boolean) {

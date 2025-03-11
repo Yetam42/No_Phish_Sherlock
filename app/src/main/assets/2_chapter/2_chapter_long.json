@@ -108,21 +108,25 @@
         "imageSource": "chapter2_05",
         "imageFirst": true
       },
-      "paragraphs": [
-        "• „Wenn Sie einen Virenscanner nutzen, kann es sein, dass eine Sicherheitswarnung nach dem Öffnen des Links im Browser an- gezeigt wird. Es handelt sich hier- bei um ein technisches Problem, was uns bereits bekannt ist. Falls das Problem bei Ihnen auch auf- tritt, deaktivieren Sie den Viren- scanner und versuchen Sie es er- neut.“",
-        "• „Mir ist bewusst, dass Sie nach der neuen Datenschutzgrundver- ordnung, keine Informationen über die Abwesenheit von Kollegen geben dürfen. Um die dringende Terminabsprache mit den Vertretern des Ministeri- ums abschließen zu können, wäre es wichtig, wenn Sie mir die Verfügbarkeit von Herrn Müller und Frau Mayer für die nächsten zwei Wochen bitte zeitnah mitteilen. Vielen Dank für Ihre Unterstützung.“",
-        "Beinhaltet die <b>Nachricht Informationen, die eigentlich in Deutschland nicht elektronisch versendet werden</b>, handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
-        "• Gerichtsbeschlüsse werden nicht per E-Mail verschickt und sind auch nicht per Link in ei- ner E-Mail abrufbar.",
-        "• Bußgeldbescheide werden auch nicht per E-Mail verschickt und sind auch nicht per Link in einer E-Mail abrufbar.",
-        "• Auch Ankündigungen von entsprechenden Bescheiden werden nicht elektronisch getä- tigt.",
-        "Man wird in einer Nachricht um <b>Informationen</b> gebeten (z.B. diese direkt zurückzuschicken, auf einer Webseite einzugeben oder in der angehängten Datei einzutragen). Es handelt sich aber um Informationen, <b>die dem angeblichen Absender vorliegen müssten</b>. Hinzu kommt, dass vertrauenswürdige Organisation, diese nicht per (unverschlüsselter) E-Mail anfragen wür- den. Entsprechend handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
-        "• Die (vermeintliche) eigene Bank fragt nach Kontodaten.",
-        "• Die (vermeintliche) Personalabteilung fragt nach Adresse, Geburtsdatum, Vertragslauf- zeit und Gehaltseinstufung."
-      ],
-      "media": {
-        "type": "image",
-        "source": "chapter2_06"
-      }
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "• „Wenn Sie einen Virenscanner nutzen, kann es sein, dass eine Sicherheitswarnung nach dem Öffnen des Links im Browser an- gezeigt wird. Es handelt sich hier- bei um ein technisches Problem, was uns bereits bekannt ist. Falls das Problem bei Ihnen auch auf- tritt, deaktivieren Sie den Viren- scanner und versuchen Sie es er- neut.“",
+            "• „Mir ist bewusst, dass Sie nach der neuen Datenschutzgrundver- ordnung, keine Informationen über die Abwesenheit von Kollegen geben dürfen. Um die dringende Terminabsprache mit den Vertretern des Ministeri- ums abschließen zu können, wäre es wichtig, wenn Sie mir die Verfügbarkeit von Herrn Müller und Frau Mayer für die nächsten zwei Wochen bitte zeitnah mitteilen. Vielen Dank für Ihre Unterstützung.“",
+            "Beinhaltet die <b>Nachricht Informationen, die eigentlich in Deutschland nicht elektronisch versendet werden</b>, handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
+            "• Gerichtsbeschlüsse werden nicht per E-Mail verschickt und sind auch nicht per Link in ei- ner E-Mail abrufbar.",
+            "• Bußgeldbescheide werden auch nicht per E-Mail verschickt und sind auch nicht per Link in einer E-Mail abrufbar.",
+            "• Auch Ankündigungen von entsprechenden Bescheiden werden nicht elektronisch getä- tigt.",
+            "Man wird in einer Nachricht um <b>Informationen</b> gebeten (z.B. diese direkt zurückzuschicken, auf einer Webseite einzugeben oder in der angehängten Datei einzutragen). Es handelt sich aber um Informationen, <b>die dem angeblichen Absender vorliegen müssten</b>. Hinzu kommt, dass vertrauenswürdige Organisation, diese nicht per (unverschlüsselter) E-Mail anfragen wür- den. Entsprechend handelt es sich sicher um eine betrügerische Nachricht. Beispiele hierfür sind:",
+            "• Die (vermeintliche) eigene Bank fragt nach Kontodaten.",
+            "• Die (vermeintliche) Personalabteilung fragt nach Adresse, Geburtsdatum, Vertragslauf- zeit und Gehaltseinstufung."
+          ],
+          "media": {
+            "type": "image",
+            "source": "chapter2_06"
+          }
+        }
+      ]
     },
     {
       "section": "5/8",

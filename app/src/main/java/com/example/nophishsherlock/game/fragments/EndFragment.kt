@@ -19,7 +19,7 @@ import com.google.android.material.button.MaterialButton
  */
 class EndFragment : Fragment() {
     private var listener: GameFragmentListener? = null
-    private val MESSAGE = "Du hast Lektion %s erfolgreich abgeschlossen"
+    private val MESSAGE = "Du hast Lektion %s erfolgreich abgeschlossen."
     lateinit var viewModel: GameViewModel
 
 

@@ -29,6 +29,7 @@
         <activity
             android:name=".contentbuilder.NewFullScreen"
             android:configChanges="orientation|screenSize" />
+        <activity android:name=".contentbuilder.ContentViewBuilder$FullscreenImageActivity" />
     </application>
 
 

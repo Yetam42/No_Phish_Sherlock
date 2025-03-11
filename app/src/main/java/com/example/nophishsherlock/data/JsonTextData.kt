@@ -2,7 +2,6 @@ package com.example.nophishsherlock.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-
 /**
  * Diese Klasse repräsentiert das JsonTextData
  *

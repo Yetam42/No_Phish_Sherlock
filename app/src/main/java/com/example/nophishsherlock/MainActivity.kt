@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity(), GameFragmentListener {
                     clearFragments(true)
                     if (!showShort) {
                         showShort = true
-                        infoButton.visibility = View.VISIBLE
+                        // infoButton.visibility = View.VISIBLE
                         bottomBar.visibility = View.GONE
                         showChapter()
                     }
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity(), GameFragmentListener {
                     if (showShort) {
                         showShort = false
                         bottomBar.visibility = View.VISIBLE
-                        infoButton.visibility = View.INVISIBLE
+                        // infoButton.visibility = View.INVISIBLE
                         showChapter()
                     }
                     true
@@ -203,6 +203,7 @@ class MainActivity : AppCompatActivity(), GameFragmentListener {
                     viewPagerData = mutableListOf(EndFragment())
                     viewPagerAdapter.notifyDataSetChanged()
                     infoButton.visibility = View.GONE
+                    topAppBar.visibility = View.GONE
                     val menu = topAppBar.menu as Menu
                     menu.clear()
 

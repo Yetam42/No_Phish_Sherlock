@@ -1,8 +1,8 @@
 {
   "game": [
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung\nKannst du nur aufgrund des Wer-Bereichs die Phishing erkennen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Kannst du nur aufgrund des Wer-Bereichs mögliches Phishing erkennen",
       "game": {
         "type": "dragAndDrop",
         "content": [
@@ -26,8 +26,8 @@
       }
     },
     {
-      "title": "Drag und Drop Aufgabe",
-      "taskDescription": "Ist der Wer-Bereich relevant für die Beurteilung\nKannst du nur aufgrund des Wer-Bereichs die Phishing erkennen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Kannst du nur aufgrund des Wer-Bereichs mögliches Phishing erkennen",
       "game": {
         "type": "dragAndDrop",
         "content": [
@@ -52,8 +52,8 @@
       }
     },
     {
-      "title": "Richtig oder falsch",
-      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "title": "Richtig oder Falsch",
+      "taskDescription": "Folgender Wer-Bereich ist vertrauenswürdig",
       "game": {
         "type": "rightOrWrong",
         "content": [
@@ -65,8 +65,8 @@
       }
     },
     {
-      "title": "Richtig oder falsch",
-      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "title": "Richtig oder Falsch",
+      "taskDescription": "Folgender Wer-Bereich ist vertrauenswürdig",
       "game": {
         "type": "rightOrWrong",
         "content": [
@@ -78,8 +78,8 @@
       }
     },
     {
-      "title": "Richtig oder falsch",
-      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "title": "Richtig oder Falsch",
+      "taskDescription": "Folgender Wer-Bereich ist vertrauenswürdig",
       "game": {
         "type": "rightOrWrong",
         "content": [
@@ -92,7 +92,7 @@
     },
     {
       "title": "Richtig oder falsch",
-      "taskDescription": "Ist folgender Wer-Bereich vertrauenswürdig?",
+      "taskDescription": "Folgender Wer-Bereich ist vertrauenswürdig",
       "game": {
         "type": "rightOrWrong",
         "content": [

@@ -17,7 +17,7 @@ class NewFullScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.video_fullscreen)
+        setContentView(R.layout.media_fullscreen)
 
         // Hide system UI for fullscreen
         window.decorView.systemUiVisibility =
@@ -25,6 +25,7 @@ class NewFullScreen : AppCompatActivity() {
 
         // Create PlayerView dynamically
         playerView = findViewById(R.id.player_view)
+        playerView.visibility = View.VISIBLE
 
 
         // Initialize ExoPlayer

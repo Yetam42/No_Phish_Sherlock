@@ -24,16 +24,20 @@
         "imageSource": "chapter3_01",
         "imageFirst": false
       },
-      "paragraphs": [
-        "• personenbezogene Daten wie Einstellungs- und Bewerbungsunterlagen oder Notenlisten,",
-        "• der interne Aufbau Ihres Unternehmens,",
-        "• die Reise- oder Urlaubspläne von Beschäftigten und/oder Kolleginnen und Kollegen.",
-        "Schicken Sie versehentlich sensible Daten zurück an Kriminelle, können diese von diesen missbraucht werden, um Ihnen zu schaden. Teilweise geschieht dies stufenweise: D.h. erst werden nach Daten gefragt, die dann in einem zweiten Schritt von Kriminellen genutzt werden:",
-        "• z. B. könnte nach einem Scan Ihres Ausweises gefragt werden. Im nächsten Schritt können die Kriminellen damit eine dritte Person davon überzeugen, dass diese Person mit Ihnen kommuniziert.",
-        "• z. B. könnte nach Informationen zur Abwesenheit von Kolleginnen oder Kollegen und/oder Vorgesetzen gefragt werden. Diese nutzten Kriminelle im nächsten Schritt, um so Abwesenheitsvertreterinnen oder -vertreter gezielt anzuschreiben und auf vermeintliche Absprachen vor der Abwesenheit hinzuweisen und so diese oder diesen dazu zu bringen, eine entsprechende gefährliche Aktion auszuführen.",
-        "Hinweis: Seriöse Anbieter würden Sie nie auffordern, dass Sie ihnen Ihr Passwort zusenden.",
-        "Daher gilt: Auch wenn die Nachricht, in der sensible Daten angefordert werden, plausibel erscheint, gilt: Sensible Informationen bzw. sensible Daten sollten Sie nur elektronisch verschicken, wenn Sie sicher sind, dass nur der beabsichtigte Absender den Inhalt der Nachricht lesen kann, z.B. weil Sie die E-Mail mit S/MIME verschlüsseln. Prüfen Sie, ob Sie ein S/MIME Zertifikat der Empfängerin oder des Empfängers haben.",
-        "Hinweis: Kriminelle versuchen an sensible Daten auch über Telefonanrufe zu gelangen, indem sie sich z.B. als vermeintlich neue lokale IT-Beauftragte oder vermeintliche Mitarbeiterinnen oder Mitarbeiter bei Microsoft oder Apple Support ausgeben."
+      "paragraphWithMedia": [
+        {
+          "paragraphs": [
+            "• personenbezogene Daten wie Einstellungs- und Bewerbungsunterlagen oder Notenlisten,",
+            "• der interne Aufbau Ihres Unternehmens,",
+            "• die Reise- oder Urlaubspläne von Beschäftigten und/oder Kolleginnen und Kollegen.",
+            "Schicken Sie versehentlich sensible Daten zurück an Kriminelle, können diese von diesen missbraucht werden, um Ihnen zu schaden. Teilweise geschieht dies stufenweise: D.h. erst werden nach Daten gefragt, die dann in einem zweiten Schritt von Kriminellen genutzt werden:",
+            "• z. B. könnte nach einem Scan Ihres Ausweises gefragt werden. Im nächsten Schritt können die Kriminellen damit eine dritte Person davon überzeugen, dass diese Person mit Ihnen kommuniziert.",
+            "• z. B. könnte nach Informationen zur Abwesenheit von Kolleginnen oder Kollegen und/oder Vorgesetzen gefragt werden. Diese nutzten Kriminelle im nächsten Schritt, um so Abwesenheitsvertreterinnen oder -vertreter gezielt anzuschreiben und auf vermeintliche Absprachen vor der Abwesenheit hinzuweisen und so diese oder diesen dazu zu bringen, eine entsprechende gefährliche Aktion auszuführen.",
+            "Hinweis: Seriöse Anbieter würden Sie nie auffordern, dass Sie ihnen Ihr Passwort zusenden.",
+            "Daher gilt: Auch wenn die Nachricht, in der sensible Daten angefordert werden, plausibel erscheint, gilt: Sensible Informationen bzw. sensible Daten sollten Sie nur elektronisch verschicken, wenn Sie sicher sind, dass nur der beabsichtigte Absender den Inhalt der Nachricht lesen kann, z.B. weil Sie die E-Mail mit S/MIME verschlüsseln. Prüfen Sie, ob Sie ein S/MIME Zertifikat der Empfängerin oder des Empfängers haben.",
+            "Hinweis: Kriminelle versuchen an sensible Daten auch über Telefonanrufe zu gelangen, indem sie sich z.B. als vermeintlich neue lokale IT-Beauftragte oder vermeintliche Mitarbeiterinnen oder Mitarbeiter bei Microsoft oder Apple Support ausgeben."
+          ]
+        }
       ]
     },
     {
@@ -48,15 +52,17 @@
             "type": "image",
             "source": "chapter3_02"
           }
+        },
+        {
+          "paragraphs": [
+            "Daher gilt: Falls Ihnen die Kontonummer/ IBAN für die entsprechende Überweisung bereits aus früheren Transaktionen bekannt ist, nutzen Sie die bekannte und nicht die aus der Nachricht. Damit sind Sie auf der sicheren Seite.",
+            "Wenn Sie die Kontonummer des Absenders nicht bereits kennen, dann prüfen Sie die in der Nachricht angegebene Kontonummer auf Plausibilität:",
+            "• Prüfen, Sie ob es eine ausländischen IBAN (solche, die nicht mit DE beginnen) ist. Seien Sie dann besonders vorsichtig.",
+            "• Prüfen Sie die IBAN, in dem Sie die (ersten) Zeichen der IBAN in eine Suchmaschine eingeben und schauen, ob die Treffer darauf hinweisen, dass es sich um eine bereits bekannte Masche handelt.",
+            "Falls Ihnen die Telefonnummer des Absenders bereits bekannt ist (nicht aus der Nachricht!), fragen Sie nach, wenn Sie unsicher sind.",
+            "Hinweis: Besondere Vorsicht ist geboten, wenn Sie in BitCoins oder anderen Krypto-Währungen zahlen sollen."
+          ]
         }
-      ],
-      "paragraphs": [
-        "Daher gilt: Falls Ihnen die Kontonummer/ IBAN für die entsprechende Überweisung bereits aus früheren Transaktionen bekannt ist, nutzen Sie die bekannte und nicht die aus der Nachricht. Damit sind Sie auf der sicheren Seite.",
-        "Wenn Sie die Kontonummer des Absenders nicht bereits kennen, dann prüfen Sie die in der Nachricht angegebene Kontonummer auf Plausibilität:",
-        "• Prüfen, Sie ob es eine ausländischen IBAN (solche, die nicht mit DE beginnen) ist. Seien Sie dann besonders vorsichtig.",
-        "• Prüfen Sie die IBAN, in dem Sie die (ersten) Zeichen der IBAN in eine Suchmaschine eingeben und schauen, ob die Treffer darauf hinweisen, dass es sich um eine bereits bekannte Masche handelt.",
-        "Falls Ihnen die Telefonnummer des Absenders bereits bekannt ist (nicht aus der Nachricht!), fragen Sie nach, wenn Sie unsicher sind.",
-        "Hinweis: Besondere Vorsicht ist geboten, wenn Sie in BitCoins oder anderen Krypto-Währungen zahlen sollen."
       ]
     },
     {

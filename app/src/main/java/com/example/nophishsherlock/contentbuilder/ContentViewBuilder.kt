@@ -4,19 +4,24 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
+import com.example.nophishsherlock.R
 import com.example.nophishsherlock.data.ImageText
 import com.example.nophishsherlock.data.JsonTextData
 import com.example.nophishsherlock.data.ParagraphWithImage
@@ -100,10 +105,7 @@ class ContentViewBuilder(private val context: Context) {
                 layout.addView(createParagraphWithMedia(paragraphWithMedia))
             }
 
-
-            //scrollView.addView(layout)
             views.add(layout)
-
         }
 
         return views
@@ -205,6 +207,78 @@ class ContentViewBuilder(private val context: Context) {
         }
     }
 
+    private fun openFullscreenImageView(imageUrl: String) {
+        val intent = Intent(context, FullscreenImageActivity::class.java)
+        intent.putExtra("image_url", imageUrl)
+        context.startActivity(intent)
+    }
+
+    class FullscreenImageActivity : AppCompatActivity() {
+
+        private lateinit var scaleGestureDetector: ScaleGestureDetector
+        private var scaleFactor = 1.0f
+        private lateinit var imageView: ImageView
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.media_fullscreen)
+
+            val imageUrl = intent.getStringExtra("image_url")
+            imageView = findViewById(R.id.imageView)
+            imageView.visibility = View.VISIBLE
+
+            if (imageUrl != null) {
+                val imageId = resources.getIdentifier(imageUrl, "drawable", packageName)
+                Log.d("FullscreenImage", "Image ID: $imageId") // Add this line
+                if (imageId != 0) {
+                    imageView.setImageResource(imageId)
+                } else {
+                    Log.e("FullscreenImage", "Resource not found for: $imageUrl")
+                }
+            }
+
+            scaleGestureDetector = ScaleGestureDetector(this, ScaleListener())
+        }
+
+        override fun onTouchEvent(motionEvent: MotionEvent): Boolean {
+            scaleGestureDetector.onTouchEvent(motionEvent)
+            return true
+        }
+
+        private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+            override fun onScale(scaleGestureDetector: ScaleGestureDetector): Boolean {
+                scaleFactor *= scaleGestureDetector.scaleFactor
+                scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 5.0f)) // Limit zoom scale
+                imageView.scaleX = scaleFactor
+                imageView.scaleY = scaleFactor
+                return true
+            }
+        }
+
+    }
+
+    private fun setupDoubleTapListener(imageView: ImageView, imageUrl: String) {
+        val gestureDetector =
+            GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+                override fun onDoubleTap(e: android.view.MotionEvent): Boolean {
+                    // Open fullscreen view when double-tapped
+                    Log.d("DoubleTap", "Double tap detected")
+                    openFullscreenImageView(imageUrl)
+                    return true
+                }
+            })
+
+        imageView.setOnTouchListener { _, event ->
+            gestureDetector.onTouchEvent(event)
+            Log.d("DoubleTap", "Touch event detected")
+            // Returning false here lets the system also handle the touch event,
+            // so it's not blocked for normal interactions like scrolling
+            true
+        }
+
+    }
+
+
     private fun createTextViewWithImage(text: ImageText, textSize: Float): LinearLayout {
         if (text.text == null) return LinearLayout(context)
         val layout = LinearLayout(context).apply {
@@ -285,6 +359,8 @@ class ContentViewBuilder(private val context: Context) {
         imageView.layoutParams = layoutParams
         imageView.scaleType = ImageView.ScaleType.FIT_CENTER
         imageView.tag = imageUrl
+
+        setupDoubleTapListener(imageView, imageUrl)
         return imageView
     }
 
@@ -323,7 +399,8 @@ class ContentViewBuilder(private val context: Context) {
 
         playerView.setFullscreenButtonClickListener {
             player.stop()
-            openFullscreen(player)
+            openFullscreen(player, videoUri.toString())
+
 
         }
 
@@ -331,10 +408,11 @@ class ContentViewBuilder(private val context: Context) {
     }
 
 
-    private fun openFullscreen(player: ExoPlayer) {
+    private fun openFullscreen(player: ExoPlayer, videoUri: String) {
         val intent = Intent(context, NewFullScreen::class.java)
-        intent.putExtra("video_uri", "android.resource://${context.packageName}/raw/example")
+        intent.putExtra("video_uri", videoUri)
         intent.putExtra("video_position", player.currentPosition)
+
         context.startActivity(intent)
     }
 

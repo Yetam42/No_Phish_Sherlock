@@ -1,13 +1,13 @@
 {
   "game": [
     {
-      "title": "Plausibilitätsprüfung",
-      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "title": "Versteckter Link",
+      "taskDescription": "Ist das der richtige Link?",
       "game": {
         "type": "hiddenLink",
         "content": [
           {
-            "shownText": "Hier ist der Link zu den Kopfhörer https://www.amazon.de/SonyXm9",
+            "shownText": "Hier ist der Link zu den Kopfhörern https://www.amazon.de/SonyXm9",
             "shownLink": "https://www.amazon.de/SonyXm9",
             "trueLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
             "isCorrect": false
@@ -16,13 +16,13 @@
       }
     },
     {
-      "title": "Plausibilitätsprüfung",
-      "taskDescription": "Ist die Aussage plausibel oder nicht?",
+      "title": "Versteckter Link",
+      "taskDescription": "Ist das der richtige Link?",
       "game": {
         "type": "hiddenLink",
         "content": [
           {
-            "shownText": "Ihr Packet konnte nicht zugestellt werden. Bitte klicken Sie auf https://www.dhl.de/paket_zustellung um eine gemeinsame Lösung zu finden",
+            "shownText": "Ihr Paket konnte nicht zugestellt werden. Bitte klicken Sie auf https://www.dhl.de/paket_zustellung, um eine gemeinsame Lösung zu finden.",
             "shownLink": "https://www.dhl.de/paket_zustellung",
             "trueLink": "https://www.dhl.de/paket_zustellung",
             "isCorrect": true
@@ -32,7 +32,7 @@
     },
     {
       "title": "Versteckter Link",
-      "taskDescription": "Ist das der richtige Link",
+      "taskDescription": "Ist das der richtige Link?",
       "game": {
         "type": "hiddenLink",
         "content": [

@@ -12,6 +12,7 @@
         app:cardCornerRadius="10dp"
         app:cardPreventCornerOverlap="true"
         style="@style/Widget.Material3.CardView.Outlined"
+        android:clickable="false"
         android:layout_margin="4dp"
         app:strokeWidth="4dp">
 

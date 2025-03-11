@@ -1,8 +1,8 @@
 {
   "game": [
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -14,8 +14,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -28,8 +28,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -41,8 +41,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -54,8 +54,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -67,8 +67,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Klicke auf den tatsächlichen Dateityp",
       "game": {
         "type": "pickwrong",
         "content": [

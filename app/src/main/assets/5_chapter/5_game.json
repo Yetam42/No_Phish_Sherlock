@@ -1,8 +1,8 @@
 {
   "game": [
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -14,8 +14,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -27,8 +27,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -40,8 +40,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -53,8 +53,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -66,8 +66,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [
@@ -79,8 +79,8 @@
       }
     },
     {
-      "title": "Textauswahl Aufgabe",
-      "taskDescription": "Markiere den Wer-Bereich und klicke auf den richtigen Teil im Text",
+      "title": "Textauswahl-Aufgabe",
+      "taskDescription": "Markiere den Wer-Bereich, indem du auf den richtigen Teil des Links klickst",
       "game": {
         "type": "pickwrong",
         "content": [

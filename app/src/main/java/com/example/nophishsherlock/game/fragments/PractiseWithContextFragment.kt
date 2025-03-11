@@ -134,7 +134,7 @@ class PractiseWithContextFragment : BaseGameFragment() {
             }
             wrong.setOnClickListener {
                 notifyActivity(true)
-                wrong.deselectButton()
+                right.deselectButton()
                 wrong.selectButton(false)
             }
         }

@@ -15,4 +15,8 @@ interface GameFragmentListener {
     fun onGameFinished(isCompleted: Boolean)
 
     fun onNextChapter()
+
+    fun getEmojiUnicode(unicode: Int): String {
+        return String(Character.toChars(unicode))
+    }
 }

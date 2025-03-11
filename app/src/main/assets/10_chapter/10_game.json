@@ -1,8 +1,8 @@
 {
   "game": [
     {
-      "title": "Drag und Drop aufgabe Aufgabe",
-      "taskDescription": "Ordne die Elemente zu den Zielen",
+      "title": "Drag-und-Drop-Aufgabe",
+      "taskDescription": "Ordne die Elemente den Kategorien",
       "game": {
         "type": "dragAndDrop",
         "content": [
@@ -33,7 +33,7 @@
     },
     {
       "title": "Aufgabe mit Kontext",
-      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "taskDescription": "In diesem Szenario ist eine betrügerische Nachricht",
       "game": {
         "type": "taskWithContext",
         "content": [
@@ -47,7 +47,7 @@
     },
     {
       "title": "Aufgabe mit Kontext",
-      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "taskDescription": "In diesem Szenario ist eine betrügerische Nachricht",
       "game": {
         "type": "taskWithContext",
         "content": [
@@ -61,7 +61,7 @@
     },
     {
       "title": "Aufgabe mit Kontext",
-      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "taskDescription": "In diesem Szenario ist eine betrügerische Nachricht",
       "game": {
         "type": "taskWithContext",
         "content": [
@@ -75,7 +75,7 @@
     },
     {
       "title": "Aufgabe mit Kontext",
-      "taskDescription": "Ist in diesem Szenario eine betrügerische Nachricht",
+      "taskDescription": "In diesem Szenario ist eine betrügerische Nachricht",
       "game": {
         "type": "taskWithContext",
         "content": [
